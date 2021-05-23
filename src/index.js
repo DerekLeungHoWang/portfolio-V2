@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { StylesProvider } from '@material-ui/styles';
 
 ReactDOM.render(
-  <StylesProvider StylesProvider injectFirst>
+  <StylesProvider  injectFirst>
     <React.StrictMode>
       <App />
     </React.StrictMode>

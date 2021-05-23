@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { createGlobalStyle, default as styled } from "styled-components";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +10,10 @@ import {
 } from "react-router-dom";
 import Navbar from "./Components/Common/Navbar/Navbar";
 import './App.css'
- 
+import CoverPage from "./Components/HomePage/CoverPage/CoverPage";
+import ProjectsPage from "./Components/HomePage/ProjectsPage/ProjectsPage";
+import HomePage from "./Components/HomePage/HomePage";
+
 
 
 
@@ -17,29 +21,35 @@ import './App.css'
 
 
 function App() {
-
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#3aba98',
+      },
+    }
+  })
 
   return (
-    <>
-      <Router>
-        <Navbar />
+    <div className="App" >
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route path="/">
+              <HomePage />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            {/* <About /> */}
-          </Route>
-          <Route path="/users">
-            {/* <Users /> */}
-          </Route>
-          <Route path="/">
-            {/* <Home /> */}
-          </Route>
-        </Switch>
+            </Route>
+            <Route path="/about">
+              {/* <About /> */}
+            </Route>
+            <Route path="/users">
+              {/* <Users /> */}
+            </Route>
+          </Switch>
 
-      </Router>
-    </>
+        </Router>
+      </ThemeProvider>
+    </div>
 
 
   );
