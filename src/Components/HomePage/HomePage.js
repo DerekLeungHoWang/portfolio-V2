@@ -1,9 +1,11 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import { motion } from 'framer-motion';
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import CoverPage from './CoverPage/CoverPage'
 import ProjectsPage from './ProjectsPage/ProjectsPage'
+import { useInView } from "react-intersection-observer";
+import { useSelector } from 'react-redux';
 const useStyles = makeStyles((theme) => ({
     root: {
         // flexGrow: 1,
@@ -16,25 +18,27 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
     },
 }));
-const Inner = styled(Grid)`
+const Col = styled(Grid)`  
+`;
+
+
+
+
+export default function HomePage() {
 
  
- 
-   
-`;
-export default function HomePage() {
     const classes = useStyles();
     return (
         <Grid container
             className={classes.root}
         >
-            <Grid container item xs={12}  >
-                <CoverPage />
-            </Grid>
-            <Grid container item xs={12}  >
+            <Col container item xs={12}  >
+                <CoverPage  />
+            </Col>
+            <Col container item xs={12}  >
                 <ProjectsPage />
-            </Grid>
-
+            </Col>
+         
         </Grid>
     )
 }

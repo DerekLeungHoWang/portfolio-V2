@@ -1,10 +1,12 @@
-import { motion } from 'framer-motion';
-import React from 'react'
+import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
 import styles from './CoverPage.module.css'
 import Button from '@material-ui/core/Button';
 import { Grid, useTheme } from '@material-ui/core';
 import StyledButton from '../../Common/StyledButton/StyledButton';
+import { useSelector } from 'react-redux';
+import { blue, pink } from '@material-ui/core/colors';
 
 
 const Title = () => {
@@ -17,7 +19,7 @@ const Title = () => {
 
     >
 
-        <motion.h6 color="primary">Hi,There</motion.h6>
+
         {line1.split("").map((char, index) => {
             return (
                 <motion.span
@@ -42,17 +44,7 @@ const Title = () => {
 
     </motion.h1>)
 }
-const myButton = {
-    hidden: {
-        opacity: 0
-    },
-    visible: {
-        opacity: 1,
-        transition: {
-            duration: 1
-        }
-    }
-}
+
 
 const StyledTitle = styled(Title)`
  color: white;
@@ -80,17 +72,29 @@ const letter = {
     }
 }
 
+
+
 const Wrapper = styled(Grid)`
     color: white;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(31, 31, 44);
+    background-color: #1f1f2c;
 `;
+
+
 
 
 
 export default function CoverPage() {
     const theme = useTheme();
+    const prjPageInview = useSelector(state => state.AnimationReducer.prjPageInView)
+    const ref = React.useRef(null)
+    const talkBtn = useAnimation();
+    const [animate, setAnimate] = useState(false);
+    const [pos, setPos] = useState("relative")
+
+
+
     return (
         <Wrapper container
             direction="row"
@@ -99,7 +103,17 @@ export default function CoverPage() {
         >
             <Grid item  >
                 <StyledTitle />
-                <StyledButton >Let's Talk</StyledButton>
+                <Button
+
+                    component={motion.div}
+                    variant="outlined"
+                    color="primary"
+                    ref={ref}
+                    // initial="hidden"
+                    // variants={talkBtnVariants}
+                    animate={talkBtn}
+
+                >GitHub</Button>
             </Grid>
 
         </Wrapper>

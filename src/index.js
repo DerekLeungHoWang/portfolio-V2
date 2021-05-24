@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StylesProvider } from '@material-ui/styles';
+import store from './configureStore'
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-  <StylesProvider  injectFirst>
+  <StylesProvider injectFirst>
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
   </StylesProvider>
   ,

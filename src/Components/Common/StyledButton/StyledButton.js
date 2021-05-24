@@ -1,12 +1,12 @@
 import { Button, styled, useTheme } from '@material-ui/core'
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styles from './StyledButton.module.css'
 
 
-export default function StyledButton(props) {
+const StyledButton = forwardRef((props, ref) => {
 
- 
+
     const myButton = {
         hidden: {
             opacity: 0
@@ -18,16 +18,20 @@ export default function StyledButton(props) {
             }
         }
     }
+
+
+
     return (
         <Button
             className={styles.styledButton}
             initial="hidden"
-            animate="visible"
+            animate={props.animate ? props.animate : "visible"}
             component={motion.div}
-            variants={myButton}
+            variants={props.variants ? props.variants : myButton}
             variant="outlined"
             color="primary"
-
+            ref={ref}
         >{props.children}</Button>
     )
-}
+})
+export default StyledButton;
