@@ -6,6 +6,8 @@ import CoverPage from './CoverPage/CoverPage'
 import ProjectsPage from './ProjectsPage/ProjectsPage'
 import { useInView } from "react-intersection-observer";
 import { useSelector } from 'react-redux';
+import SkillPage from './SkillPage/SkillPage';
+import ContactPage from './ContacPage/ContactPage';
 const useStyles = makeStyles((theme) => ({
     root: {
         // flexGrow: 1,
@@ -33,10 +35,13 @@ export default function HomePage() {
                 <CoverPage />
             </Grid>
             <Grid container item xs={12}  >
+                <SkillPage />
+            </Grid>
+            <Grid container item xs={12}  >
                 <ProjectsPage />
             </Grid>
             <Grid container item xs={12}  >
-            <CoverPage />
+                <ContactPage />
             </Grid>
         </Grid>
     )

@@ -1,0 +1,248 @@
+[
+    {
+        "id": 1,
+        "category": "frontend",
+        "skill": "React"
+    },
+    {
+        "id": 2,
+        "category": "frontend",
+        "skill": "redux"
+    },
+    {
+        "id": 3,
+        "category": "frontend",
+        "skill": "redux thunk"
+    },
+    {
+        "id": 4,
+        "category": "frontend",
+        "skill": "framer motion"
+    },
+    {
+        "id": 5,
+        "category": "frontend",
+        "skill": "reat router"
+    },
+    {
+        "id": 6,
+        "category": "frontend",
+        "skill": "styled components"
+    },
+    {
+        "id": 7,
+        "category": "frontend",
+        "skill": "Material UI"
+    },
+    {
+        "id": 8,
+        "category": "frontend",
+        "skill": "Ant Design"
+    },
+    {
+        "id": 9,
+        "category": "frontend",
+        "skill": "loadash"
+    },
+    {
+        "id": 10,
+        "category": "frontend",
+        "skill": "css modules"
+    },
+    {
+        "id": 11,
+        "category": "frontend",
+        "skill": "HTML5"
+    },
+    {
+        "id": 12,
+        "category": "frontend",
+        "skill": "CSS3"
+    },
+    {
+        "id": 13,
+        "category": "frontend",
+        "skill": "Javascript"
+    },
+    {
+        "id": 14,
+        "category": "frontend",
+        "skill": "JSON"
+    },
+    {
+        "id": 15,
+        "category": "frontend",
+        "skill": "JEST"
+    },
+    {
+        "id": 16,
+        "category": "frontend",
+        "skill": "ENZYME"
+    },
+    {
+        "id": 17,
+        "category": "backend",
+        "skill": "Java"
+    },
+    {
+        "id": 18,
+        "category": "backend",
+        "skill": "Spring Boot"
+    },
+    {
+        "id": 19,
+        "category": "backend",
+        "skill": "Spring Security"
+    },
+    {
+        "id": 20,
+        "category": "backend",
+        "skill": "JWT"
+    },
+    {
+        "id": 21,
+        "category": "backend",
+        "skill": "Microservices"
+    },
+    {
+        "id": 22,
+        "category": "backend",
+        "skill": "Apache Poi"
+    },
+    {
+        "id": 23,
+        "category": "backend",
+        "skill": "JPQL"
+    },
+    {
+        "id": 24,
+        "category": "backend",
+        "skill": "Criteria Query"
+    },
+    {
+        "id": 25,
+        "category": "center",
+        "skill": "center"
+    },
+    {
+        "id": 26,
+        "category": "backend",
+        "skill": "JPA"
+    },
+    {
+        "id": 27,
+        "category": "backend",
+        "skill": "JUNIT"
+    },
+    {
+        "id": 28,
+        "category": "backend",
+        "skill": "MOCKITO"
+    },
+    {
+        "id": 29,
+        "category": "backend",
+        "skill": "Node.js"
+    },
+    {
+        "id": 30,
+        "category": "backend",
+        "skill": "Express.js"
+    },
+    {
+        "id": 31,
+        "category": "backend",
+        "skill": "MySQL"
+    },
+    {
+        "id": 32,
+        "category": "backend",
+        "skill": "MySQL"
+    },
+    {
+        "id": 33,
+        "category": "backend",
+        "skill": "IText"
+    },
+    {
+        "id": 34,
+        "category": "testing",
+        "skill": "Selenium"
+    },
+    {
+        "id": 35,
+        "category": "testing",
+        "skill": "Katalon"
+    },
+    {
+        "id": 36,
+        "category": "testing",
+        "skill": "Xpath"
+    },
+    {
+        "id": 37,
+        "category": "deployment",
+        "skill": "AWS S3"
+    },
+    {
+        "id": 38,
+        "category": "deployment",
+        "skill": "AWS EBS"
+    },
+    {
+        "id": 39,
+        "category": "deployment",
+        "skill": "AWS CodePipeline"
+    },
+    {
+        "id": 40,
+        "category": "deployment",
+        "skill": "Docker"
+    },
+    {
+        "id": 41,
+        "category": "deployment",
+        "skill": "Jenkins"
+    },
+    {
+        "id": 42,
+        "category": "others",
+        "skill": "Jupyter"
+    },
+    {
+        "id": 43,
+        "category": "others",
+        "skill": "VBA"
+    },
+    {
+        "id": 44,
+        "category": "others",
+        "skill": "Python"
+    },
+    {
+        "id": 45,
+        "category": "others",
+        "skill": "Word"
+    },
+    {
+        "id": 46,
+        "category": "others",
+        "skill": "PowerPoint"
+    },
+    {
+        "id": 47,
+        "category": "others",
+        "skill": "Excel"
+    },
+    {
+        "id": 48,
+        "category": "others",
+        "skill": "Git"
+    },
+    {
+        "id": 49,
+        "category": "others",
+        "skill": "CMD"
+    }
+   
+]

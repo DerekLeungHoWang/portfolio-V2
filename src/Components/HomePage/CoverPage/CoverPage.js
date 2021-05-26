@@ -11,7 +11,7 @@ import { blue, pink } from '@material-ui/core/colors';
 
 const Title = () => {
     const line1 = "I am Derek Leung , "
-    const line2 = "a Software Developer"
+    const line2 = "Software Developer."
     return (<motion.h1
         initial="hidden"
         animate="visible"

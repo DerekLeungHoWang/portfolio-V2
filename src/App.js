@@ -25,8 +25,14 @@ function App() {
     palette: {
       primary: {
         main: '#48a18b',
-        background:'#1f1f2c'
+        background: '#1f1f2c',
+        frontend:'#A4C3A9',
+        backend: "#82AB9B",
+        deployment: "#65928D",
+        testing: "#4E797E",
+        others: "#3C606C"
       },
+
     }
   })
 
