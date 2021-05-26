@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import data from './Projects.json'
 import { Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faFolderOpen as faFolderOpen } from '@fortawesome/free-regular-svg-icons'
+
 import styled from 'styled-components';
 import StyledButton from '../../../../Common/StyledButton/StyledButton';
 import { motion } from 'framer-motion';
