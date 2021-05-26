@@ -18,27 +18,26 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
     },
 }));
-const Col = styled(Grid)`  
-`;
-
 
 
 
 export default function HomePage() {
 
- 
+
     const classes = useStyles();
     return (
         <Grid container
             className={classes.root}
         >
-            <Col container item xs={12}  >
-                <CoverPage  />
-            </Col>
-            <Col container item xs={12}  >
+            <Grid container item xs={12}  >
+                <CoverPage />
+            </Grid>
+            <Grid container item xs={12}  >
                 <ProjectsPage />
-            </Col>
-         
+            </Grid>
+            <Grid container item xs={12}  >
+            <CoverPage />
+            </Grid>
         </Grid>
     )
 }

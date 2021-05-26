@@ -78,7 +78,7 @@ const Wrapper = styled(Grid)`
     color: white;
     height: 100vh;
     width: 100vw;
-    background-color: #1f1f2c;
+    background-color: ${props => props.theme.palette.primary.background};
 `;
 
 
@@ -100,6 +100,8 @@ export default function CoverPage() {
             direction="row"
             justify="center"
             alignItems="center"
+            theme={theme}
+         
         >
             <Grid item  >
                 <StyledTitle />

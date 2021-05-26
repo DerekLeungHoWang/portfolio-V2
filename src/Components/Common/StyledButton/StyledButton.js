@@ -23,14 +23,14 @@ const StyledButton = forwardRef((props, ref) => {
 
     return (
         <Button
-            className={styles.styledButton}
+          
             initial="hidden"
             animate={props.animate ? props.animate : "visible"}
             component={motion.div}
             variants={props.variants ? props.variants : myButton}
             variant="outlined"
             color="primary"
-            ref={ref}
+        
         >{props.children}</Button>
     )
 })
