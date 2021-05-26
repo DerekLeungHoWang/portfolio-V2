@@ -13,6 +13,7 @@ import './App.css'
 import CoverPage from "./Components/HomePage/CoverPage/CoverPage";
 import ProjectsPage from "./Components/HomePage/ProjectsPage/ProjectsPage";
 import HomePage from "./Components/HomePage/HomePage";
+import RightNav from "./Components/Common/RightNav/RightNav";
 
 
 
@@ -26,7 +27,7 @@ function App() {
       primary: {
         main: '#48a18b',
         background: '#1f1f2c',
-        frontend:'#A4C3A9',
+        frontend: '#A4C3A9',
         backend: "#82AB9B",
         deployment: "#65928D",
         testing: "#4E797E",
