@@ -34,7 +34,7 @@ export default function ProjectsPage() {
     }, [inView]);
 
     return (
-        <Wrapper ref={ref} theme={theme} container >
+        <Wrapper id="prjPage" ref={ref} theme={theme} container >
             <Grid container item xs={12}
                 direction="row"
                 justify="center"

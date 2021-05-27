@@ -12,16 +12,29 @@ const variants = {
   }
 };
 const MyList = styled(motion.ul)`
-  position: absolute;
+  position: relative;
   right: 30px;
   top: 80px;
+  width: 300px;
 `
-export const Navigation = () => (
-  <MyList variants={variants}>
-    {itemIds.map(i => (
-      <MenuItem i={i} key={i} />
-    ))}
-  </MyList>
-);
+export const Navigation = () => {
+  return (
+    <>
+      <MyList variants={variants}>
+        {itemIds.map(text=> (
+          <MenuItem text={text} key={text} />
+        ))}
+      </MyList>
+    </>
 
-const itemIds = [0, 1, 2, 3, 4];
+
+  )
+}
+// <MyList variants={variants}>
+//   {itemIds.map(i => (
+//     <MenuItem i={i} key={i} />
+//   ))}
+// </MyList>
+
+
+const itemIds = ["Cover","Skills", "Projects", "Contact"];

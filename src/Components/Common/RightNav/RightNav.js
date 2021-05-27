@@ -27,7 +27,7 @@ const sidebar = {
 const MyNav = styled(motion.nav)`
   color: white;
      
-      
+      z-index: 999;
   `
 const Background = styled(motion.div)`
   
@@ -36,7 +36,8 @@ const Background = styled(motion.div)`
   right: 0;
   bottom: 0;
   width: 300px;
-  background: #fff;
+  background: #233554;
+
 `
 function RightNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);

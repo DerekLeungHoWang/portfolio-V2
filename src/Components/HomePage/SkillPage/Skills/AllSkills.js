@@ -5,16 +5,19 @@ import { Button, Grid, useTheme } from "@material-ui/core";
 import data from './Skills.json'
 import { useInView } from "react-intersection-observer";
 
-function AllSkills({ delayPerPixel = 0.0038 }) {
+function AllSkills({ delayPerPixel = 0.0008 }) {
     const originOffset = useRef({ top: 0, left: 0 });
     const [animate, setAnimate] = useState(false)
     const controls = useAnimation();
 
     useEffect(() => {
-        if (animate)
+        if (animate) {
             controls.start("visible");
-        else
+
+        } else {
             controls.start("hidden");
+        }
+
     }, [animate]);
 
     const handleClick = (e) => {
@@ -80,15 +83,21 @@ function GridItem(props) {
     const offset = useRef({ top: 0, left: 0 });
     const ref = useRef();
     const [inViewRef, inView] = useInView()
-    const { delayPerPixel, i, originIndex, originOffset, onClick, id, category, skill ,setAnimate} = props
+    const { delayPerPixel, i, originIndex, originOffset, onClick, id, category, skill, setAnimate } = props
     const theme = useTheme();
 
 
 
     useLayoutEffect(() => {
+        if(!inView && i === originIndex){
+            setAnimate(false)
+        }
+
         if (inView && i === originIndex) {
             setAnimate(true)
-        }
+        } 
+
+
 
         const element = ref.current;
         if (!element) return;

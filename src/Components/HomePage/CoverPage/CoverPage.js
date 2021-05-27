@@ -9,10 +9,16 @@ import { useSelector } from 'react-redux';
 import { blue, pink } from '@material-ui/core/colors';
 
 
+const Heading = styled(motion.h2)`
+
+    color:#ccd6f6;
+    font-size: 62px;
+`
+
 const Title = () => {
-    const line1 = "I am Derek Leung , "
+    const line1 = "I am Derek Leung. "
     const line2 = "Software Developer."
-    return (<motion.h1
+    return (<Heading
         initial="hidden"
         animate="visible"
         variants={sentence}
@@ -42,7 +48,7 @@ const Title = () => {
         })}
 
 
-    </motion.h1>)
+    </Heading>)
 }
 
 

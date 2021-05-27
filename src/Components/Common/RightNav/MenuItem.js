@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { ListItem, ListItemText, useTheme } from "@material-ui/core";
 
 const variants = {
   open: {
@@ -19,14 +20,6 @@ const variants = {
   }
 };
 
-const IconPlaceHolder = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  flex: 40px 0;
-  margin-right: 20px;
-
-`
 
 const TextPlaceHolder = styled.div`
    border-radius: 5px;
@@ -35,23 +28,40 @@ const TextPlaceHolder = styled.div`
   flex: 1;
 `
 
-const MyList = styled(motion.li)`
-  
-  
+const MyList = styled(ListItem)`
+    width:"100%";
+
 `
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const ItemText = styled(ListItemText)`
+     color: ${props=>props.theme.palette.primary.main};
+    
+`
 
-export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+
+
+export const MenuItem = ({ text }) => {
+  const theme = useTheme();
+  const handleClick = () => {
+
+  }
   return (
     <MyList
+      key={text}
+      button
+      component={motion.li}
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      onClick={handleClick}
     >
-      <IconPlaceHolder style={style} />
-      <TextPlaceHolder style={style}/>
+      <ItemText theme={theme} comonent={motion.div} primary={text} />
     </MyList>
   );
 };
+
+
+{/* <ListItem button key={text}>
+  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+  <ListItemText primary={text} />
+</ListItem> */}

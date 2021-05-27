@@ -1,6 +1,6 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import { motion } from 'framer-motion';
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
 import CoverPage from './CoverPage/CoverPage'
 import ProjectsPage from './ProjectsPage/ProjectsPage'
@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { useSelector } from 'react-redux';
 import SkillPage from './SkillPage/SkillPage';
 import ContactPage from './ContacPage/ContactPage';
+import RightSideNote from '../Common/SideNote/RightSideNote';
 const useStyles = makeStyles((theme) => ({
     root: {
         // flexGrow: 1,
@@ -24,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function HomePage() {
+    const ref = useRef(null)
+
 
 
     const classes = useStyles();
@@ -43,6 +46,8 @@ export default function HomePage() {
             <Grid container item xs={12}  >
                 <ContactPage />
             </Grid>
+
+            <RightSideNote />
         </Grid>
     )
 }
