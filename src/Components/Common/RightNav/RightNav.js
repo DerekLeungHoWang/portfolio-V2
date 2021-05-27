@@ -36,20 +36,17 @@ const Background = styled(motion.div)`
   right: 0;
   bottom: 0;
   width: 300px;
-  background: #233554;
+  background: #005750;
 
 `
 function RightNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  // const containerRef = useRef(null);
-  // const { height } = useDimensions(containerRef);
+
   return (
     <MyNav
 
       initial={false}
       animate={isOpen ? "open" : "closed"}
-    //custom={height}
-    // ref={containerRef}
     >
       <Background  variants={sidebar} />
 

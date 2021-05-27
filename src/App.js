@@ -25,7 +25,8 @@ function App() {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: '#64ffda',
+        main: '#2FA687',
+        secondary:"#F3EADA",
         background: '#0a192f',
         frontend: '#A4C3A9',
         backend: "#82AB9B",

@@ -34,7 +34,7 @@ const MyList = styled(ListItem)`
 `
 
 const ItemText = styled(ListItemText)`
-     color: ${props=>props.theme.palette.primary.main};
+     color: ${props=>props.theme.palette.primary.secondary};
     
 `
 

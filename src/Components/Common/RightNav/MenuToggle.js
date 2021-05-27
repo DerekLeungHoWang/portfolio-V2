@@ -8,7 +8,7 @@ const Path = props => {
   const theme = useTheme();
   return (
     <motion.path
-      stroke={`${theme.palette.primary.main}`}
+      stroke={`${theme.palette.primary.secondary}`}
       fill="transparent"
       strokeWidth="3"
       // stroke="hsl(0, 0%, 18%)"

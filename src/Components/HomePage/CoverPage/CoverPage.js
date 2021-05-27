@@ -11,7 +11,7 @@ import { blue, pink } from '@material-ui/core/colors';
 
 const Heading = styled(motion.h2)`
 
-    color:#ccd6f6;
+    color:#F3EADA;
     font-size: 62px;
 `
 
@@ -22,7 +22,7 @@ const Title = () => {
         initial="hidden"
         animate="visible"
         variants={sentence}
-
+      
     >
 
 
@@ -31,6 +31,7 @@ const Title = () => {
                 <motion.span
                     key={`${char}-${index}`}
                     variants={letter}
+                
                 >
                     {char}
                 </motion.span>
@@ -112,7 +113,7 @@ export default function CoverPage() {
             <Grid item  >
                 <StyledTitle />
                 <Button
-
+                    size="large"
                     component={motion.div}
                     variant="outlined"
                     color="primary"
@@ -121,7 +122,7 @@ export default function CoverPage() {
                     // variants={talkBtnVariants}
                     animate={talkBtn}
 
-                >GitHub</Button>
+                >Resume</Button>
             </Grid>
 
         </Wrapper>
