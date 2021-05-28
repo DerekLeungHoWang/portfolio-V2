@@ -47,7 +47,7 @@ function App() {
             <Navbar />
        
             <Switch>
-              <Route path={["/:id", "/"]} component={HomePage} >
+              <Route path={["/portfolio-V2/:id", "/"]} component={HomePage} >
 
 
               </Route>
