@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core'
+import { Grid, useTheme } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import React from 'react'
 import styled from 'styled-components'
@@ -10,19 +10,25 @@ const data = [
         id: 1,
         icon: "faPaintBrush",
         title: "Frontend",
-        description: "React.js has been my favourite frontend framework, love to use with material-ui/ant-design for quick development "
+        highlightText: "React.js",
+        description1: "My strength in the frontend is ",
+        description2: ", combining with libraries like styled comopnents and framer motion to create amazing UI experience"
     },
     {
         id: 2,
         icon: "faCogs",
         title: "Backend",
-        description: "Currently my main backend technology is Spring Boot and MySQL, also had experience with Node.js with express.js"
+        highlightText: "Spring Boot",
+        description1: "Familiar with creating web api and manipulating data with MySQL using ",
+        description2: ""
     },
     {
         id: 3,
         icon: "faViral",
         title: "Autmoated Testing",
-        description: "I am especially good at Selenium and able to use relative xpath to capture the location of web element in a dynamic and flexible way. Combining with Apache Poi to create fully customized test report in excel format"
+        highlightText: "Selenium",
+        description1: "Adopting autmoated Testing with ",
+        description2: " has helped me and my team to save a ton of time, able to precisely and flexibly locate element with dynamic xpath."
     }
 ]
 
@@ -46,12 +52,17 @@ const Divider = styled(motion.div)`
      margin-top: 50px;
 
 `
+const HighlightText = styled(motion.span)`
+       color:${props => props.theme.palette.primary.main};
+       font-weight: 600;
+
+`
 
 const Icon = styled(FontAwesomeIcon)`
     font-size: 20px;
 `
 export default function SkillLeft() {
-
+    const theme = useTheme();
     const icons = [faPaintBrush, faCogs, faVial]
     return (
         <Grid container direction="row"
@@ -69,8 +80,8 @@ export default function SkillLeft() {
                         return ((
                             <Wrapper key={i} >
                                 <Divider />
-                                <Grid item container direction="row" 
-                                  
+                                <Grid item container direction="row"
+
                                     alignItems="center">
                                     <Icon icon={icons[i]} />
                                     <Title>
@@ -79,7 +90,9 @@ export default function SkillLeft() {
 
                                 </Grid>
                                 <Description>
-                                    {item.description}
+                                    <span>{item.description1}</span>
+                                    <HighlightText theme={theme}  >{item.highlightText}</HighlightText>
+                                    <span>{item.description2}</span>
                                 </Description>
                             </Wrapper>
 

@@ -13,9 +13,9 @@ const variants = {
 };
 const MyList = styled(motion.ul)`
   position: relative;
-  right: 30px;
-  top: 80px;
-  width: 300px;
+  right: 0px;
+  top: 95px;
+  width: 290px;
 `
 export const Navigation = () => {
   return (
@@ -37,4 +37,4 @@ export const Navigation = () => {
 // </MyList>
 
 
-const itemIds = ["Cover","Skills", "Projects", "Contact"];
+const itemIds = ["Home","Skills", "Projects", "Contact"];

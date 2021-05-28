@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimateSharedLayout, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { createGlobalStyle, default as styled } from "styled-components";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -14,6 +14,7 @@ import CoverPage from "./Components/HomePage/CoverPage/CoverPage";
 import ProjectsPage from "./Components/HomePage/ProjectsPage/ProjectsPage";
 import HomePage from "./Components/HomePage/HomePage";
 import RightNav from "./Components/Common/RightNav/RightNav";
+import { Header } from "./Components/HomePage/ProjectsPage/Projects/Featured/Header";
 
 
 
@@ -26,7 +27,7 @@ function App() {
     palette: {
       primary: {
         main: '#2FA687',
-        secondary:"#F3EADA",
+        secondary: "#F3EADA",
         background: '#0a192f',
         frontend: '#A4C3A9',
         backend: "#82AB9B",
@@ -41,22 +42,25 @@ function App() {
   return (
     <div className="App" >
       <ThemeProvider theme={theme}>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route path="/">
-              <HomePage />
+        <AnimateSharedLayout type="crossfade">
+          <Router>
+            <Navbar />
+       
+            <Switch>
+              <Route path={["/:id", "/"]} component={HomePage} >
 
-            </Route>
-            <Route path="/about">
-              {/* <About /> */}
-            </Route>
-            <Route path="/users">
-              {/* <Users /> */}
-            </Route>
-          </Switch>
 
-        </Router>
+              </Route>
+              <Route path="/about">
+                {/* <About /> */}
+              </Route>
+              <Route path="/users">
+                {/* <Users /> */}
+              </Route>
+            </Switch>
+
+          </Router>
+        </AnimateSharedLayout>
       </ThemeProvider>
     </div>
 

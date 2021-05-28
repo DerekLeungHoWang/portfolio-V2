@@ -6,8 +6,10 @@ import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
 import { setPrjPageInView } from '../Actions/HomePageActions';
 import { Grid, useTheme } from '@material-ui/core';
-import FeaturedProjects from './Projects/Featured/FeaturedProjects';
+import ProjectArchive from './Projects/Archive/ProjectArchive';
 import AllProjects from './Projects/AllProjects/AllProjects';
+import FeaturedProjects from './Projects/Featured/FeaturedProjects';
+
 const Wrapper = styled(Grid)`
     height: auto;
     width: 100vw;
@@ -19,7 +21,8 @@ const Title = styled(motion.h1)`
 `
 
 
-export default function ProjectsPage() {
+export default function ProjectsPage(props) {
+    const { id } = props
     const theme = useTheme();
     const dispatch = useDispatch()
 
@@ -40,11 +43,12 @@ export default function ProjectsPage() {
                 justify="center"
                 alignItems="center"
             >
-                <Grid container item xs={9}     direction="row"
-                justify="center"
-                alignItems="center" >
-                    <Title theme={theme} >01 Featured Projects</Title>
-                    <FeaturedProjects />
+                <Grid container item xs={9} direction="row"
+                    justify="center"
+                    alignItems="center" >
+                    <Title theme={theme} >Project Archive</Title>
+                    <FeaturedProjects id={id} />
+                    <ProjectArchive />
                     {/* <AllProjects /> */}
                 </Grid>
 

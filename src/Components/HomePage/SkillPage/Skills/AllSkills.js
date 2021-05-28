@@ -5,6 +5,11 @@ import { Button, Grid, useTheme } from "@material-ui/core";
 import data from './Skills.json'
 import { useInView } from "react-intersection-observer";
 
+import { ReactComponent as ReactSvg } from '../../../Common/Images/react.svg';
+import { ReactComponent as SpringBootSvg } from '../../../Common/Images/springBoot.svg';
+import { ReactComponent as SeleniumSvg } from '../../../Common/Images/selenium.svg';
+
+
 function AllSkills({ delayPerPixel = 0.0008 }) {
     const originOffset = useRef({ top: 0, left: 0 });
     const [animate, setAnimate] = useState(false)
@@ -27,12 +32,25 @@ function AllSkills({ delayPerPixel = 0.0008 }) {
     }
     const getText = (item) => {
 
+        if (item.id == 1) {
+            return (<ReactSvg />
+            )
+        }
+
+        if (item.id == 18) {
+            return (<SpringBootSvg />
+            )
+        }
+
         if (item.id == 25) {
             return (<span style={{ width: "65px", wordWrap: "break-word" }}>
                 {animate ? "Hide" : "Show"}
             </span>)
         }
-
+        if (item.id == 34) {
+            return (<SeleniumSvg fill="#64ffda" stroke="#64ffda" />
+            )
+        }
         return (<span style={{ width: "65px", wordWrap: "break-word" }}>
             {item.skill}
         </span>)
@@ -89,13 +107,13 @@ function GridItem(props) {
 
 
     useLayoutEffect(() => {
-        if(!inView && i === originIndex){
+        if (!inView && i === originIndex) {
             setAnimate(false)
         }
 
         if (inView && i === originIndex) {
             setAnimate(true)
-        } 
+        }
 
 
 
@@ -135,12 +153,14 @@ const itemVariants = {
     hidden: props => {
         console.log(props);
         return ({
+      
             opacity: props.id == 24 ? 1 : 0,
             scale: props.id == 24 ? 1 : 0,
             transition: { delay: props.delayRef.current, }
         })
     },
     visible: props => ({
+ 
         opacity: 1,
         scale: 1,
         transition: { delay: props.delayRef.current }

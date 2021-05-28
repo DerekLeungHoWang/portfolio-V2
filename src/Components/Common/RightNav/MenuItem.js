@@ -31,10 +31,14 @@ const TextPlaceHolder = styled.div`
 const MyList = styled(ListItem)`
     width:"100%";
 
+
 `
 
 const ItemText = styled(ListItemText)`
      color: ${props=>props.theme.palette.primary.secondary};
+     display: flex;
+    align-items: center;
+    justify-content: center;
     
 `
 

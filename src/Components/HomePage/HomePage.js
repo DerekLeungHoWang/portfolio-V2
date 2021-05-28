@@ -1,5 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
 import CoverPage from './CoverPage/CoverPage'
@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 import SkillPage from './SkillPage/SkillPage';
 import ContactPage from './ContacPage/ContactPage';
 import RightSideNote from '../Common/SideNote/RightSideNote';
+import LeftSideNote from '../Common/SideNote/LeftSideNote';
+import FeaturedProjects from './ProjectsPage/Projects/Featured/FeaturedProjects';
 const useStyles = makeStyles((theme) => ({
     root: {
         // flexGrow: 1,
@@ -24,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function HomePage() {
-    const ref = useRef(null)
-
+export default function HomePage({ match }) {
+    let { id } = match.params;
+    const imageHasLoaded = true;
 
 
     const classes = useStyles();
@@ -34,20 +36,22 @@ export default function HomePage() {
         <Grid container
             className={classes.root}
         >
-            <Grid container item xs={12}  >
+        <Grid container item xs={12}  >
                 <CoverPage />
             </Grid>
             <Grid container item xs={12}  >
                 <SkillPage />
             </Grid>
             <Grid container item xs={12}  >
-                <ProjectsPage />
+                <ProjectsPage id={id} />
             </Grid>
             <Grid container item xs={12}  >
                 <ContactPage />
             </Grid>
-
+            <LeftSideNote />
             <RightSideNote />
+
         </Grid>
+     
     )
 }
