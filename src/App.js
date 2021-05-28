@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { createGlobalStyle, default as styled } from "styled-components";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -44,10 +44,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <AnimateSharedLayout type="crossfade">
           <Router>
-            <Navbar />
+            {/* <Navbar /> */}
        
             <Switch>
-              <Route path={["/portfolio-V2/:id", "/"]} component={HomePage} >
+              <Route path={["/:id", "/"]} component={HomePage} >
 
 
               </Route>
