@@ -11,7 +11,7 @@ import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
 
 const Wrapper = styled(Grid)`
-    min-height: 100vh;
+    min-height: 60vh;
     height: auto;
     width: 100%;
    background-color: ${props => props.theme.palette.primary.background};

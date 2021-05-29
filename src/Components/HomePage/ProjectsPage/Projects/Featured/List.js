@@ -3,32 +3,30 @@ import { items } from "./data";
 import { Link } from "react-router-dom";
 import { motion, useMotionValue } from "framer-motion";
 import './style.css'
-import image1 from '../../../../Common/Images/f1.jpg'
+import image1 from '../../../../Common/Images/f1_2.jpg'
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
 import { Grid } from "@material-ui/core";
 
 
-const Image = styled.img`
- /* object-fit: contain; */
-   
- 
-`
+
 function Card({ id, title, category, theme }) {
 
     return (
-        <li className={`card `}>
+        <MyCard className={`card `} initial="rest" whileHover="hover" animate="rest" >
             <div className="card-content-container">
                 <motion.div className="card-content" layoutId={`card-container-${id}`}>
-                    <motion.div
+                    <ImageWrapper
                         className="card-image-container"
                         layoutId={`card-image-container-${id}`}
+
                     >
                         <Image
+                        variants={textMotion}
                             //  className="card-image"
 
                             src={image1} alt="" />
-                    </motion.div>
+                    </ImageWrapper>
                     <motion.div
                         className="title-container"
                         layoutId={`title-container-${id}`}
@@ -39,29 +37,67 @@ function Card({ id, title, category, theme }) {
                 </motion.div>
             </div>
             <Link to={id} className={`card-open-link`} />
-        </li>
+        </MyCard>
     );
 }
 
 export function List({ selectedId, history }) {
 
     return (
-        <Grid container spacing={9} direction="row"
+        <Outer container spacing={9} direction="row"
             justify="center"
             alignItems="center" >
 
             {items.map(card => (
-                <Grid item   >
+                <Inner item component={motion.div}  >
                     <Card key={card.id} {...card} isSelected={card.id === selectedId} />
-                </Grid>
+                </Inner>
             ))}
 
-        </Grid>
+        </Outer>
     );
 }
 
+const textMotion = {
+    rest: {
+       scale:1,
+    
+       transition:{duration:.3}
+    },
+    hover: {
+    
+        scale:1.1,
+        transition:{duration:.3}
+    },
+    
+};
+const Outer = styled(Grid)`
 
-const MyUL = styled(Grid)`
+ 
+`
+const Inner = styled(Grid)`
  
  
+`
+
+const ImageWrapper = styled(motion.div)`
+  display: inline-block;
+ 
+  
+  
+  
+`
+const Image = styled(motion.img)`
+ 
+ 
+  
+   
+ 
+`
+
+const MyCard = styled(motion.li)`
+ 
+ 
+ 
+  
 `

@@ -30,6 +30,8 @@ export default function FeaturedProjects(props) {
             document.body.style.overflow = 'scroll'
         }
     }, [id])
+
+   
     return (
         <>
           

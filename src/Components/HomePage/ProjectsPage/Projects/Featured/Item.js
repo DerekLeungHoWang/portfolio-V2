@@ -8,6 +8,7 @@ import image1 from '../../../../Common/Images/f1.jpg'
 import { Frame, Scroll } from "framer"
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
+import { Button } from "@material-ui/core";
 export function Item({ id }) {
   const { category, title } = items.find(item => item.id === id);
   const containerRef = useRef(null);
@@ -29,7 +30,7 @@ export function Item({ id }) {
   return (
     <>
       <motion.div
-      ref={containerRef} 
+        ref={containerRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.15 } }}
@@ -41,28 +42,31 @@ export function Item({ id }) {
         <Link to="/" />
       </motion.div>
       <div className="card-content-container open" >
-        <motion.div className="card-content" layoutId={`card-container-${id}`}        >
-          <motion.div
+        <motion.div className="card-content" layoutId={`card-container-${id}`}       >
+          <ImgContainer
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
-             
+         
           >
-            <ItemImage  
-            // className="card-image" 
-            src={image1} alt="abc" />
-          </motion.div>
+            <ItemImage
+              // className="card-image" 
+              src={image1} alt="abc" />
+          </ImgContainer>
           <motion.div
             className="title-container"
             layoutId={`title-container-${id}`}
+        
           >
             <span className="category">{category}</span>
             <h2>{title}</h2>
           </motion.div>
-          <motion.div className="content-container"  animate>
-
+          <motion.div className="content-container" animate>
+            <Button>Youtube</Button>
+            <Button>Website</Button>
+            <Button>Code</Button>
             <LoremIpsum
-   
-              p={24}
+
+              p={2}
               avgWordsPerSentence={6}
               avgSentencesPerParagraph={4}
             />
@@ -74,7 +78,13 @@ export function Item({ id }) {
   );
 }
 const ItemImage = styled.img`
-    @media (max-width: 600px) {
-   
-  }
+    filter: brightness(60%);
+`
+
+const ImgContainer = styled(motion.div)`
+height: 50%;
+overflow-x: scroll;    
+white-space: nowrap;
+width: 100%;
+
 `

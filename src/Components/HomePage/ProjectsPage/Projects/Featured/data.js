@@ -18,7 +18,7 @@ export const items = [
     {
       id: "a",
       category: "Pedal Power",
-      title: "Map Apps for the Superior Mode of Transport",
+      title: "Map Apps for the Superior Mode",
       pointOfInterest: 260,
       backgroundColor: "#5DBCD2"
     }
