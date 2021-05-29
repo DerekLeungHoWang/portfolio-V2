@@ -7,22 +7,21 @@ export const items = [
       pointOfInterest: 80,
       backgroundColor: "#814A0E"
     },
-    // Photo by Dennis Brendel on Unsplash
-    // {
-    //   id: "f",
-    //   category: "How to",
-    //   title: "Arrange Your Apple Devices for the Gram",
-    //   pointOfInterest: 120,
-    //   backgroundColor: "#959684"
-    // },
-    // // Photo by Alessandra Caretto on Unsplash
-    // {
-    //   id: "a",
-    //   category: "Pedal Power",
-    //   title: "Map Apps for the Superior Mode of Transport",
-    //   pointOfInterest: 260,
-    //   backgroundColor: "#5DBCD2"
-    // },
+    {
+      id: "f",
+      category: "How to",
+      title: "Arrange Your Apple Devices for the Gram",
+      pointOfInterest: 120,
+      backgroundColor: "#959684"
+    },
+    // Photo by Alessandra Caretto on Unsplash
+    {
+      id: "a",
+      category: "Pedal Power",
+      title: "Map Apps for the Superior Mode of Transport",
+      pointOfInterest: 260,
+      backgroundColor: "#5DBCD2"
+    }
     // // Photo by Taneli Lahtinen on Unsplash
     // {
     //   id: "g",

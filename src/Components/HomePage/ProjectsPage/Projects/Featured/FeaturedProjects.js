@@ -1,6 +1,6 @@
 import { Grid } from '@material-ui/core'
 import { AnimatePresence, motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Item } from './Item'
@@ -8,26 +8,40 @@ import { List } from './List'
 import './style.css'
 
 const Wrapper = styled(Grid)`
-    width:100vw !important;
+    width: 100%;
+    height: 100%;
 
 `
+const Container = styled(Grid)`
+    width: 100%;
+   
 
+`
 export default function FeaturedProjects(props) {
     let imageHasLoaded = true
     const { id } = props
-    
-    return (
-        <Wrapper
+    useEffect(() => {
 
-            container direction="row"
-            justify="center"
-            alignItems="center">
-            <Grid  item xs={9}>
+        if (id) {
+            document.body.style.overflow = 'hidden'
+        }
+
+        return () => {
+            document.body.style.overflow = 'scroll'
+        }
+    }, [id])
+    return (
+        <>
+          
                 <List selectedId={id} />
                 <AnimatePresence>
-                    {id && imageHasLoaded && <Item id={id} key="item" />}
+                    {id && imageHasLoaded
+
+                        && <Item id={id} key="item" />
+                        //  
+                    }
                 </AnimatePresence>
-            </Grid>
-        </Wrapper>
+         
+        </>
     )
 }

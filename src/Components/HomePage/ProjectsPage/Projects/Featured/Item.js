@@ -7,6 +7,7 @@ import './style.css'
 import image1 from '../../../../Common/Images/f1.jpg'
 import { Frame, Scroll } from "framer"
 import { useWheelScroll } from "./utils/use-wheel-scroll";
+import styled from "styled-components";
 export function Item({ id }) {
   const { category, title } = items.find(item => item.id === id);
   const containerRef = useRef(null);
@@ -40,13 +41,15 @@ export function Item({ id }) {
         <Link to="/" />
       </motion.div>
       <div className="card-content-container open" >
-        <motion.div className="card-content" layoutId={`card-container-${id}`}          style={{overflow:"scroll"}}>
+        <motion.div className="card-content" layoutId={`card-container-${id}`}        >
           <motion.div
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
-            style={{overflowY:"scroll"}}
+             
           >
-            <img  className="card-image" src={image1} alt="abc" />
+            <ItemImage  
+            // className="card-image" 
+            src={image1} alt="abc" />
           </motion.div>
           <motion.div
             className="title-container"
@@ -70,3 +73,8 @@ export function Item({ id }) {
     </>
   );
 }
+const ItemImage = styled.img`
+    @media (max-width: 600px) {
+   
+  }
+`

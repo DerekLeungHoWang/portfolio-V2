@@ -11,9 +11,17 @@ import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
 
 const Wrapper = styled(Grid)`
+    min-height: 100vh;
     height: auto;
-    width: 100vw;
-    background-color: ${props => props.theme.palette.primary.background};
+    width: 100%;
+   background-color: ${props => props.theme.palette.primary.background};
+   //background-color: green;
+`;
+
+const Container = styled(Grid)`
+    height: 100%;
+    width: 100%;
+   
  
 `;
 
@@ -37,14 +45,18 @@ export default function FeaturedProjectPage(props) {
     }, [inView]);
 
     return (
-        <Wrapper id="featuredPage" ref={ref} theme={theme} container direction="row"
-            justify="center"
-            alignItems="center" >
-            <Grid container item xs={12}  >
-                <Title theme={theme} >Featured</Title>
+        <Wrapper id="featuredPage" ref={ref} theme={theme}
+            container
+        >
+            
+            <Container container item xs={12} style 
+            direction="row"
+                justify="center"
+                alignItems="center"  >
+               <Title theme={theme} >Featured</Title>
                 <FeaturedProjects id={id} />
 
-            </Grid>
+            </Container>
         </Wrapper>
     )
 }

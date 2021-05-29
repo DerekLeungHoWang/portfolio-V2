@@ -6,27 +6,28 @@ import './style.css'
 import image1 from '../../../../Common/Images/f1.jpg'
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
+import { Grid } from "@material-ui/core";
 
 
 const Image = styled.img`
- object-fit: contain;
+ /* object-fit: contain; */
    
  
 `
 function Card({ id, title, category, theme }) {
 
     return (
-        <li     className={`card ${theme}`}>
-            <div    className="card-content-container">
-                <motion.div  className="card-content" layoutId={`card-container-${id}`}>
+        <li className={`card `}>
+            <div className="card-content-container">
+                <motion.div className="card-content" layoutId={`card-container-${id}`}>
                     <motion.div
                         className="card-image-container"
                         layoutId={`card-image-container-${id}`}
                     >
-                        <Image 
-                      //  className="card-image"
-                        
-                        src={image1} alt="" />
+                        <Image
+                            //  className="card-image"
+
+                            src={image1} alt="" />
                     </motion.div>
                     <motion.div
                         className="title-container"
@@ -42,13 +43,25 @@ function Card({ id, title, category, theme }) {
     );
 }
 
-export function List({ selectedId,history }) {
+export function List({ selectedId, history }) {
 
     return (
-        <ul className="card-list">
+        <Grid container spacing={9} direction="row"
+            justify="center"
+            alignItems="center" >
+
             {items.map(card => (
-                <Card   key={card.id} {...card} isSelected={card.id === selectedId} />
+                <Grid item   >
+                    <Card key={card.id} {...card} isSelected={card.id === selectedId} />
+                </Grid>
             ))}
-        </ul>
+
+        </Grid>
     );
 }
+
+
+const MyUL = styled(Grid)`
+ 
+ 
+`
