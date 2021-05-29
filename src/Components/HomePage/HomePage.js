@@ -37,23 +37,23 @@ export default function HomePage({ match }) {
         <Grid container
             className={classes.root}
         >
-            {/* <Grid container item xs={12}  >
+            <Grid container item xs={12}  >
                 <CoverPage />
             </Grid>
             <Grid container item xs={12}  >
                 <SkillPage />
-            </Grid> */}
+            </Grid>
             <Grid container item xs={12}  >
                 <FeaturedProjectPage id={id} />
             </Grid>
-            {/* <Grid container item xs={12}  >
+            <Grid container item xs={12}  >
                 <ProjectsPage id={id} />
             </Grid>
             <Grid container item xs={12}  >
                 <ContactPage />
             </Grid>
             <LeftSideNote />
-            <RightSideNote /> */}
+            <RightSideNote />
 
         </Grid>
 
