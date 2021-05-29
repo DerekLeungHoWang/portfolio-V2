@@ -4,7 +4,7 @@ import { LoremIpsum } from "react-lorem-ipsum";
 import { Link } from "react-router-dom";
 import { items } from "./data";
 import './style.css'
-import image1 from '../../../../Common/Images/c.jpg'
+import image1 from '../../../../Common/Images/e.jpg'
 export function Item({ id }) {
   const { category, title } = items.find(item => item.id === id);
  

@@ -11,6 +11,7 @@ import ContactPage from './ContacPage/ContactPage';
 import RightSideNote from '../Common/SideNote/RightSideNote';
 import LeftSideNote from '../Common/SideNote/LeftSideNote';
 import FeaturedProjects from './ProjectsPage/Projects/Featured/FeaturedProjects';
+import FeaturedProjectPage from './ProjectsPage/FeaturedProjectPage';
 const useStyles = makeStyles((theme) => ({
     root: {
         // flexGrow: 1,
@@ -36,11 +37,14 @@ export default function HomePage({ match }) {
         <Grid container
             className={classes.root}
         >
-        <Grid container item xs={12}  >
+            <Grid container item xs={12}  >
                 <CoverPage />
             </Grid>
             <Grid container item xs={12}  >
                 <SkillPage />
+            </Grid>
+            <Grid container item xs={12}  >
+                <FeaturedProjectPage id={id} />
             </Grid>
             <Grid container item xs={12}  >
                 <ProjectsPage id={id} />
@@ -52,6 +56,6 @@ export default function HomePage({ match }) {
             <RightSideNote />
 
         </Grid>
-     
+
     )
 }

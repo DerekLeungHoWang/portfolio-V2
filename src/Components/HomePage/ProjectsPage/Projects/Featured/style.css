@@ -1,9 +1,3 @@
-/* .App {
-  font-family: sans-serif;
-  text-align: center;
-} */
-
- 
  
  
 .screen {
@@ -12,6 +6,7 @@
 }
 
 .container {
+  
   max-width: 990px;
   flex: 1 1 100%;
   padding: 45px 25px;
@@ -29,26 +24,7 @@ h1 {
   text-transform: uppercase;
 }
 
-/* header {
-  border-bottom: 1px solid var(--divider);
-  position: relative;
-} */
-
-/* .avatar {
-  background: var(--divider);
-  border-radius: 50%;
-  position: absolute;
-  bottom: 12px;
-  right: 0;
-  overflow: hidden;
-}
-
-.avatar,
-.avatar img {
-  width: 40px;
-  height: 40px;
-} */
-
+ 
 ul,
 li {
   list-style: none;
@@ -63,18 +39,19 @@ li {
 }
 
 .card {
+  min-width: 300px;
   position: relative;
-  padding: 25px;
+  padding: 0px;
   height: 460px;
   flex: 0 0 40%;
   max-width: 40%;
 }
 
-.card:nth-child(4n + 1),
+/* .card:nth-child(4n + 1),
 .card:nth-child(4n + 4) {
   flex: 0 0 60%;
   max-width: 60%;
-}
+} */
 
 .card:nth-child(odd) {
   padding-left: 0;
@@ -201,20 +178,20 @@ p {
   line-height: 28px;
 }
 
-@media only screen and (max-width: 800px) {
-  .card {
+/* @media only screen and (max-width: 800px) { */
+  /* .card {
     flex: 0 0 50%;
     max-width: 50%;
-  }
+  } */
 
-  .card:nth-child(4n + 1),
+  /* .card:nth-child(4n + 1),
   .card:nth-child(4n + 4) {
     flex: 0 0 50%;
     max-width: 50%;
-  }
-}
+  } */
+/* } */
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .card {
     flex: 1 0 100%;
     max-width: 100%;
@@ -232,4 +209,4 @@ p {
   .card-content-container.open {
     padding: 0;
   }
-}
+} */

@@ -3,7 +3,7 @@ import { items } from "./data";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import './style.css'
-import image1 from '../../../../Common/Images/c.jpg'
+import image1 from '../../../../Common/Images/e.jpg'
 function Card({ id, title, category, theme }) {
   return (
     <li className={`card ${theme}`}>
