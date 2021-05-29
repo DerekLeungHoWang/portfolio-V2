@@ -14,7 +14,7 @@ const Wrapper = styled(Grid)`
     height: auto;
     width: 100vw;
     background-color: ${props => props.theme.palette.primary.background};
-    user-select: none;
+ 
 `;
 
 const Title = styled(motion.h1)`

@@ -15,6 +15,7 @@ const Wrapper = styled(Grid)`
 export default function FeaturedProjects(props) {
     let imageHasLoaded = true
     const { id } = props
+    
     return (
         <Wrapper
 
