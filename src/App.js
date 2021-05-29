@@ -44,7 +44,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <AnimateSharedLayout type="crossfade">
           <Router>
-            <Navbar />
+            {/* <Navbar /> */}
        
             <Switch>
               <Route path={["/:id", "/"]} component={HomePage} >
