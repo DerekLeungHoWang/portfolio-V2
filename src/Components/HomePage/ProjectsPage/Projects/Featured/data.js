@@ -9,7 +9,7 @@ export const items = [
     },
     {
       id: "f",
-      category: "Frontend Animation",
+      category: "Frontend",
       title: "Infinite Carousel",
       pointOfInterest: 120,
       backgroundColor: "#959684"
