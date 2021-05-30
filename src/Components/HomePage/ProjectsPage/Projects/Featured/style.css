@@ -127,6 +127,7 @@ li {
    overflow: hidden;
    height: 420px;
    width: auto;
+   
  }
 
  .open .card-image-container, .open .title-container {
@@ -229,3 +230,10 @@ li {
     padding: 0;
   } */
  }
+
+ #overWrapper{
+  height: 100%;
+  width: 100%;
+ 
+  overflow: hidden;
+}

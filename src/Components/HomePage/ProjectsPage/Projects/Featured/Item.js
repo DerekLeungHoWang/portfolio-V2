@@ -46,12 +46,13 @@ export function Item({ id }) {
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
-
+        id="overWrapper"
       >
         <Link to="/" />
       </motion.div>
       <div className="card-content-container open" >
-        <motion.div className="card-content" layoutId={`card-container-${id}`}       >
+
+        <motion.div  className="card-content" layoutId={`card-container-${id}`}       >
           <ImgContainer
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
@@ -68,6 +69,7 @@ export function Item({ id }) {
             <span className="category">{category}</span>
             <h2>{title}</h2>
           </motion.div>
+
           <motion.div className="content-container" animate>
             <Button startIcon={<YoutubeSvg />} >Youtube</Button>
             <Button startIcon={<DesktopSvg />}>Website</Button>
