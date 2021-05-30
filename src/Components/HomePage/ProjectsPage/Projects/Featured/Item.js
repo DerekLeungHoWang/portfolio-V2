@@ -58,7 +58,7 @@ export function Item({ id }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link>
+            {/* <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link> */}
            
             <ItemImage
               // className="card-image" 
