@@ -17,7 +17,7 @@ import { ReactComponent as DesktopIcon } from '../../../../Common/Images/desktop
 import { ReactComponent as GithubIcon } from '../../../../Common/Images/github2.svg';
 
 export function Item({ id }) {
-  console.log(id, "20");
+  
   const images = [image1, image2, image3]
   const { category, title } = items.find(item => item.id === id);
   const containerRef = useRef(null);
@@ -55,7 +55,6 @@ export function Item({ id }) {
           <ImgContainer
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
-
           >
             <ItemImage
               // className="card-image" 
@@ -75,7 +74,7 @@ export function Item({ id }) {
             <Button startIcon={<GithubSvg />}>Code</Button>
             <LoremIpsum
               //startIcon
-              p={2}
+              p={3}
               avgWordsPerSentence={6}
               avgSentencesPerParagraph={4}
             />
@@ -86,8 +85,10 @@ export function Item({ id }) {
     </>
   );
 }
+
 const ItemImage = styled.img`
-  
+border-top-left-radius:20px;
+border-top-right-radius:20px;
 `
 
 const ImgContainer = styled(motion.div)`

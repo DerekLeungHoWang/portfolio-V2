@@ -9,20 +9,15 @@ import { useSelector } from 'react-redux';
 import { blue, pink } from '@material-ui/core/colors';
 
 
-const Heading = styled(motion.h2)`
-
-    color:#F3EADA;
-    font-size: 62px;
-`
 
 const Title = () => {
-    const line1 = "I am Derek Leung. "
+    const line1 = "I am Derek Leung,  "
     const line2 = "Software Developer."
     return (<Heading
         initial="hidden"
         animate="visible"
         variants={sentence}
-      
+
     >
 
 
@@ -31,7 +26,7 @@ const Title = () => {
                 <motion.span
                     key={`${char}-${index}`}
                     variants={letter}
-                
+                    style={{color:"white"}}
                 >
                     {char}
                 </motion.span>
@@ -41,6 +36,7 @@ const Title = () => {
         {line2.split("").map((char, index) => {
             return (
                 <motion.span
+                 
                     key={`${char}-${index}`}
                     variants={letter}>
                     {char}
@@ -53,9 +49,7 @@ const Title = () => {
 }
 
 
-const StyledTitle = styled(Title)`
- color: white;
-`;
+
 
 const sentence = {
     hidden: {
@@ -108,11 +102,16 @@ export default function CoverPage() {
             justify="center"
             alignItems="center"
             theme={theme}
-         
+
         >
-            <Grid item  >
-                <StyledTitle />
+            <Container item >
+                <SayHi theme={theme}
+                    initial="hidden"
+                    animate="visible"
+                    variants={sayHi}>Hi There,</SayHi>
+                <MyTitle />
                 <Button
+            
                     size="large"
                     component={motion.div}
                     variant="outlined"
@@ -123,8 +122,44 @@ export default function CoverPage() {
                     animate={talkBtn}
 
                 >Resume</Button>
-            </Grid>
+            </Container>
 
         </Wrapper>
     )
 }
+
+const Container=styled(Grid)`
+ 
+  padding-left: 60px !important;
+ 
+   
+`
+const MyTitle=styled(Title)`
+  
+  
+   
+`
+const SayHi = styled(motion.h4)`
+    color: ${props => props.theme.palette.primary.main};
+   
+`
+const sayHi = {
+    hidden: {
+        opacity: 0,
+        y: 20
+
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.2 }
+    }
+}
+
+
+const Heading = styled(motion.h2)`
+    font-family: 'Montserrat', sans-serif;
+    color:#a8a8a8;
+    font-size: 62px;
+ 
+`

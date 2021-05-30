@@ -133,7 +133,8 @@ export default function ProjectArchive() {
 
                         variants={card}
                         component={motion.div}
-                        key={`${project.title}-${index}`} className={classes.cardWrapper} container item xs={12} sm={12} md={12} lg={4}   >
+                        key={`${project.title}-${index}`} className={classes.cardWrapper} container item 
+             >
                         <Card variant="outlined" key={project.title} className={classes.card}  >
                             <CardContent >
                                 <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />

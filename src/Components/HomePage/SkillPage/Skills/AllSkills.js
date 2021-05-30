@@ -26,7 +26,7 @@ function AllSkills({ delayPerPixel = 0.0008 }) {
     }, [animate]);
 
     const handleClick = (e) => {
-        console.log(e.currentTarget.id);
+        
         setAnimate(!animate)
 
     }
@@ -151,7 +151,7 @@ function GridItem(props) {
 
 const itemVariants = {
     hidden: props => {
-        console.log(props);
+        
         return ({
       
             opacity: props.id == 24 ? 1 : 0,

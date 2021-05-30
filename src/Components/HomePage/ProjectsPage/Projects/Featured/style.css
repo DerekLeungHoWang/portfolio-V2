@@ -76,7 +76,7 @@ li {
    left: 0;
    right: 0;
    position: fixed;
-   z-index: 6;
+   z-index: 8;
    overflow: hidden;
    padding: 40px 0;
    overflow: scroll;
@@ -102,10 +102,12 @@ li {
 
  .open .card-content {
    height: auto;
-   max-width: 40vw;
-   width: auto;
-   pointer-events: auto;
+   max-width: 800px;
+   min-width: 400px;
+   
+   pointer-events: stroke;
    height: 100vh;
+   overflow-y:scroll;
  }
 
  .card-open-link {
@@ -155,7 +157,7 @@ li {
  }
 
  .overlay {
-   z-index: 1;
+   z-index: 7;
    position: fixed;
    background: rgba(43, 41, 41, 0.8);
    will-change: opacity;
