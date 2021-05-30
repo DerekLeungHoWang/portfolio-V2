@@ -48,7 +48,7 @@ function Card({ id, title, category, theme,i }) {
 export function List({ selectedId, history }) {
 
     return (
-        <Outer container spacing={9} direction="row"
+        <Outer container spacing={5} direction="row"
             justify="center"
             alignItems="center" >
 
@@ -65,7 +65,7 @@ export function List({ selectedId, history }) {
 const textMotion = {
     rest: {
         scale: 1,
-
+        
         transition: { duration: .3 }
     },
     hover: {
