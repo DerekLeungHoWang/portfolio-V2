@@ -15,9 +15,10 @@ import { Button } from "@material-ui/core";
 import { ReactComponent as YoutubeIcon } from '../../../../Common/Images/youtube.svg';
 import { ReactComponent as DesktopIcon } from '../../../../Common/Images/desktop.svg';
 import { ReactComponent as GithubIcon } from '../../../../Common/Images/github2.svg';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 export function Item({ id }) {
-  
+
   const images = [image1, image2, image3]
   const { category, title } = items.find(item => item.id === id);
   const containerRef = useRef(null);
@@ -42,7 +43,7 @@ export function Item({ id }) {
         ref={containerRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0,display:"none", transition: { duration: 0.15 } }}
+        exit={{ opacity: 0, display: "none", transition: { duration: 0.15 } }}
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
@@ -52,11 +53,13 @@ export function Item({ id }) {
       </motion.div>
       <div className="card-content-container open" >
 
-        <motion.div  className="card-content" layoutId={`card-container-${id}`}       >
+        <motion.div className="card-content" layoutId={`card-container-${id}`}       >
           <ImgContainer
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
+            <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link>
+           
             <ItemImage
               // className="card-image" 
               src={id == "f" ? image2 : id == "a" ? image3 : image1} alt="abc" />
@@ -87,7 +90,15 @@ export function Item({ id }) {
     </>
   );
 }
-
+const Close = styled(FontAwesomeIcon)`
+  position: absolute;
+  top:10px;
+  right:10px;
+  color: grey;
+  font-size: 35px;
+  background-color: black;
+  border-radius: 100px;
+`
 const ItemImage = styled.img`
 border-top-left-radius:20px;
 border-top-right-radius:20px;
