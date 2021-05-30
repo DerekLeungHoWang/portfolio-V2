@@ -34,14 +34,14 @@ export default function FeaturedProjects(props) {
 
         if (id) {
             document.body.style.overflow = 'hidden'
-            document.body.style.overscrollBehavior = 'none'
+             
             //overscroll-behavior-y: none;
         }
 
         return () => {
             document.body.style.overflow = 'unset'
             document.body.style.overflowX = 'hidden'
-            document.body.style.overscrollBehavior = 'none'
+         
         }
     }, [id])
 
