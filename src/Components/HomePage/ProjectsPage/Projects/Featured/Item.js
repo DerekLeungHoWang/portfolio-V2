@@ -9,6 +9,10 @@ import { Frame, Scroll } from "framer"
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
+import { ReactComponent as YoutubeIcon } from '../../../../Common/Images/youtube.svg';
+import { ReactComponent as DesktopIcon } from '../../../../Common/Images/desktop.svg';
+import { ReactComponent as GithubIcon } from '../../../../Common/Images/github2.svg';
+
 export function Item({ id }) {
   const { category, title } = items.find(item => item.id === id);
   const containerRef = useRef(null);
@@ -46,7 +50,7 @@ export function Item({ id }) {
           <ImgContainer
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
-         
+
           >
             <ItemImage
               // className="card-image" 
@@ -55,17 +59,17 @@ export function Item({ id }) {
           <motion.div
             className="title-container"
             layoutId={`title-container-${id}`}
-        
+
           >
             <span className="category">{category}</span>
             <h2>{title}</h2>
           </motion.div>
           <motion.div className="content-container" animate>
-            <Button>Youtube</Button>
-            <Button>Website</Button>
-            <Button>Code</Button>
+            <Button startIcon={<YoutubeSvg />} >Youtube</Button>
+            <Button startIcon={<DesktopSvg />}>Website</Button>
+            <Button startIcon={<GithubSvg />}>Code</Button>
             <LoremIpsum
-
+              //startIcon
               p={2}
               avgWordsPerSentence={6}
               avgSentencesPerParagraph={4}
@@ -78,7 +82,7 @@ export function Item({ id }) {
   );
 }
 const ItemImage = styled.img`
-    filter: brightness(60%);
+  
 `
 
 const ImgContainer = styled(motion.div)`
@@ -88,3 +92,18 @@ white-space: nowrap;
 width: 100%;
 
 `
+
+const YoutubeSvg = styled(YoutubeIcon)`
+  height: 20px;
+  width:20px;
+`
+const DesktopSvg = styled(DesktopIcon)`
+  height: 20px;
+  width:20px;
+`
+const GithubSvg = styled(GithubIcon)`
+  height: 20px;
+  width:20px;
+`
+
+
