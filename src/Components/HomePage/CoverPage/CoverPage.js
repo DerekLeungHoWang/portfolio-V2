@@ -159,7 +159,7 @@ const sayHi = {
 
 const Heading = styled(motion.h2)`
     font-family: 'Montserrat', sans-serif;
-    color:#a8a8a8;
+    color:white;
     font-size: 62px;
  
 `
