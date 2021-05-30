@@ -19,8 +19,8 @@ const Wrapper = styled(motion.div)`
 
  
 const Logo = styled(motion.h1)`
-    margin-left: 24px;
- 
+    margin-left: 35px;
+    margin-top: 35px;
 `;
 
 const NavLink = styled(Link)`

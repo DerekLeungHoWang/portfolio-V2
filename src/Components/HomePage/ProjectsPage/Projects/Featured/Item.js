@@ -4,7 +4,10 @@ import { LoremIpsum } from "react-lorem-ipsum";
 import { Link } from "react-router-dom";
 import { items } from "./data";
 import './style.css'
-import image1 from '../../../../Common/Images/f1.jpg'
+import image1 from '../../../../Common/Images/f1_1.jpg'
+import image2 from '../../../../Common/Images/f.jpg'
+import image3 from '../../../../Common/Images/a.jpg'
+
 import { Frame, Scroll } from "framer"
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
@@ -14,6 +17,8 @@ import { ReactComponent as DesktopIcon } from '../../../../Common/Images/desktop
 import { ReactComponent as GithubIcon } from '../../../../Common/Images/github2.svg';
 
 export function Item({ id }) {
+  console.log(id, "20");
+  const images = [image1, image2, image3]
   const { category, title } = items.find(item => item.id === id);
   const containerRef = useRef(null);
   const y = useMotionValue(0);
@@ -23,13 +28,13 @@ export function Item({ id }) {
   }
 
 
-  useWheelScroll(
-    containerRef,
-    y,
-    // constraints,
-    checkSwipeToDismiss,
-    true
-  );
+  // useWheelScroll(
+  //   containerRef,
+  //   y,
+  //   // constraints,
+  //   checkSwipeToDismiss,
+  //   true
+  // );
   // ref={containerRef} 
   return (
     <>
@@ -37,7 +42,7 @@ export function Item({ id }) {
         ref={containerRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        exit={{ opacity: 0,display:"none", transition: { duration: 0.15 } }}
         transition={{ duration: 0.2, delay: 0.15 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
@@ -54,7 +59,7 @@ export function Item({ id }) {
           >
             <ItemImage
               // className="card-image" 
-              src={image1} alt="abc" />
+              src={id == "f" ? image2 : id == "a" ? image3 : image1} alt="abc" />
           </ImgContainer>
           <motion.div
             className="title-container"

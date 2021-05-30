@@ -9,16 +9,16 @@ export const items = [
     },
     {
       id: "f",
-      category: "How to",
-      title: "Animated infinite Carousel",
+      category: "Frontend Animation",
+      title: "Infinite Carousel",
       pointOfInterest: 120,
       backgroundColor: "#959684"
     },
     // Photo by Alessandra Caretto on Unsplash
     {
       id: "a",
-      category: "Pedal Power",
-      title: "Ecommerce with admin dashboard",
+      category: "Full Stack",
+      title: "Ecommerce",
       pointOfInterest: 260,
       backgroundColor: "#5DBCD2"
     }

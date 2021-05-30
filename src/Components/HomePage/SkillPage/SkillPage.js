@@ -48,7 +48,7 @@ export default function SkillPage() {
                 alignItems="center"
             >
 
-                <Header theme={theme} >SKILLS</Header>
+                <Header theme={theme} >Skills</Header>
             </Grid>
 
 

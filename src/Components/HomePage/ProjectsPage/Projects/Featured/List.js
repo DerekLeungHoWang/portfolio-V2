@@ -1,16 +1,20 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { items } from "./data";
 import { Link } from "react-router-dom";
 import { motion, useMotionValue } from "framer-motion";
 import './style.css'
-import image1 from '../../../../Common/Images/f1_2.jpg'
+import image1 from '../../../../Common/Images/f1.jpg'
+import image2 from '../../../../Common/Images/f2.jpg'
+import image3 from '../../../../Common/Images/a_1.jpg'
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
 import { Grid } from "@material-ui/core";
 
 
 
-function Card({ id, title, category, theme }) {
+function Card({ id, title, category, theme,i }) {
+    console.log(i);
+    const images = [image1, image2,image3]
 
     return (
         <MyCard className={`card `} initial="rest" whileHover="hover" animate="rest" >
@@ -22,10 +26,10 @@ function Card({ id, title, category, theme }) {
 
                     >
                         <Image
-                        variants={textMotion}
+                            variants={textMotion}
                             //  className="card-image"
 
-                            src={image1} alt="" />
+                            src={images[i]} alt="" />
                     </ImageWrapper>
                     <motion.div
                         className="title-container"
@@ -48,9 +52,9 @@ export function List({ selectedId, history }) {
             justify="center"
             alignItems="center" >
 
-            {items.map(card => (
+            {items.map((card, i) => (
                 <Inner item component={motion.div}  >
-                    <Card key={card.id} {...card} isSelected={card.id === selectedId} />
+                    <Card key={card.id} i={i} {...card} isSelected={card.id === selectedId} />
                 </Inner>
             ))}
 
@@ -60,16 +64,16 @@ export function List({ selectedId, history }) {
 
 const textMotion = {
     rest: {
-       scale:1,
-    
-       transition:{duration:.3}
+        scale: 1,
+
+        transition: { duration: .3 }
     },
     hover: {
-    
-        scale:1.1,
-        transition:{duration:.3}
+
+        scale: 1.1,
+        transition: { duration: .3 }
     },
-    
+
 };
 const Outer = styled(Grid)`
 

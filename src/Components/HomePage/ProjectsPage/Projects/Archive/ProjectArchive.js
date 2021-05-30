@@ -100,7 +100,7 @@ const cardWrapper = {
 
 const card = {
     hidden: {
-        y:100,
+        y:50,
        // scale: 0,
         opacity: 0,
     },

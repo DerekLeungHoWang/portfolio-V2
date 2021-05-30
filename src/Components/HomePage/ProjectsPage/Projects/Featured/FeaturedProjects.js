@@ -27,8 +27,9 @@ export default function FeaturedProjects(props) {
         }
 
         return () => {
-            document.body.style.overflow = 'scroll'
-        }
+            document.body.style.overflow = 'unset'
+            document.body.style.overflowX = 'hidden'
+        }  
     }, [id])
 
    
