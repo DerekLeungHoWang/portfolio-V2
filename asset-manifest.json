@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio-V2/static/css/main.20a7ae61.chunk.css",
-    "main.js": "/portfolio-V2/static/js/main.9040ffff.chunk.js",
-    "main.js.map": "/portfolio-V2/static/js/main.9040ffff.chunk.js.map",
+    "main.js": "/portfolio-V2/static/js/main.e9556f55.chunk.js",
+    "main.js.map": "/portfolio-V2/static/js/main.e9556f55.chunk.js.map",
     "runtime-main.js": "/portfolio-V2/static/js/runtime-main.982e4f25.js",
     "runtime-main.js.map": "/portfolio-V2/static/js/runtime-main.982e4f25.js.map",
     "static/js/2.84cadb2d.chunk.js": "/portfolio-V2/static/js/2.84cadb2d.chunk.js",
@@ -12,19 +12,22 @@
     "index.html": "/portfolio-V2/index.html",
     "static/css/main.20a7ae61.chunk.css.map": "/portfolio-V2/static/css/main.20a7ae61.chunk.css.map",
     "static/js/2.84cadb2d.chunk.js.LICENSE.txt": "/portfolio-V2/static/js/2.84cadb2d.chunk.js.LICENSE.txt",
-    "static/media/f1.cd8a7a2b.jpg": "/portfolio-V2/static/media/f1.cd8a7a2b.jpg",
-    "static/media/f1_2.f17dca26.jpg": "/portfolio-V2/static/media/f1_2.f17dca26.jpg",
+    "static/media/desktop.6c981efa.svg": "/portfolio-V2/static/media/desktop.6c981efa.svg",
+    "static/media/f1.d7709b8f.jpg": "/portfolio-V2/static/media/f1.d7709b8f.jpg",
+    "static/media/f1_2.f29d086d.jpg": "/portfolio-V2/static/media/f1_2.f29d086d.jpg",
     "static/media/github.7b87839a.svg": "/portfolio-V2/static/media/github.7b87839a.svg",
+    "static/media/github2.fa0212fe.svg": "/portfolio-V2/static/media/github2.fa0212fe.svg",
     "static/media/leetcode.fa87fd9f.svg": "/portfolio-V2/static/media/leetcode.fa87fd9f.svg",
     "static/media/linkedin.7e47fa38.svg": "/portfolio-V2/static/media/linkedin.7e47fa38.svg",
     "static/media/react.9342c384.svg": "/portfolio-V2/static/media/react.9342c384.svg",
     "static/media/selenium.e1b4fe0d.svg": "/portfolio-V2/static/media/selenium.e1b4fe0d.svg",
-    "static/media/springBoot.b39d866e.svg": "/portfolio-V2/static/media/springBoot.b39d866e.svg"
+    "static/media/springBoot.b39d866e.svg": "/portfolio-V2/static/media/springBoot.b39d866e.svg",
+    "static/media/youtube.5213846a.svg": "/portfolio-V2/static/media/youtube.5213846a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.982e4f25.js",
     "static/js/2.84cadb2d.chunk.js",
     "static/css/main.20a7ae61.chunk.css",
-    "static/js/main.9040ffff.chunk.js"
+    "static/js/main.e9556f55.chunk.js"
   ]
 }
