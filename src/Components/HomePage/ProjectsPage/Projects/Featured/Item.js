@@ -79,7 +79,7 @@ export function Item({ id }) {
             <Button startIcon={<GithubSvg />}>Code</Button>
             <LoremIpsum
               //startIcon
-              p={3}
+              p={24}
               avgWordsPerSentence={6}
               avgSentencesPerParagraph={4}
             />

@@ -35,6 +35,7 @@ const data = [
 const Wrapper = styled(motion.div)`
     color:white;
     height:"100%";
+    margin: auto 25px;
 `
 
 const Title = styled(motion.h2)`
@@ -49,8 +50,10 @@ const Description = styled(motion.p)`
 const Divider = styled(motion.div)`
    border-bottom: 1px solid white;
     border-radius: 100%;
-     margin-top: 50px;
-
+ 
+    &:last-child{
+        margin: 25px 25px; 
+    }
 `
 const HighlightText = styled(motion.span)`
        color:${props => props.theme.palette.primary.main};
