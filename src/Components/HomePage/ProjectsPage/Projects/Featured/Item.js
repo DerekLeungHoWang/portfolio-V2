@@ -78,7 +78,9 @@ export function Item({ id }) {
             <Button startIcon={<YoutubeSvg />} >Youtube</Button>
             <Button startIcon={<DesktopSvg />}>Website</Button>
             <Button startIcon={<GithubSvg />}>Code</Button>
-            <Text>sdfsdf</Text>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac felis sit amet leo fermentum ultricies. Donec pellentesque dui a sem placerat malesuada. Aenean libero justo, bibendum aliquam rutrum non, eleifend a velit. Donec tristique metus justo, vitae tristique orci facilisis et. Vivamus in cursus odio, at molestie orci. Nullam molestie massa quis tempor facilisis. Vestibulum ac enim pulvinar, semper elit in, facilisis est. Aliquam varius, purus posuere consectetur ultrices, quam mi pellentesque lorem, sed feugiat quam odio et sem. Mauris ligula diam, laoreet quis auctor id, convallis non neque.
+
+Maecenas dictum justo quis quam rutrum, sit amet feugiat quam imperdiet. Praesent finibus nunc sit amet justo ultricies mattis. Vestibulum sed viverra libero, non consectetur ex. Nunc convallis dui ante, sed rhoncus orci feugiat ac. Curabitur ultrices posuere lacus, nec accumsan libero condimentum ut. Duis venenatis placerat nunc nec auctor. Mauris a cursus mauris, vel pharetra sem. Praesent auctor quam a erat lobortis, at condimentum nisl sollicitudin. Duis vulputate eu ex vitae egestas.</Text>
 
           </motion.div>
         </motion.div>
