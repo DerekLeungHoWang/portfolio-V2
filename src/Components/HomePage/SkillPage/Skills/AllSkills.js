@@ -26,7 +26,7 @@ function AllSkills({ delayPerPixel = 0.0008 }) {
     }, [animate]);
 
     const handleClick = (e) => {
-        
+
         setAnimate(!animate)
 
     }
@@ -61,38 +61,42 @@ function AllSkills({ delayPerPixel = 0.0008 }) {
 
 
     return (
-        <Grid container direction="row"
-            justify="center"
-            alignItems="center"
+        <motion.div initial="hidden" animate={controls} variants={{}}
+            style={{ display: "inline-block", minWidth: 320, maxWidth: 650 }}
         >
-            <Grid container item xs={12} direction="row"
+            <Grid container direction="row"
                 justify="center"
-                alignItems="center" >
-                <motion.div initial="hidden" animate={controls} variants={{}}
-                    style={{ display: "inline-block", minWidth: 320, maxWidth: 650 }}
-                >
-                    {data.map((item, i) => (
-                        <GridItem
+                alignItems="center"
+            >
+                {/* <Grid container item xs={12} direction="row"
+                justify="center"
+                alignItems="center" >*/}
 
-                            id={i}
-                            key={i}
-                            i={i}
-                            category={item.category}
-                            skill={item.skill}
-                            onClick={handleClick}
-                            originIndex={24}
-                            delayPerPixel={delayPerPixel}
-                            originOffset={originOffset}
-                            setAnimate={setAnimate}
-                        >
-                            {getText(item)}
-                        </GridItem>
+                {data.map((item, i) => (
+                    <GridItem
+                        item
+                        id={i}
+                        key={i}
+                        i={i}
+                        category={item.category}
+                        skill={item.skill}
+                        onClick={handleClick}
+                        originIndex={24}
+                        delayPerPixel={delayPerPixel}
+                        originOffset={originOffset}
+                        setAnimate={setAnimate}
+                    >
+
+                        {getText(item)}
+
+                    </GridItem>
 
 
-                    ))}
-                </motion.div>
-            </Grid>
-        </Grid >
+                ))}
+
+                {/* </Grid> */}
+            </Grid >
+        </motion.div>
     );
 }
 
@@ -151,16 +155,16 @@ function GridItem(props) {
 
 const itemVariants = {
     hidden: props => {
-        
+
         return ({
-      
+
             opacity: props.id == 24 ? 1 : 0,
             scale: props.id == 24 ? 1 : 0,
             transition: { delay: props.delayRef.current, }
         })
     },
     visible: props => ({
- 
+
         opacity: 1,
         scale: 1,
         transition: { delay: props.delayRef.current }

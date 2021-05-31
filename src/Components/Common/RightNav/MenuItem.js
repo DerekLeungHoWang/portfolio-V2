@@ -46,8 +46,8 @@ const ItemText = styled(ListItemText)`
 
 export const MenuItem = ({ text }) => {
   const theme = useTheme();
-  const handleClick = () => {
-
+  const handleClick = (e) => {
+        console.log(e.currentTarget);
   }
   return (
     <MyList

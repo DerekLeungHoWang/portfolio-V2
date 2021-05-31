@@ -39,11 +39,14 @@ const Wrapper = styled(motion.div)`
 `
 
 const Title = styled(motion.h2)`
-
+/* margin-top: 30px;
+margin-bottom: 30px; */
 margin-left: 10px;
 `
 const Description = styled(motion.p)`
-   
+   color: #9d9ca1;
+   font-size: 20px;
+   line-height: 28px;
 
 `
 

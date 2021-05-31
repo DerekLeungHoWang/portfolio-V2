@@ -6,7 +6,7 @@ import { MenuToggle } from './MenuToggle';
 import { Navigation } from './Navigation';
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at 80% 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -14,7 +14,7 @@ const sidebar = {
     }
   }),
   closed: {
-    clipPath: "circle(30px at 200px 60px)",
+    clipPath: "circle(30px at 80% 60px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -35,7 +35,9 @@ const Background = styled(motion.div)`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 300px;
+  min-width: 100px;
+  max-width: 300px;
+  width: 100%;
   background: #005750;
 
 `

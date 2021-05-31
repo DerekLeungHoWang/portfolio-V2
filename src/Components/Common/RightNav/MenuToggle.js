@@ -27,7 +27,7 @@ outline: none;
     cursor: pointer;
     position: absolute;
     top: 38px;
-    right: 74px;
+    right: 34px;
     width: 50px;
     height: 50px;
     border-radius: 50%;

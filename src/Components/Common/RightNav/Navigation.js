@@ -12,10 +12,13 @@ const variants = {
   }
 };
 const MyList = styled(motion.ul)`
-  position: relative;
+  position: absolute;
   right: 0px;
   top: 95px;
-  width: 290px;
+  width: 300px;
+
+    padding:0px;
+  
 `
 export const Navigation = () => {
   return (

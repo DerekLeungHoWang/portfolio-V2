@@ -53,11 +53,11 @@ export default function SkillPage() {
 
 
 
-            <Grid container item xs={12}
+            {/* <Grid container item xs={12}
                 direction="row"
                 justify="center"
                 alignItems="center"
-            >
+            > */}
 
                 <Grid container item xs={12} lg={6} direction="column"
                     justify="center"
@@ -68,10 +68,10 @@ export default function SkillPage() {
                 <Grid container item xs={12} lg={6} direction="column"
                     justify="center"
                     alignItems="center" >
-                    <Title theme={theme} >Knowledge Table</Title>
+                    {/* <Title theme={theme} >Knowledge Table</Title> */}
                     <AllSkills />
                 </Grid>
-            </Grid>
+            {/* </Grid> */}
         </Wrapper>
     )
 }

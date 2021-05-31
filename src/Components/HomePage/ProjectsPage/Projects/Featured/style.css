@@ -185,7 +185,7 @@ li {
  }
 
  .content-container {
-   padding: 460px 35px 35px 35px;
+   padding: 400px 35px 35px 35px;
     
    width: 100vw;
     height: 100%;
@@ -193,11 +193,11 @@ li {
     margin: 0px 0px;
  }
 
- p {
+ /* p {
    color: #9d9ca1;
    font-size: 20px;
    line-height: 28px;
- }
+ } */
 
  /* @media only screen and (max-width: 800px) { */
 

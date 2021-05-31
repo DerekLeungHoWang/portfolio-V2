@@ -53,7 +53,7 @@ export function List({ selectedId, history }) {
             alignItems="center" >
 
             {items.map((card, i) => (
-                <Inner item component={motion.div}  >
+                <Inner key={card.id} item component={motion.div}  >
                     <Card key={card.id} i={i} {...card} isSelected={card.id === selectedId} />
                 </Inner>
             ))}

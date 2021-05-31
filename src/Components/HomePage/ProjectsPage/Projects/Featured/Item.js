@@ -59,9 +59,10 @@ export function Item({ id }) {
             layoutId={`card-image-container-${id}`}
           >
             {/* <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link> */}
-           
+
             <ItemImage
               // className="card-image" 
+               
               src={id == "f" ? image2 : id == "a" ? image3 : image1} alt="abc" />
           </ImgContainer>
           <motion.div
@@ -77,12 +78,7 @@ export function Item({ id }) {
             <Button startIcon={<YoutubeSvg />} >Youtube</Button>
             <Button startIcon={<DesktopSvg />}>Website</Button>
             <Button startIcon={<GithubSvg />}>Code</Button>
-            <LoremIpsum
-              //startIcon
-              p={24}
-              avgWordsPerSentence={6}
-              avgSentencesPerParagraph={4}
-            />
+            <Text>sdfsdf</Text>
 
           </motion.div>
         </motion.div>
@@ -90,6 +86,11 @@ export function Item({ id }) {
     </>
   );
 }
+const Text = styled.p`
+
+ color: red;
+
+`
 const Close = styled(FontAwesomeIcon)`
   position: absolute;
   top:10px;
