@@ -20,12 +20,12 @@ const MyList = styled(motion.ul)`
     padding:0px;
   
 `
-export const Navigation = () => {
+export const Navigation = (props) => {
   return (
     <>
       <MyList variants={variants}>
-        {itemIds.map(text=> (
-          <MenuItem text={text} key={text} />
+        {itemIds.map((text,i)=> (
+          <MenuItem toggleOpen={props.toggleOpen} text={text} key={text} />
         ))}
       </MyList>
     </>

@@ -27,7 +27,7 @@ const Container = styled(Grid)`
 `
 export default function FeaturedProjects(props) {
     const windowSize = useWindowSize();
-    console.log(windowSize);
+    
     let imageHasLoaded = true
     const { id } = props
     useEffect(() => {

@@ -37,7 +37,7 @@ export default function ProjectsPage(props) {
     }, [inView]);
 
     return (
-        <Wrapper id="prjPage" ref={ref} theme={theme} container >
+        <Wrapper id="projectPage" ref={ref} theme={theme} container >
             <Grid container item xs={12}
                 direction="row"
                 justify="center"
@@ -47,7 +47,7 @@ export default function ProjectsPage(props) {
                     justify="center"
                     alignItems="center" >
                     <Title theme={theme} >Project Archive</Title>
-      
+
                     <ProjectArchive />
                     {/* <AllProjects /> */}
                 </Grid>

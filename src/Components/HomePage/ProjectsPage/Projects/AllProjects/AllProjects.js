@@ -32,6 +32,7 @@ export default function AllProjects() {
 
     return (
         <Grid 
+  
         container direction="row" 
             justify="center"
             alignItems="center">

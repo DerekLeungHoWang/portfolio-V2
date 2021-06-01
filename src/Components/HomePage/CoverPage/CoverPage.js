@@ -102,6 +102,7 @@ export default function CoverPage() {
             justify="center"
             alignItems="center"
             theme={theme}
+            id="coverPage"
 
         >
             <Container item >
@@ -158,7 +159,7 @@ const sayHi = {
 
 
 const Heading = styled(motion.h2)`
-    font-family: 'Montserrat', sans-serif;
+    font-family:  sans-serif;
     color:white;
     font-size: 52px;
  

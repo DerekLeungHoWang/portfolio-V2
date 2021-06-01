@@ -13,7 +13,7 @@ import { Grid } from "@material-ui/core";
 
 
 function Card({ id, title, category, theme,i }) {
-    console.log(i);
+    
     const images = [image1, image2,image3]
 
     return (

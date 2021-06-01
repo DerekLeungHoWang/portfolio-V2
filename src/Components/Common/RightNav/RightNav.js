@@ -52,7 +52,7 @@ function RightNav() {
     >
       <Background  variants={sidebar} />
 
-      <Navigation />
+      <Navigation toggleOpen={toggleOpen}/>
       <MenuToggle toggle={() => toggleOpen()} />
     
     </MyNav>

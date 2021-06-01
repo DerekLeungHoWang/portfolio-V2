@@ -30,14 +30,20 @@ const useStyles = makeStyles((theme) => ({
 export default function HomePage({ match }) {
     let { id } = match.params;
     const imageHasLoaded = true;
-
-
+    const selectedMenu = useSelector(state => state.NavReducer.selectedMenu)
+    console.log(selectedMenu);
     const classes = useStyles();
+    // const coverPage = useRef()
+    // const skillPage = useRef()
+    // const featuredPage = useRef()
+    // const contactPage = useRef()
+
+
     return (
         <Grid container
             className={classes.root}
         >
-            <Grid container item xs={12}  >
+            <Grid  container item xs={12}  >
                 <CoverPage />
             </Grid>
             <Grid container item xs={12}  >

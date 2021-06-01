@@ -39,7 +39,7 @@ export default function SkillPage() {
 
 
     return (
-        <Wrapper theme={theme} container direction="row"
+        <Wrapper id="skillPage" theme={theme} container direction="row"
             justify="center"
             alignItems="center"  >
             <Grid container item xs={12}

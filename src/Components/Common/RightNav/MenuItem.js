@@ -2,6 +2,8 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { ListItem, ListItemText, useTheme } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { setSelectedMenu } from "./actions/NavActions";
 
 const variants = {
   open: {
@@ -35,7 +37,7 @@ const MyList = styled(ListItem)`
 `
 
 const ItemText = styled(ListItemText)`
-     color: ${props=>props.theme.palette.primary.secondary};
+     color: ${props => props.theme.palette.primary.secondary};
      display: flex;
     align-items: center;
     justify-content: center;
@@ -44,13 +46,39 @@ const ItemText = styled(ListItemText)`
 
 
 
-export const MenuItem = ({ text }) => {
+export const MenuItem = ({ text, toggleOpen }) => {
+  const ref = React.useRef();
+  const dispatch = useDispatch()
   const theme = useTheme();
   const handleClick = (e) => {
-        console.log(e.currentTarget);
+    let id = ref.current.id.toLowerCase()
+    console.log(id);
+    if (id === "home") {
+      toggleOpen()
+      document.getElementById("coverPage").scrollIntoView()
+    }
+    if (id === "skills") {
+      toggleOpen()
+      document.getElementById("skillPage").scrollIntoView()
+    }
+    if (id === "projects") {
+      toggleOpen()
+       
+      
+     document.getElementById("projectPage").scrollIntoView()
+    }
+    if (id === "contact") {
+      toggleOpen()
+      document.getElementById("skillPage").scrollIntoView()
+    }
+
+    dispatch(setSelectedMenu(id))
+
   }
   return (
     <MyList
+      ref={ref}
+      id={text}
       key={text}
       button
       component={motion.li}
