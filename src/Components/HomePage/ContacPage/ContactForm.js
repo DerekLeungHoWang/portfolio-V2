@@ -71,7 +71,8 @@ const useStyles = makeStyles(theme => ({
     },
     paper: {
         background: `${theme.palette.primary.paper} !important`,
-        padding: 16
+        padding:"50px 20px"
+        
     },
 
 }));

@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "category": "frontend",
+        "skill": "React"
+    },
+    {
+        "id": 2,
+        "category": "frontend",
+        "skill": "redux"
+    },
+    {
+        "id": 3,
+        "category": "frontend",
+        "skill": "redux thunk"
+    }
+]

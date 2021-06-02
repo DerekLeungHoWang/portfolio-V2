@@ -21,11 +21,12 @@ const MyList = styled(motion.ul)`
   
 `
 export const Navigation = (props) => {
+  const {isOpen,toggleOpen} = props
   return (
     <>
       <MyList variants={variants}>
         {itemIds.map((text,i)=> (
-          <MenuItem toggleOpen={props.toggleOpen} text={text} key={text} />
+          <MenuItem isOpen={isOpen} toggleOpen={toggleOpen} text={text} key={text} />
         ))}
       </MyList>
     </>

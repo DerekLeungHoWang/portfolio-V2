@@ -4,12 +4,10 @@
  }
 
  .container {
-  
-  max-width: 100%;
-  flex: 1 1 100%;
-  padding: 45px 25px;
-  
-}
+   max-width: 100%;
+   flex: 1 1 100%;
+   padding: 45px 25px;
+ }
 
  h1 {
    font-weight: bold;
@@ -104,7 +102,6 @@ li {
    height: auto;
    max-width: 800px;
    min-width: 400px;
-   
    pointer-events: stroke;
    height: 90vh;
    /* overflow-y:scroll; */
@@ -127,7 +124,6 @@ li {
    overflow: hidden;
    height: 420px;
    width: auto;
-   
  }
 
  .open .card-image-container, .open .title-container {
@@ -169,7 +165,6 @@ li {
    height: auto;
    width: 100vw;
    max-width: 100vw;
-
    -webkit-tap-highlight-color: transparent;
  }
 
@@ -185,12 +180,13 @@ li {
  }
 
  .content-container {
-   padding: 400px 35px 35px 35px;
-    
+   position: relative;
+   top: 50%;
+   left: 5%;
    width: 100vw;
-    height: 100%;
-    overflow-y: scroll;
-    margin: 0px 0px;
+   height: 100%;
+   overflow-y: scroll;
+   margin: 0px 0px;
  }
 
  /* p {
@@ -234,9 +230,8 @@ li {
   } */
  }
 
- #overWrapper{
-  height: 100%;
-  width: 100%;
- 
-  overflow: hidden;
-}
+ #overWrapper {
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+ }

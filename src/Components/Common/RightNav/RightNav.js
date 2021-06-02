@@ -41,7 +41,7 @@ const Background = styled(motion.div)`
   background: #005750;
 
 `
-function RightNav() {
+function RightNav(props) {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   return (
@@ -52,7 +52,7 @@ function RightNav() {
     >
       <Background  variants={sidebar} />
 
-      <Navigation toggleOpen={toggleOpen}/>
+      <Navigation isOpen={isOpen} toggleOpen={toggleOpen}/>
       <MenuToggle toggle={() => toggleOpen()} />
     
     </MyNav>

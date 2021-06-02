@@ -18,23 +18,12 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 export function Item({ id }) {
 
   const images = [image1, image2, image3]
-  const { category, title } = items.find(item => item.id === id);
+  const { category, title, youtube_link, github_link,description, stack,developedTime } = items.find(item => item.id === id);
   const containerRef = useRef(null);
-  const y = useMotionValue(0);
-  const dismissDistance = 150;
-  const checkSwipeToDismiss = () => {
-    // y.get() > dismissDistance && history.push("/");
-  }
 
 
-  // useWheelScroll(
-  //   containerRef,
-  //   y,
-  //   // constraints,
-  //   checkSwipeToDismiss,
-  //   true
-  // );
-  // ref={containerRef} 
+
+
   return (
     <>
       <motion.div
@@ -70,27 +59,35 @@ export function Item({ id }) {
           >
             <span className="category">{category}</span>
             <h2>{title}</h2>
-            
+
           </motion.div>
           <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link>
           <motion.div className="content-container" animate>
-            <Button startIcon={<YoutubeSvg />} >Youtube</Button>
-            <Button startIcon={<DesktopSvg />}>Website</Button>
-            <Button startIcon={<GithubSvg />}>Code</Button>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac felis sit amet leo fermentum ultricies. Donec pellentesque dui a sem placerat malesuada. Aenean libero justo, bibendum aliquam rutrum non, eleifend a velit. Donec tristique metus justo, vitae tristique orci facilisis et. Vivamus in cursus odio, at molestie orci. Nullam molestie massa quis tempor facilisis. Vestibulum ac enim pulvinar, semper elit in, facilisis est. Aliquam varius, purus posuere consectetur ultrices, quam mi pellentesque lorem, sed feugiat quam odio et sem. Mauris ligula diam, laoreet quis auctor id, convallis non neque.
-
-Maecenas dictum justo quis quam rutrum, sit amet feugiat quam imperdiet. Praesent finibus nunc sit amet justo ultricies mattis. Vestibulum sed viverra libero, non consectetur ex. Nunc convallis dui ante, sed rhoncus orci feugiat ac. Curabitur ultrices posuere lacus, nec accumsan libero condimentum ut. Duis venenatis placerat nunc nec auctor. Mauris a cursus mauris, vel pharetra sem. Praesent auctor quam a erat lobortis, at condimentum nisl sollicitudin. Duis vulputate eu ex vitae egestas.</Text>
-
+            <a href={youtube_link} target="_blank"> <MyButton startIcon={<YoutubeSvg />} >Youtube</MyButton></a>
+            <MyButton disabled startIcon={<DesktopSvg />}>Website</MyButton>
+            <a href={github_link} target="_blank">  <MyButton startIcon={<GithubSvg />}>Code</MyButton></a>
+            <h3>Intro</h3>
+            <Text>{description}</Text>
+            <h3>Main Technology</h3>
+            <Text>{stack}</Text>
+            <h3>Developed In</h3>
+            <Text>{developedTime}</Text>
           </motion.div>
         </motion.div>
       </div>
     </>
   );
 }
+const MyButton = styled(Button)`
+z-index: 20;
+`
 const Text = styled.p`
-
- color: red;
-
+  display: inline-block;
+  width: 700px;
+ color: grey;
+ padding: 0px;
+ margin: 0px;
+ 
 `
 const Close = styled(FontAwesomeIcon)`
   position: absolute;
