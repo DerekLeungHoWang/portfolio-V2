@@ -33,7 +33,8 @@ function App() {
         backend: "#82AB9B",
         deployment: "#65928D",
         testing: "#4E797E",
-        others: "#3C606C"
+        others: "#3C606C",
+        paper:"#283042"
       },
 
     }

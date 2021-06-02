@@ -111,23 +111,24 @@ export default function CoverPage() {
                     animate="visible"
                     variants={sayHi}>Hi There,</SayHi>
                 <MyTitle />
-                <Button
+                <a href={Pdf} target="_blank">
+                    <Button
 
-                    size="large"
-                    component={motion.div}
-                    variant="outlined"
-                    color="primary"
-                    ref={ref}
-                    // initial="hidden"
-                    // variants={talkBtnVariants}
-                    animate={talkBtn}
+                        size="large"
+                        component={motion.div}
+                        variant="outlined"
+                        color="primary"
+                        ref={ref}
+                        // initial="hidden"
+                        // variants={talkBtnVariants}
+                        animate={talkBtn}
 
-                >
-                    <a href={Pdf} target="_blank">    Resume</a>
+                    >
+                        Resume
 
 
 
-                </Button>
+                </Button></a>
             </Container>
 
         </Wrapper>
@@ -152,7 +153,7 @@ const SayHi = styled(motion.h4)`
 const sayHi = {
     hidden: {
         opacity: 0,
-        y: 20
+        y: 100
 
     },
     visible: {
