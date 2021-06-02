@@ -7,8 +7,6 @@ import './style.css'
 import image1 from '../../../../Common/Images/f1_1.jpg'
 import image2 from '../../../../Common/Images/f.jpg'
 import image3 from '../../../../Common/Images/a.jpg'
-
-import { Frame, Scroll } from "framer"
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
@@ -58,11 +56,11 @@ export function Item({ id }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            {/* <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link> */}
+
 
             <ItemImage
               // className="card-image" 
-               
+
               src={id == "f" ? image2 : id == "a" ? image3 : image1} alt="abc" />
           </ImgContainer>
           <motion.div
@@ -72,8 +70,9 @@ export function Item({ id }) {
           >
             <span className="category">{category}</span>
             <h2>{title}</h2>
+            
           </motion.div>
-
+          <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link>
           <motion.div className="content-container" animate>
             <Button startIcon={<YoutubeSvg />} >Youtube</Button>
             <Button startIcon={<DesktopSvg />}>Website</Button>
@@ -95,12 +94,18 @@ const Text = styled.p`
 `
 const Close = styled(FontAwesomeIcon)`
   position: absolute;
-  top:10px;
-  right:10px;
+  top:20px;
+  right:20px;
   color: grey;
   font-size: 35px;
   background-color: black;
   border-radius: 100px;
+  z-index: 15;
+  @media (max-width: 385px) {
+    position: fixed;
+    top: 0px;
+    right:40vw;
+  }
 `
 const ItemImage = styled.img`
 border-top-left-radius:20px;

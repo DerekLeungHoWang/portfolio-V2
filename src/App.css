@@ -26,3 +26,7 @@ code {
   align-items: center; */
   position: relative;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}

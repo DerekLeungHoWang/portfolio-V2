@@ -19,9 +19,9 @@ export default function LeftSideNote() {
         <Wrapper>
             <Media>
                 <IconWrapper>
-                    <Github style={{ transform: "rotate(-90deg)"}} />
-                    <Leetcode style={{ transform: "rotate(-90deg)", marginLeft:"25px"  }} />
-                    <Linkedin style={{ transform: "rotate(-90deg)", marginLeft:"25px"  }} />
+                    <a href="https://github.com/DerekLeungHoWang/portfolio-V2" target="_blank">     <Github style={{ transform: "rotate(-90deg)" }} /></a>
+                    <a href="https://leetcode.com/poiuz88i/" target="_blank"> <Leetcode style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>
+                    <a href="https://www.linkedin.com/in/derek-leung-7b7388122/" target="_blank">     <Linkedin style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>
                 </IconWrapper>
             </Media>
             <Line />
@@ -53,6 +53,10 @@ const Media = styled.div`
         width:22px;
         fill:white !important;
         opacity: 0.5;
+        &:hover{
+            opacity: 1;
+            transition: all .5s ease-in-out;
+        }
   }
   
     

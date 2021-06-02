@@ -7,7 +7,7 @@ import { Grid, useTheme } from '@material-ui/core';
 import StyledButton from '../../Common/StyledButton/StyledButton';
 import { useSelector } from 'react-redux';
 import { blue, pink } from '@material-ui/core/colors';
-
+import Pdf from '../../Common/PDF/resume.pdf'
 
 
 const Title = () => {
@@ -26,7 +26,7 @@ const Title = () => {
                 <motion.span
                     key={`${char}-${index}`}
                     variants={letter}
-                    style={{color:"white"}}
+                    style={{ color: "white" }}
                 >
                     {char}
                 </motion.span>
@@ -36,7 +36,7 @@ const Title = () => {
         {line2.split("").map((char, index) => {
             return (
                 <motion.span
-                 
+
                     key={`${char}-${index}`}
                     variants={letter}>
                     {char}
@@ -112,7 +112,7 @@ export default function CoverPage() {
                     variants={sayHi}>Hi There,</SayHi>
                 <MyTitle />
                 <Button
-            
+
                     size="large"
                     component={motion.div}
                     variant="outlined"
@@ -122,20 +122,25 @@ export default function CoverPage() {
                     // variants={talkBtnVariants}
                     animate={talkBtn}
 
-                >Resume</Button>
+                >
+                    <a href={Pdf} target="_blank">    Resume</a>
+
+
+
+                </Button>
             </Container>
 
         </Wrapper>
     )
 }
 
-const Container=styled(Grid)`
+const Container = styled(Grid)`
  
   padding-left: 60px !important;
  
    
 `
-const MyTitle=styled(Title)`
+const MyTitle = styled(Title)`
   
   
    

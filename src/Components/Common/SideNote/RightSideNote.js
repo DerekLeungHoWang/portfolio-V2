@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export default function RightSideNote() {
     return (
         <Wrapper>
-            <Email>hkz88i00123@gmail.com</Email>
+            <a href="mailTo:hkz88i00123@gmail.com"> <Email>hkz88i00123@gmail.com</Email></a>
             <Line />
         </Wrapper>
     )
@@ -31,6 +31,10 @@ const Email = styled.div`
     transform:rotate(90deg);
     color:#a8b2d1 ;
     font-size: 14px;
+    &:hover{
+        color: white;
+        transition: all .5s ease-in-out;
+    }
     
 `
 
