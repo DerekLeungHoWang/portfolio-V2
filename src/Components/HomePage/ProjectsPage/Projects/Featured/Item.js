@@ -18,7 +18,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 export function Item({ id }) {
 
   const images = [image1, image2, image3]
-  const { category, title, youtube_link, github_link,description, stack,developedTime } = items.find(item => item.id === id);
+  const { category, title, youtube_link, github_link, description, stack, developedTime } = items.find(item => item.id === id);
   const containerRef = useRef(null);
 
 
@@ -63,15 +63,27 @@ export function Item({ id }) {
           </motion.div>
           <Link to="/"> <Close icon={faTimesCircle}>Close</Close></Link>
           <motion.div className="content-container" animate>
-            <a href={youtube_link} target="_blank"> <MyButton startIcon={<YoutubeSvg />} >Youtube</MyButton></a>
-            <MyButton disabled startIcon={<DesktopSvg />}>Website</MyButton>
-            <a href={github_link} target="_blank">  <MyButton startIcon={<GithubSvg />}>Code</MyButton></a>
-            <h3>Intro</h3>
-            <Text>{description}</Text>
-            <h3>Main Technology</h3>
-            <Text>{stack}</Text>
-            <h3>Developed In</h3>
-            <Text>{developedTime}</Text>
+
+            <div className="cardContent">
+              <a href={youtube_link} target="_blank"> <MyButton startIcon={<YoutubeSvg />} >Youtube</MyButton></a>
+              <MyButton disabled startIcon={<DesktopSvg />}>Website</MyButton>
+              <a href={github_link} target="_blank">  <MyButton startIcon={<GithubSvg />}>Code</MyButton></a>
+              <h3>Intro</h3>
+              <p>{description}</p>
+              <h3>Main Technology</h3>
+              <p>{stack}</p>
+              <h3>Developed In</h3>
+              <p>{developedTime}</p>
+              {/* <p>asdasdasdasasdasdasdasdasdasdasasdasdasdasdasdasdasasdasdasdasdasdasdasasdasdas
+              dasdasdasdasasdasdasasd
+              asdasdasdasasdasdasdasd
+              asdasdasdasasdasdasd
+              asdasdasdasasdasdasdasdasdasasdasdasdasdasdasdasasdasdasdasdasdasasdasdasd
+              dasdasdasdasasdasdasdasdasdasdasasdasdasdasdasdasdasasdasdasd</p> */}
+            </div>
+
+
+
           </motion.div>
         </motion.div>
       </div>
@@ -82,11 +94,7 @@ const MyButton = styled(Button)`
 z-index: 20;
 `
 const Text = styled.p`
-  display: inline-block;
-  width: 700px;
- color: grey;
- padding: 0px;
- margin: 0px;
+  
  
 `
 const Close = styled(FontAwesomeIcon)`
