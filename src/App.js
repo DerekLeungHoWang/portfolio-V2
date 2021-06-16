@@ -15,6 +15,7 @@ import ProjectsPage from "./Components/HomePage/ProjectsPage/ProjectsPage";
 import HomePage from "./Components/HomePage/HomePage";
 import RightNav from "./Components/Common/RightNav/RightNav";
 import { Header } from "./Components/HomePage/ProjectsPage/Projects/Featured/Header";
+import ProjectDetail from "./Components/HomePage/ProjectsPage/Projects/Archive/Detail/ProjectDetail";
 
 
 
@@ -34,7 +35,7 @@ function App() {
         deployment: "#65928D",
         testing: "#4E797E",
         others: "#3C606C",
-        paper:"#283042"
+        paper: "#283042"
       },
 
     }
@@ -46,17 +47,17 @@ function App() {
         <AnimateSharedLayout type="crossfade">
           <Router>
             <Navbar />
-       
+
             <Switch>
-              <Route path={["/:id", "/"]} component={HomePage} >
+              <Route exact path={["/:id", "/"]} component={HomePage} >
 
 
               </Route>
-              <Route path="/about">
-                {/* <About /> */}
-              </Route>
+              <Route path="/projectDetail/:projectId" component={ProjectDetail}  />
+  
+             
               <Route path="/users">
-                {/* <Users /> */}
+
               </Route>
             </Switch>
 

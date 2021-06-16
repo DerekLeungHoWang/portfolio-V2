@@ -38,7 +38,8 @@ export default function ProjectsPage(props) {
 
     return (
         <Wrapper id="projectPage" ref={ref} theme={theme} container >
-            <Grid container item xs={12}
+            <Grid container item 
+                xs={12}
                 direction="row"
                 justify="center"
                 alignItems="center"
