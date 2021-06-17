@@ -35,10 +35,7 @@ function ProjectDetail({ match }) {
                 ease: "Power2.easeInOut",
                 delay: -1.4
             })
-            .to(imageRef, {
-                duration: 2.4,
-                borderRadius: "20px"
-            })
+
 
         return () => {
             document.getElementById("navBar").style.display = "block"
@@ -55,6 +52,17 @@ function ProjectDetail({ match }) {
                     justify="center"
                     alignItems="center"
                 >
+                    <Grid container item
+                        
+                        lg={8}
+                        direction="row"
+                        justify="space-between"
+                        alignItems="center"
+                    >
+
+                        <div className="projectDescription animatable">Frontend</div>
+                        <div className="projectDescription animatable">2021</div>
+                    </Grid>
                     <Row container item
                         lg={12}
                         direction="row"
@@ -72,10 +80,14 @@ function ProjectDetail({ match }) {
                     </Row>
                     <Grid container item
                         lg={12}
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
                     >
-                        <div className="projectDescription animatable">{item.title}</div>
-
-                        <div style={{ margin: "50px" }} className="projectDescription animatable">{item.description}</div>
+                        <div id="pjrojectWrapper">
+                            <div className="projectTitle animatable">{item.title}</div>
+                            <div style={{ margin: "50px" }} className="projectDescription animatable">{item.description}</div>
+                        </div>
                     </Grid>
 
                 </Container>))
@@ -94,6 +106,7 @@ const Container = styled(Grid)`
     align-items: center;
     visibility: hidden;
 background-color:#0a192f;
+overflow: hidden;
 `
 
 const Row = styled(Grid)`
