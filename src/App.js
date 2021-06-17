@@ -23,7 +23,10 @@ import ProjectDetail from "./Components/HomePage/ProjectsPage/Projects/Archive/D
 
 
 
-function App() {
+function App(props) {
+   
+
+ 
   const theme = createMuiTheme({
     palette: {
       primary: {

@@ -15,6 +15,7 @@ import StyledButton from '../../../../Common/StyledButton/StyledButton';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+
 const useStyles = makeStyles({
     cardWrapper: {
         display: "inline-block",

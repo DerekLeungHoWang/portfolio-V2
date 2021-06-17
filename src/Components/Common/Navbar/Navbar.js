@@ -28,11 +28,12 @@ const NavLink = styled(Link)`
     color: ${props => props.color};
 `;
 export default function Navbar() {
+    
     const theme = useTheme();
     let color = theme.palette.primary.main
     return (
      
-            <Wrapper theme={theme}>
+            <Wrapper id="navBar" theme={theme}>
                 <Logo >DEREK</Logo>
                
                 <RightNav/> 
