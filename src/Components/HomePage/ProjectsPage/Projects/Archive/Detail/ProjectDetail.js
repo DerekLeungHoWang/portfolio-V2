@@ -115,8 +115,7 @@ const TopTitle = styled.div`
    align-items: center;
    justify-content: space-between;
    p{
-    margin: 0px  10px;
-    padding: 0px 0px;
+ 
     font-weight: 600;
     padding-bottom: 15px;
     font-size: 1.2rem;
