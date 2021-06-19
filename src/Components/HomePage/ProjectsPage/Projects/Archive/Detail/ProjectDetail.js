@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import "./pj.scss";
-import {data} from '../data'
+import { data } from '../data'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import gsap from "gsap";
 import styled from 'styled-components';
@@ -48,46 +48,31 @@ function ProjectDetail({ match }) {
         data.map((item, index) => {
 
             return (item.id === parseInt(projectId) &&
-                (<Outer key={item.id} container ref={el => (containerRef = el)}
-                    direction="row"
-                    justify="center"
-                    alignItems="center"
+                (<div key={item.id} container ref={el => (containerRef = el)}
+                    className="project_detail_container"
                 >
-                    <Inner container item   >
 
-                        <Row container item
-                            lg={12}
-                            direction="column"
-                            justify="center"
-                            alignItems="center"
-                        >
+                    <div className="project_detail_inner_container">
+                        <div>
                             <TopTitle
                             >
                                 <p className="projectDescription animatable">Frontend</p>
                                 <p className="projectDescription animatable">2021</p>
                             </TopTitle>
-
-
                             <div className='img-container'>
                                 <img
                                     ref={el => (imageRef = el)}
                                     src={item.img}
                                 />
                             </div>
+                        </div>
 
+                        <div id="buttonGrouptWrapper">
 
-                        </Row>
-                        <Grid container item
-                            lg={12}
-                            direction="row"
-                            justify="center"
-                            alignItems="flex-start"
-                        >
-
-                            <ButtonGroup>
+                            <ButtonGroup className="animatable">
                                 <a href={item.youtube_link} target="_blank">
                                     <Button
-                                 
+
                                         color="primary" startIcon={<YoutubeSvg />}>Video</Button></a>
                                 <a href={item.actual_link} target="_blank">
                                     <Button
@@ -98,22 +83,24 @@ function ProjectDetail({ match }) {
                                         color="primary" startIcon={<GithubSvg />}>Code</Button>
                                 </a>
                             </ButtonGroup>
+                        </div>
 
-                            <div id="pjrojectWrapper">
+                        <div id="pjrojectWrapper">
 
-                                <div className="projectTitle animatable">
-                                    {item.title}
+                            <div className="projectTitle animatable">
+                                {item.title}
 
-                                </div>
-                                <div className="projectDescription animatable">
-
-                                    {item.description}
-                                </div>
                             </div>
-                        </Grid>
-                    </Inner>
+                            <div className="projectDescription animatable">
 
-                </Outer>))
+                                {item.description}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>))
         })
 
 
@@ -121,31 +108,12 @@ function ProjectDetail({ match }) {
     )
 
 }
-const Outer = styled(Grid)`
-      width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-background-color:#0a192f;
-overflow: hidden;
-`
-const Inner = styled(Grid)`
-      width: 80%;
-    height: auto;
-
-`
 const TopTitle = styled.div`
-    width: 81%;
+    width: 100%;
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
-   padding-top: 0px;
-   margin-top: 0px;
-   margin-bottom: 15px;
-
    p{
     margin: 0px  10px;
     padding: 0px 0px;
@@ -157,16 +125,19 @@ const TopTitle = styled.div`
 `
 
 const ButtonGroup = styled.div`
-    width: 80%;
+     
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     margin-top: 10px;
- 
-`
+    margin-bottom: 5px;
+    @media (max-width: 375px) {
+        Button{
+       font-size: 10px;
+    }
+  }
 
-const Row = styled(Grid)`
-  
+ 
 `
 const YoutubeSvg = styled(YoutubeIcon)`
   height: 100%;
