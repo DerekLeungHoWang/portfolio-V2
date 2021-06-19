@@ -49,11 +49,13 @@
   height:auto;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   @media (max-width: 768px) {
    flex-direction: column;
-   
+   & > *{
+     margin:10px;
+   }
   }
 }
 #buttonGrouptWrapper{
@@ -72,6 +74,7 @@
   padding: 10px 5px;
   color: white;
   font-family: 'B612', sans-serif;
+  
   @media (max-width: 768px) {
     font-size:1.5rem;
   }
@@ -81,7 +84,12 @@
   padding: 10px 5px;
   color: white;
   max-width: 500px;
-  
+  line-height: 1.5;
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 80%;
+  }
 }
  
 .animatable {

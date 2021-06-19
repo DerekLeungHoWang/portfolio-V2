@@ -53,12 +53,14 @@ function ProjectDetail({ match }) {
                 >
 
                     <div className="project_detail_inner_container">
+                        <SideText  className="animatable">PROJECT - 01</SideText>
                         <div>
                             <TopTitle
                             >
                                 <p className="projectDescription animatable">Frontend</p>
                                 <p className="projectDescription animatable">2021</p>
                             </TopTitle>
+
                             <div className='img-container'>
                                 <img
                                     ref={el => (imageRef = el)}
@@ -108,6 +110,16 @@ function ProjectDetail({ match }) {
     )
 
 }
+const SideText = styled.h1`
+    color:#2FA687;
+    position: absolute;
+    transform: rotate(90deg);
+    top:40%;
+    left:5%;
+    @media (max-width: 768px) {
+       display: none;
+    }
+`
 const TopTitle = styled.div`
     width: 100%;
    display: flex;
