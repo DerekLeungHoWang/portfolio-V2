@@ -1,5 +1,5 @@
 import image1 from "../../../../Common/Images/project1.jpg";
-
+import image2 from "../../../../Common/Images/project2.jpg";
 export const data = [
     {
         "id": 1,
@@ -14,15 +14,15 @@ export const data = [
     },
     {
         "id": 2,
-        "title": "PlaceHolder2",
-        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "title": "Personal Website V1",
+        "description": "This is probably my earliest complete project, created after a few months after I started learning programming, please be reminded that this one is not mobile friendly at all. ",
         "youtube_link": "Nguyen",
-        "actual_link": "hnguyen0@bloomberg.com",
-        "github_link": "227.211.25.18",
-        "tag1": "React",
-        "tag2": "Spring Boot",
-        "tag3": "MySQL",
-        "img": image1
+        "actual_link": "https://derekleunghowang.github.io/personalPage/",
+        "github_link": "https://github.com/DerekLeungHoWang/personalPage",
+        "tag1": "HTML",
+        "tag2": "CSS",
+        "tag3": "Javascript",
+        "img": image2
     },
     {
         "id": 3,

@@ -1,13 +1,14 @@
 .project_detail_container{
+ 
   height: 100vh;
     background-color: #0a192f;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
- 
+
     .project_detail_inner_container{
- 
+ visibility: hidden;
     
       max-width: 70%;
       height: 100vh;
@@ -19,6 +20,7 @@
 }
 
   .img-container {
+   
     max-width:100%;
     max-height:auto;
 
