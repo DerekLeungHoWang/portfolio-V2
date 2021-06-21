@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/portfolio-V2/static/css/main.533b3359.chunk.css",
-    "main.js": "/portfolio-V2/static/js/main.5dda9639.chunk.js",
-    "main.js.map": "/portfolio-V2/static/js/main.5dda9639.chunk.js.map",
+    "main.css": "/portfolio-V2/static/css/main.c453030c.chunk.css",
+    "main.js": "/portfolio-V2/static/js/main.600ee5f7.chunk.js",
+    "main.js.map": "/portfolio-V2/static/js/main.600ee5f7.chunk.js.map",
     "runtime-main.js": "/portfolio-V2/static/js/runtime-main.982e4f25.js",
     "runtime-main.js.map": "/portfolio-V2/static/js/runtime-main.982e4f25.js.map",
     "static/js/2.eff6a30c.chunk.js": "/portfolio-V2/static/js/2.eff6a30c.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.750d8137.chunk.js": "/portfolio-V2/static/js/3.750d8137.chunk.js",
     "static/js/3.750d8137.chunk.js.map": "/portfolio-V2/static/js/3.750d8137.chunk.js.map",
     "index.html": "/portfolio-V2/index.html",
-    "static/css/main.533b3359.chunk.css.map": "/portfolio-V2/static/css/main.533b3359.chunk.css.map",
+    "static/css/main.c453030c.chunk.css.map": "/portfolio-V2/static/css/main.c453030c.chunk.css.map",
     "static/js/2.eff6a30c.chunk.js.LICENSE.txt": "/portfolio-V2/static/js/2.eff6a30c.chunk.js.LICENSE.txt",
     "static/media/a.58d65be4.jpg": "/portfolio-V2/static/media/a.58d65be4.jpg",
     "static/media/a_1.922569bd.jpg": "/portfolio-V2/static/media/a_1.922569bd.jpg",
@@ -24,6 +24,7 @@
     "static/media/leetcode.fa87fd9f.svg": "/portfolio-V2/static/media/leetcode.fa87fd9f.svg",
     "static/media/linkedin.7e47fa38.svg": "/portfolio-V2/static/media/linkedin.7e47fa38.svg",
     "static/media/project1.c3edf67d.jpg": "/portfolio-V2/static/media/project1.c3edf67d.jpg",
+    "static/media/project2.0ec93077.jpg": "/portfolio-V2/static/media/project2.0ec93077.jpg",
     "static/media/react.9342c384.svg": "/portfolio-V2/static/media/react.9342c384.svg",
     "static/media/resume.5b0dd1ec.pdf": "/portfolio-V2/static/media/resume.5b0dd1ec.pdf",
     "static/media/selenium.e1b4fe0d.svg": "/portfolio-V2/static/media/selenium.e1b4fe0d.svg",
@@ -33,7 +34,7 @@
   "entrypoints": [
     "static/js/runtime-main.982e4f25.js",
     "static/js/2.eff6a30c.chunk.js",
-    "static/css/main.533b3359.chunk.css",
-    "static/js/main.5dda9639.chunk.js"
+    "static/css/main.c453030c.chunk.css",
+    "static/js/main.600ee5f7.chunk.js"
   ]
 }
