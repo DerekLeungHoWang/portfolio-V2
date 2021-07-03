@@ -97,6 +97,7 @@
 .animatable {
   position: relative;
   clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+ 
   animation: .75s cubic-bezier(1,-0.01,.12,.8) 0s 1 reveal forwards;
 }
 
@@ -110,6 +111,7 @@
   // background: rgb(65, 62, 85);
   background: white;
   padding: inherit;
+ 
   animation: .75s cubic-bezier(1,-0.01,.12,.8) .75s 1 hideBlack forwards;
 }
 

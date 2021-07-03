@@ -19,10 +19,10 @@ function ProjectDetail({ match }) {
     let tl = useRef(gsap.timeline());
 
     useEffect(() => {
-        console.log(loaded);
+        document.getElementById("navBar").style.display = "none"
         if (loaded) {
-            document.getElementById("navBar").style.display = "none"
-            document.querySelector(".project_detail_inner_container").style.visibility = "visible"
+       
+          document.querySelector(".project_detail_inner_container").style.visibility = "visible"
 
             tl.current.set(imageReveal, { width: "100%", })
             tl.current.to(containerRef, {
