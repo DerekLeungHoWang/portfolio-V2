@@ -21,9 +21,7 @@ function ProjectDetail({ match }) {
     useEffect(() => {
         document.getElementById("navBar").style.display = "none"
         if (loaded) {
-            console.log("loaded");
-          document.querySelector(".project_detail_inner_container").style.display = "block"
-
+            document.querySelector(".project_detail_inner_container").style.display = "block"
             tl.current.set(imageReveal, { width: "100%", })
             tl.current.to(containerRef, {
                 duration: 0,
@@ -74,7 +72,7 @@ function ProjectDetail({ match }) {
     return (
         data.map((item, index) => {
 
-            return (  item.id === parseInt(projectId) &&
+            return (item.id === parseInt(projectId) &&
                 (<div key={item.id} ref={el => (containerRef = el)}
                     className="project_detail_container"
                 >
