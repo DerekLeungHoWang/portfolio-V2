@@ -22,7 +22,7 @@ function ProjectDetail({ match }) {
         document.getElementById("navBar").style.display = "none"
         if (loaded) {
             console.log("loaded");
-          document.querySelector(".project_detail_inner_container").style.visibility = "visible"
+          document.querySelector(".project_detail_inner_container").style.display = "block"
 
             tl.current.set(imageReveal, { width: "100%", })
             tl.current.to(containerRef, {
