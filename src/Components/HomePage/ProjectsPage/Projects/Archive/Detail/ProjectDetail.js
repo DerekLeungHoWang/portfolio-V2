@@ -9,6 +9,7 @@ import { Button } from '@material-ui/core'
 import { ReactComponent as YoutubeIcon } from '../../../../../Common/Images/youtube.svg';
 import { ReactComponent as DesktopIcon } from '../../../../../Common/Images/desktop.svg';
 import { ReactComponent as GithubIcon } from '../../../../../Common/Images/github2.svg';
+import ProjectBody from './ProjectBody';
 function ProjectDetail({ match }) {
     let { params: { projectId } } = match
     const [loaded, setLoaded] = useState(false)
@@ -78,11 +79,10 @@ function ProjectDetail({ match }) {
                 >
 
                     <div className="project_detail_inner_container">
-                        <SideText className="animatable">PROJECT - 01</SideText>
+                        <SideText className="animatable">  {item.title}</SideText>
                         <div>
-                            <TopTitle
-                            >
-                                <p className="projectDescription animatable">Frontend</p>
+                            <TopTitle>
+                                <p className="projectDescription animatable">{item.end}</p>
                                 <p className="projectDescription animatable">2021</p>
                             </TopTitle>
 
@@ -97,32 +97,34 @@ function ProjectDetail({ match }) {
                         <div id="buttonGrouptWrapper">
 
                             <ButtonGroup className="animatable">
-                                <a href={item.youtube_link} target="_blank">
-                                    <Button
 
-                                        color="primary" startIcon={<YoutubeSvg />}>Video</Button></a>
-                                <a href={item.actual_link} target="_blank">
+                                {item.youtube_link && <a href={item.youtube_link} target="_blank">
                                     <Button
-                                        style={{ marginLeft: "10px" }}
-                                        color="primary" startIcon={<DesktopSvg />} >Website</Button></a>
-                                <a href={item.github_link} target="_blank">
-                                    <Button style={{ marginLeft: "10px" }}
+                                        style={{ fontWeight: '900' }}
+                                        variant="contained"
+                                        size="large"
+                                        color="primary" startIcon={<YoutubeSvg />}>Video</Button></a>}
+
+                                {item.actual_link && <a href={item.actual_link} target="_blank">
+                                    <Button
+                                        variant="contained"
+                                        size="large"
+                                        style={{ marginLeft: "10px", fontWeight: '900' }}
+                                        color="primary" startIcon={<DesktopSvg />} >Live Demo</Button></a>}
+
+                                {item.github_link && <a href={item.github_link} target="_blank">
+                                    <Button
+                                        variant="contained"
+                                        style={{ marginLeft: "10px", fontWeight: '900' }}
+                                        size="large"
                                         color="primary" startIcon={<GithubSvg />}>Code</Button>
-                                </a>
+                                </a>}
                             </ButtonGroup>
                         </div>
+                        <ProjectBody item={item} />
 
-                        <div id="pjrojectWrapper">
 
-                            <div className="projectTitle animatable">
-                                {item.title}
 
-                            </div>
-                            <div className="projectDescription animatable">
-
-                                {item.description}
-                            </div>
-                        </div>
                     </div>
 
 
@@ -178,6 +180,7 @@ const ButtonGroup = styled.div`
 const YoutubeSvg = styled(YoutubeIcon)`
   height: 100%;
   width:20px;
+  
 `
 const DesktopSvg = styled(DesktopIcon)`
   height:  100%;
@@ -187,7 +190,7 @@ const DesktopSvg = styled(DesktopIcon)`
 const GithubSvg = styled(GithubIcon)`
   height:  100%;
   width:20px;
-  stroke: white;
+  fill: white;
  
 `
 

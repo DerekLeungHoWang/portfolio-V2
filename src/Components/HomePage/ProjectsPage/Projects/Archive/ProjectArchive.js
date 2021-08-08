@@ -5,8 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {data} from './data'
-import { Grid } from '@material-ui/core';
+import { data } from './data'
+import { Container, Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen as faFolderOpen } from '@fortawesome/free-regular-svg-icons'
 
@@ -17,21 +17,19 @@ import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
+    cardContainer: {
+        width: '100%'
+    },
     cardWrapper: {
-        display: "inline-block",
-        height: 375,
-        width: 400,
-        maxWidth: 400,
-        position: "relative"
+        position: "relative",
+        marginBottom: "5px"
     },
     card: {
-        margin: 10,
-        width: 390,
-        height: 365,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
+
+        width: "400px",
+        height: "300px",
+    
+        borderRadius: "5px",
         background: "#283042",
         color: "white",
 
@@ -46,9 +44,7 @@ const useStyles = makeStyles({
         marginBottom: 12,
     },
     styledButton: {
-        position: "absolute",
-        top: 45,
-        right: 30,
+
         zIndex: 5,
         fontWeight: 400,
         textTransform: 'none'
@@ -56,21 +52,21 @@ const useStyles = makeStyles({
 });
 
 const FolderIcon = styled(FontAwesomeIcon)`
-     position: absolute;
-        top: 45px;
-        left: 45px;
+     
+        position:"absolute";
+        top: 0;
         font-size: 45px;
         color:${props => props.theme.palette.primary.main};
 `
 const Title = styled.h1`
-     position: absolute;
+    
      top: 80px;
      left: 45px;
     font-size: 25px;
      
 `
 const Description = styled.p`
-     position: absolute;
+     
      top: 140px;
      left: 45px;
     font-size: 15px;
@@ -78,15 +74,22 @@ const Description = styled.p`
 `
 
 const FrameWork = styled.div`
-     position: absolute;
-     bottom: 55px;
-     left: 45px;
+    position: absolute;
+     bottom: 25px;
+     left: 25px;
     font-size: 15px;
     opacity:0.5;
     & span{
         margin-right: 30px;
     }
    
+`
+
+const DetailButton = styled(Button)`
+  position:absolute;
+  top: 5%;
+  right:5%;
+
 `
 
 const cardWrapper = {
@@ -100,15 +103,14 @@ const cardWrapper = {
     }
 }
 
+
 const card = {
     hidden: {
         y: 50,
-        // scale: 0,
         opacity: 0,
     },
     visible: {
         y: 0,
-        // scale: 1,
         opacity: 1,
         transition: { duration: .5 }
     }
@@ -126,6 +128,8 @@ export default function ProjectArchive(props) {
         history.push(`/projectDetail/${id}`)
     }
     return (
+
+
         <Grid container
             direction="row"
             justify="center"
@@ -134,46 +138,58 @@ export default function ProjectArchive(props) {
             animate={prjPageInview ? "visible" : "hidden"}
             variants={cardWrapper}
             component={motion.div}
+            className={classes.cardContainer}
+            spacing={1}
         >
             {data.map((project, index) => {
 
-                return (
-                    <Grid
+                if (project.id < 50) {
+                    return (
+                        <Grid
+                            container item
+                            direction="row"
+                            justify="center"
+                            alignItems="center"
+                            variants={card}
+                            component={motion.div}
+                            key={`${project.title}-${index}`}
+                            xs={12} md={4} lg={4}
+                            className={classes.cardWrapper}
 
-                        variants={card}
-                        component={motion.div}
-                        key={`${project.title}-${index}`} className={classes.cardWrapper} container item
-                    >
-                        <Card variant="outlined" key={project.title} className={classes.card}  >
-                            <CardContent >
-                                <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
-                                <Title  >
-                                    {project.title}
-                                </Title>
+                        >
+                            <Card variant="outlined" key={project.title}
+                                className={classes.card}
+                            >
+                                <CardContent >
+                                    <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
+                                    <Title  >
+                                        {project.title}
+                                    </Title>
 
-                                <Button
-                                    onClick={() => handleClick(project.id)}
-                                    size="large"
-                                    color="primary"
-                                    variant="outlined"
-                                    className={classes.styledButton} >View</Button>
+                                    <DetailButton
+                                        onClick={() => handleClick(project.id)}
+                                        size="large"
+                                        color="primary"
+                                        variant="outlined"
+                                        className={classes.styledButton} >Detail</DetailButton>
 
-                                <Description >
-                                    {project.description}
-                                </Description>
-                                <FrameWork  >
-                                    <span>{project.tag1} </span>
-                                    <span>  {project.tag2 ?? null} </span>
-                                    <span>  {project.tag3 ?? null} </span>
-                                </FrameWork>
-
-
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                )
+                                    <Description >
+                                        {project.description}
+                                    </Description>
+                                    <FrameWork  >
+                                        <span>{project.tag1} </span>
+                                        <span>  {project.tag2 ?? null} </span>
+                                        <span>  {project.tag3 ?? null} </span>
+                                    </FrameWork>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    )
+                }
             })}
 
         </Grid>
+
+
     )
 }

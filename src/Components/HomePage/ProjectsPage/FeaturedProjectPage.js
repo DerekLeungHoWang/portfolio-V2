@@ -6,11 +6,12 @@ import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
 import { setPrjPageInView } from '../Actions/HomePageActions';
 import { Grid, useTheme } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 import ProjectArchive from './Projects/Archive/ProjectArchive';
 import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
 
-const Wrapper = styled(Grid)`
+const MyContainer = styled(Container)`
     min-height: 60vh;
     height: auto;
     width: 100%;
@@ -18,12 +19,7 @@ const Wrapper = styled(Grid)`
    //background-color: green;
 `;
 
-const Container = styled(Grid)`
-    height: 100%;
-    width: 100%;
-   
- 
-`;
+
 
 const Title = styled(motion.h1)`
     color:${props => props.theme.palette.primary.main};
@@ -45,18 +41,16 @@ export default function FeaturedProjectPage(props) {
     }, [inView]);
 
     return (
-        <Wrapper id="featuredPage" ref={ref} theme={theme}
-            container
-        >
-            
-            <Container container item xs={12} style 
-            direction="row"
+        <MyContainer theme={theme} maxWidth={false}> 
+            <Grid container 
+                direction="column"
                 justify="center"
-                alignItems="center"  >
-               <Title theme={theme} >Featured</Title>
-                <FeaturedProjects id={id} />
-
-            </Container>
-        </Wrapper>
+                alignItems="center"
+            
+            >
+                <Title theme={theme} >Featured</Title>
+                <FeaturedProjects />
+            </Grid>
+        </MyContainer>
     )
 }

@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { StylesProvider } from '@material-ui/styles';
 import store from './configureStore'
 import { Provider } from 'react-redux';
+import { CssBaseline } from '@material-ui/core';
 
 ReactDOM.render(
   <StylesProvider injectFirst>
     <React.StrictMode>
       <Provider store={store}>
+        {/* <CssBaseline /> */}
         <App />
       </Provider>
     </React.StrictMode>

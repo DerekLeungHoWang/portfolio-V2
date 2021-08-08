@@ -15,14 +15,14 @@ import FeaturedProjectPage from './ProjectsPage/FeaturedProjectPage';
 const useStyles = makeStyles((theme) => ({
     root: {
         // flexGrow: 1,
-
+       backgroundColor:'#0a192f'
 
     },
-    paper: {
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    },
+    // paper: {
+    //     padding: theme.spacing(1),
+    //     textAlign: 'center',
+    //     color: theme.palette.text.secondary,
+    // },
 }));
 
 
@@ -52,7 +52,7 @@ export default function HomePage({ match }) {
             <Grid container item xs={12}  >
                 <FeaturedProjectPage id={id} />
             </Grid>
-            <Grid container item xs={12}  >
+            <Grid container item xs={12}   >
                 <ProjectsPage id={id} />
             </Grid>
             <Grid container item xs={12}  >

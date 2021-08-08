@@ -1,71 +1,105 @@
 import image1 from "../../../../Common/Images/project1.jpg";
 import image2 from "../../../../Common/Images/project2.jpg";
+import featured1_1 from "../../../../Common/Images/featured1_1.jpg";
+import featured1_2 from "../../../../Common/Images/featured1_2.jpg";
+import featured1_3 from "../../../../Common/Images/featured1_3.jpg";
+import featured1_4 from "../../../../Common/Images/featured1_4.jpg";
+
+import lyrics1_1 from "../../../../Common/Images/lyrics1_1.jpg";
+import d31_1 from "../../../../Common/Images/d31_1.jpg";
+import lol1_1 from "../../../../Common/Images/lol1_1.jpg";
+import creditCard1_1 from "../../../../Common/Images/creditCard1_1.jpg";
+
+
+
 export const data = [
     {
         "id": 1,
-        "title": "Creative Dark Mode",
-        "description": "Seeing that dark mode has become increasingly trending over time, I came up with the idea to build one as practise. What is special about this website is the nice transition animation where the circle expands to fill the whole page to construct the dark mode and vice versa.",
+        "end":"Frontend",
+        "title": "Lyrics maker for church",
+        "description": "Alowing users to quickly generate powerpoint-like slides for lyrics.The view height of the slide is designed to be 20% of the screen height due to the physical constraint of the church.This is a tailor-made solution for the church.",
+        "youtube_link": "https://www.youtube.com/watch?v=9F7qJ-azZlY",
+        "actual_link": "https://church-lyrics-maker.netlify.app/#/",
+        "github_link": "https://github.com/DerekLeungHoWang/dark-mode",
+        "tag1": "React",
+        "img": lyrics1_1
+
+    },
+    {
+        "id": 2,
+        "end":"Frontend",
+        "title": "D3.js Charts",
+        "description": "Charts made with D3.js and React.js",
+        "youtube_link": "#",
+        "actual_link": "https://derek-d3-viz.netlify.app/",
+        "github_link": "https://github.com/DerekLeungHoWang/world-data",
+        "tag1": "React",
+        "tag2": "Spring Boot",
+        "img": d31_1
+        
+    },
+    {
+        "id": 3,
+        "end":"Frontend",
+        "title": "Dark Mode",
+        "description": "Switching between dark mode and light mode with a cool animation",
         "youtube_link": "#",
         "actual_link": "https://derekleunghowang.github.io/dark-mode/#/",
         "github_link": "https://github.com/DerekLeungHoWang/dark-mode",
         "tag1": "React",
         "img": image1
-
-    },
-    {
-        "id": 2,
-        "title": "Personal Website V1",
-        "description": "This is probably my earliest complete project, created after a few months after I started learning programming, please be reminded that this one is not mobile friendly at all. ",
-        "youtube_link": "Nguyen",
-        "actual_link": "https://derekleunghowang.github.io/personalPage/",
-        "github_link": "https://github.com/DerekLeungHoWang/personalPage",
-        "tag1": "HTML",
-        "tag2": "CSS",
-        "tag3": "Javascript",
-        "img": image2
-    },
-    {
-        "id": 3,
-        "title": "PlaceHolder3",
-        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "youtube_link": "Nguyen",
-        "actual_link": "hnguyen0@bloomberg.com",
-        "github_link": "227.211.25.18",
-        "tag1": "React",
-        "tag2": "Spring Boot",
-        "img": image1
     },
     {
         "id": 4,
-        "title": "PlaceHolder4",
-        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "youtube_link": "Nguyen",
-        "actual_link": "hnguyen0@bloomberg.com",
-        "github_link": "227.211.25.18",
+        "end":"Frontend",
+        "title": "Animated Credit Card",
+        "description": "Animated Credit Card with cool animation. The card number on card changes according to user's input. The card also flips around when user enter cvc.",
+        "youtube_link": "https://www.youtube.com/watch?v=a8TDzTMr1y8",
+       // "actual_link": "hnguyen0@bloomberg.com",
+         "github_link": "https://github.com/DerekLeungHoWang/Credit-Card-Framer-Motion",
         "tag1": "React",
         "tag2": "Spring Boot",
-        "img": image1
+        "img": creditCard1_1
     },
     {
         "id": 5,
-        "title": "PlaceHolder5",
-        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "youtube_link": "Nguyen",
-        "actual_link": "hnguyen0@bloomberg.com",
-        "github_link": "227.211.25.18",
+        "end":"Frontend",
+        "title": "League Of Legends Slides",
+        "description": "Slides with cool animation in the them of League of Legends.",
+        "youtube_link": "https://www.youtube.com/watch?v=YYOj_cLzyH8",
+        //"actual_link": "//#endregion",
+        "github_link": "https://github.com/DerekLeungHoWang/framer-motion-playground",
         "tag1": "React",
         "tag2": "Spring Boot",
-        "img": image1
+        "img": lol1_1
     },
     {
         "id": 6,
-        "title": "PlaceHolder6",
-        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "youtube_link": "Nguyen",
-        "actual_link": "hnguyen0@bloomberg.com",
-        "github_link": "227.211.25.18",
+        "end":"Frontend",
+        "title": "Portfolio v1",
+        "description": "This is my first portfolio website made using only html, css and a little bit of javascript when I first started learning to code.",
+        //"youtube_link": "Nguyen",
+         "actual_link": "https://derekleunghowang.github.io/personalPage/",
+        "github_link": "https://github.com/DerekLeungHoWang/personalPage",
         "tag1": "React",
         "tag2": "Spring Boot",
-        "img": image1
+        "img": image2
+    }
+    ,
+    {
+        "id": 99,
+        "end":"Fullstack",
+        "title": "FRUIT STORE",
+        "description": "A pretty complete website built with React, Spring Boot and MySQL. Key features includes authentication, cart, payment and order management. Error handling, form validation and language localization is also complete. Feel feel to try it out withe the default username/password",
+        "technology": "React",
+        "youtube_link": "#",
+        "actual_link": "https://wahkee-fruitstore.com/#/en",
+        "github_link": "https://github.com/DerekLeungHoWang/fruit-store-v2",
+        "tag1": "React",
+        "tag2": "Spring Boot",
+        "img": featured1_1,
+        "img2": featured1_2,
+        "img3": featured1_3,
+        "img4": featured1_4,
     }
 ]

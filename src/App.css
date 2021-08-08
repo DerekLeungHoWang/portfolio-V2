@@ -6,12 +6,16 @@ html, body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  overflow-x: hidden;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
+
  
+}
+
+body{
+  overflow-x: hidden;
 }
 
 code {
@@ -19,12 +23,9 @@ code {
 }
 
 .App {
-  height: 100%;
-  width: 100vw;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  position: relative;
+ 
+  overflow-x: hidden;
+
 }
 a {
   color: inherit;
@@ -34,3 +35,7 @@ a {
 *{
   font-family: 'Roboto', sans-serif;
 }
+ 
+::-webkit-scrollbar       {background-color:#fff;width:16px}
+::-webkit-scrollbar-track {background-color:#fff}
+::-webkit-scrollbar-thumb {background-color:#babac0;border-radius:16px;border:4px solid #fff}
