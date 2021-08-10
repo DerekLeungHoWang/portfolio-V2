@@ -100,20 +100,22 @@ function ProjectDetail({ match }) {
 
                                 {item.youtube_link && <a href={item.youtube_link} target="_blank">
                                     <Button
-                                        style={{ fontWeight: '900' }}
+                                        className="detail_link_button"
                                         variant="contained"
                                         size="large"
                                         color="primary" startIcon={<YoutubeSvg />}>Video</Button></a>}
 
                                 {item.actual_link && <a href={item.actual_link} target="_blank">
                                     <Button
+                                        className="detail_link_button"
                                         variant="contained"
                                         size="large"
                                         style={{ marginLeft: "10px", fontWeight: '900' }}
-                                        color="primary" startIcon={<DesktopSvg />} >Live Demo</Button></a>}
+                                        color="primary" startIcon={<DesktopSvg />} >WebSite</Button></a>}
 
                                 {item.github_link && <a href={item.github_link} target="_blank">
                                     <Button
+                                        className="detail_link_button"
                                         variant="contained"
                                         style={{ marginLeft: "10px", fontWeight: '900' }}
                                         size="large"

@@ -8,14 +8,18 @@ import { ContactForm } from './ContactForm';
 
 
 const Wrapper = styled(Grid)`
-height: 100vh;
+margin-top: 90px;
+height: auto;
 width: 100vw;
 background-color: ${props => props.theme.palette.primary.background};
 color: white;
+padding-bottom: 90px;
 `;
 
 const Title = styled(motion.h1)`
     color:${props => props.theme.palette.primary.main};
+    font-size: 40px;
+    margin-bottom: 90px;
 `
 export default function ContactPage() {
     const theme = useTheme();
@@ -27,11 +31,7 @@ export default function ContactPage() {
                 justify="center"
                 alignItems="center"
             >
-                {/* <Grid container item xs={12} lg={6} direction="column"
-                    justify="center"
-                    alignItems="center" >
-                       <Title theme={theme} >Contact</Title>
-                </Grid> */}
+     
                 <Title theme={theme} >Contact</Title>
 
                 <ContactForm />

@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
-import { Grid, useTheme } from '@material-ui/core';
+import { Container, Grid, useTheme } from '@material-ui/core';
 import AllSkills from './Skills/AllSkills';
 import SkillLeft from './Skills/SkillLeft/SkillLeft';
 
-const Wrapper = styled(Grid)`
+const Wrapper = styled(Container)`
 position: relative;
-min-height: 100vh;
+margin-bottom: 90px;
 height: auto;
 width: 100vw;
 background-color: ${props => props.theme.palette.primary.background};
@@ -19,7 +19,7 @@ background-color: ${props => props.theme.palette.primary.background};
 const Header = styled(motion.h1)`
   color:${props => props.theme.palette.primary.main};
     font-size: 40px;
-    padding-bottom: 50px;
+  margin-bottom: 90px;
 `
 
 const HeaderWrapper = styled(motion.div)`
@@ -39,39 +39,34 @@ export default function SkillPage() {
 
 
     return (
-        <Wrapper id="skillPage" theme={theme} container direction="row"
-            justify="center"
-            alignItems="center"  >
-            <Grid container item xs={12}
-                direction="row"
+        <Wrapper id="skillPage" theme={theme} maxWidth={false} >
+            <Grid container
+                xs={12}
+                direction="column"
                 justify="center"
                 alignItems="center"
             >
-
                 <Header theme={theme} >Skills</Header>
+                <Grid container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+
+                    spacing={1}
+                >
+                    <Grid container item xs={12} lg={6} direction="column"
+                        justify="center"
+                        alignItems="center" >
+                        <SkillLeft />
+
+                    </Grid>
+                    <Grid container item xs={12} lg={6} direction="column"
+                        justify="center"
+                        alignItems="center" >
+                        <AllSkills />
+                    </Grid>
+                </Grid>
             </Grid>
-
-
-
-            {/* <Grid container item xs={12}
-                direction="row"
-                justify="center"
-                alignItems="center"
-            > */}
-
-                <Grid container item xs={12} lg={6} direction="column"
-                    justify="center"
-                    alignItems="center" >
-                    <SkillLeft />
-
-                </Grid>
-                <Grid container item xs={12} lg={6} direction="column"
-                    justify="center"
-                    alignItems="center" >
-                    {/* <Title theme={theme} >Knowledge Table</Title> */}
-                    <AllSkills />
-                </Grid>
-            {/* </Grid> */}
         </Wrapper>
     )
 }

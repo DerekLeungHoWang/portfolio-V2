@@ -28,8 +28,8 @@ export const data = [
     {
         "id": 2,
         "end":"Frontend",
-        "title": "Practising D3.js Charts including world map, slider, pie charts and more.",
-        "description": "Charts made with D3.js and React.js",
+        "title": "D3.js charts",
+        "description": "Practising D3.js Charts including world map, slider, pie charts and more.",
         "youtube_link": "#",
         "actual_link": "https://derek-d3-viz.netlify.app/",
         "github_link": "https://github.com/DerekLeungHoWang/world-data",

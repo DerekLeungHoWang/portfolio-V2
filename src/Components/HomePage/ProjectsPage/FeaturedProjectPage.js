@@ -12,11 +12,11 @@ import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
 
 const MyContainer = styled(Container)`
-    min-height: 60vh;
+     
     height: auto;
     width: 100%;
-   background-color: ${props => props.theme.palette.primary.background};
-   //background-color: green;
+    background-color: ${props => props.theme.palette.primary.background};
+  
 `;
 
 
@@ -41,15 +41,15 @@ export default function FeaturedProjectPage(props) {
     }, [inView]);
 
     return (
-        <MyContainer theme={theme} maxWidth={false}> 
+        <MyContainer theme={theme} maxWidth={false} > 
             <Grid container 
                 direction="column"
                 justify="center"
                 alignItems="center"
-            
+               
             >
-                <Title theme={theme} >Featured</Title>
-                <FeaturedProjects />
+                <Title theme={theme} style={{marginBottom:"90px",fontSize:"40px"}} >Featured</Title>
+                <FeaturedProjects  />
             </Grid>
         </MyContainer>
     )

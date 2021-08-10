@@ -18,6 +18,7 @@ const Wrapper = styled(Container)`
 `;
 const Title = styled(motion.h1)`
     color:${props => props.theme.palette.primary.main};
+    font-size: 40px;
 `
 
 
@@ -44,8 +45,9 @@ export default function ProjectsPage(props) {
                 justify="center"
                 alignItems="center"
             >
-
-                <Title theme={theme} >More Projects</Title>
+               
+                    <Title theme={theme} style={{ marginBottom: "90px" }} >More Projects</Title>
+              
                 <ProjectArchive />
             </Grid>
         </Wrapper>

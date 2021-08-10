@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 
         width: "400px",
         height: "300px",
-    
+
         borderRadius: "5px",
         background: "#283042",
         color: "white",
@@ -47,7 +47,9 @@ const useStyles = makeStyles({
 
         zIndex: 5,
         fontWeight: 400,
-        textTransform: 'none'
+        textTransform: 'none',
+      
+
     }
 });
 
@@ -168,7 +170,7 @@ export default function ProjectArchive(props) {
 
                                     <DetailButton
                                         onClick={() => handleClick(project.id)}
-                                        size="large"
+                                       // size="large"
                                         color="primary"
                                         variant="outlined"
                                         className={classes.styledButton} >Detail</DetailButton>
