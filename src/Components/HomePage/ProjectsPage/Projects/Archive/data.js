@@ -34,7 +34,7 @@ export const data = [
         "actual_link": "https://derek-d3-viz.netlify.app/",
         "github_link": "https://github.com/DerekLeungHoWang/world-data",
         "tag1": "React",
-        "tag2": "Spring Boot",
+        //"tag2": "Spring Boot",
         "img": d31_1
         
     },
@@ -57,7 +57,7 @@ export const data = [
         "youtube_link": "https://www.youtube.com/watch?v=a8TDzTMr1y8",
          "github_link": "https://github.com/DerekLeungHoWang/Credit-Card-Framer-Motion",
         "tag1": "React",
-        "tag2": "Spring Boot",
+        //"tag2": "Spring Boot",
         "img": creditCard1_1
     },
     {
@@ -68,7 +68,7 @@ export const data = [
         "youtube_link": "https://www.youtube.com/watch?v=YYOj_cLzyH8",
         "github_link": "https://github.com/DerekLeungHoWang/framer-motion-playground",
         "tag1": "React",
-        "tag2": "Spring Boot",
+        //"tag2": "Spring Boot",
         "img": lol1_1
     },
     {
@@ -79,7 +79,7 @@ export const data = [
          "actual_link": "https://derekleunghowang.github.io/personalPage/",
         "github_link": "https://github.com/DerekLeungHoWang/personalPage",
         "tag1": "React",
-        "tag2": "Spring Boot",
+        //"tag2": "Spring Boot",
         "img": image2
     }
     ,

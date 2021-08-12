@@ -29,13 +29,18 @@ const useStyles = makeStyles({
         '&>*': {
             margin: "10px 0px"
         },
+        
 
     },
     title: {
         position: "absolute",
         top: "0px",
         left: "65%",
-        color: "#fff"
+        color: "#fff",
+        ["@media (max-width:1280px)"]: {
+            display:"none"
+         
+        }
 
     }
     ,

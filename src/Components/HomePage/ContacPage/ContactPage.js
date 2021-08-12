@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
-import { Grid, useTheme } from '@material-ui/core';
+import { Container, Grid, useTheme } from '@material-ui/core';
 import { ContactForm } from './ContactForm';
 
 
-const Wrapper = styled(Grid)`
+const Wrapper = styled(Container)`
 margin-top: 90px;
 height: auto;
 width: 100vw;
