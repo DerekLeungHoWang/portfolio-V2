@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
-import { Container, Grid, useTheme } from '@material-ui/core';
+import { Container, Grid, useTheme,Button } from '@material-ui/core';
 import { ContactForm } from './ContactForm';
 
 
@@ -32,9 +32,12 @@ export default function ContactPage() {
                 alignItems="center"
             >
      
-                <Title theme={theme} >Contact</Title>
+                {/* <Title theme={theme} >Contact</Title>
 
-                <ContactForm />
+                <ContactForm /> */}
+                  <a href="mailTo:hkz88i00123@gmail.com"> 
+                <Button color="secondary" variant="contained" >Contact Me</Button>
+                </a>
             </Grid>
         </Wrapper>
     )

@@ -51,9 +51,9 @@ function ProjectDetail({ match }) {
 
 
     useEffect(() => {
-
+         
         data.forEach((d) => {
-
+           
             if (d.id === parseInt(projectId)) {
                 const img = new Image()
                 img.src = d.img
@@ -61,6 +61,7 @@ function ProjectDetail({ match }) {
                 img.onload = () => {
                     setLoaded(true)
                 };
+                
             }
 
 

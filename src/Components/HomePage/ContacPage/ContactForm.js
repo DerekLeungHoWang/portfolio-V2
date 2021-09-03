@@ -8,7 +8,7 @@ import { useFormControls } from "./ContactFormControls";
 const inputFieldValues = [
     {
         name: "fullName",
-        label: "Full Name",
+        label: "Name",
         id: "my-name"
     },
     {
@@ -25,55 +25,55 @@ const inputFieldValues = [
     }
 ];
 const useStyles = makeStyles(theme => ({
-    textField: {
-        width: '90%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        paddingBottom: 0,
-        marginTop: 0,
-        fontWeight: 500,
-        color: 'white !important'
-    },
+    // textField: {
+    //     width: '90%',
+    //     marginLeft: 'auto',
+    //     marginRight: 'auto',
+    //     paddingBottom: 0,
+    //     marginTop: 0,
+    //     fontWeight: 500,
+    //     color: 'white !important'
+    // },
 
 
-    cssLabel: {
-        color: `${theme.palette.primary.main} !important`
-    },
-    input: {
-        color: `${theme.palette.primary.main} !important`,
-        '&:-webkit-autofill': {
-            WebkitBoxShadow: `0 0 0 100px ${theme.palette.primary.paper} inset`,
-            WebkitTextFillColor: `${theme.palette.primary.main}`,
+    // cssLabel: {
+    //     color: `${theme.palette.primary.main} !important`
+    // },
+    // input: {
+    //     color: `${theme.palette.primary.main} !important`,
+    //     '&:-webkit-autofill': {
+    //         WebkitBoxShadow: `0 0 0 100px ${theme.palette.primary.paper} inset`,
+    //         WebkitTextFillColor: `${theme.palette.primary.main}`,
 
-        },
+    //     },
 
 
-    },
-    underline: {
-        '&:before': {
-            borderBottom: `1px solid ${theme.palette.primary.main}`
-        },
-        '&:after': {
-            borderBottom: `2px solid ${theme.palette.primary.main}`
-        },
-        '&:hover:not($disabled):not($focused):not($error):after': {
-            borderBottom: `1px solid ${theme.palette.primary.main}`
-        },
-        '&:hover:not($disabled):not($focused):not($error)': {
-            borderBottom: `1px solid ${theme.palette.primary.main}`
-        },
-    },
-    cssFocused: {},
+    // },
+    // underline: {
+    //     '&:before': {
+    //         borderBottom: `1px solid ${theme.palette.primary.main}`
+    //     },
+    //     '&:after': {
+    //         borderBottom: `2px solid ${theme.palette.primary.main}`
+    //     },
+    //     '&:hover:not($disabled):not($focused):not($error):after': {
+    //         borderBottom: `1px solid ${theme.palette.primary.main}`
+    //     },
+    //     '&:hover:not($disabled):not($focused):not($error)': {
+    //         borderBottom: `1px solid ${theme.palette.primary.main}`
+    //     },
+    // },
+    // cssFocused: {},
 
-    notchedOutline: {
+    // notchedOutline: {
 
-        borderColor: `${theme.palette.primary.main} !important`
-    },
-    paper: {
-        background: `${theme.palette.primary.paper} !important`,
-        padding:"50px 20px"
+    //     borderColor: `${theme.palette.primary.main} !important`
+    // },
+    // paper: {
+    //     background: `${theme.palette.primary.paper} !important`,
+    //     padding:"50px 20px"
         
-    },
+    // },
 
 }));
 
@@ -96,9 +96,9 @@ export const ContactForm = () => {
             ref={ref}
         // className={classes.multilineColor}
         >
-            <Paper component={motion.div} initial="hidden"
+            {/* <Paper component={motion.div} initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                variants={containerVariants} className={classes.paper}  >
+                variants={containerVariants} className={classes.paper}  > */}
                 <Grid container spacing={3} direction="row"
                     justify="center"
                     alignItems="center">
@@ -109,7 +109,8 @@ export const ContactForm = () => {
                                 justify="center"
                                 alignItems="center">
                                 <TextField
-                                    // variant="outlined"
+                                    
+                                    variant="outlined"
                                     key={index}
                                     // initial="hidden"
                                     // animate={inView?"visible":"hidden"}
@@ -128,25 +129,25 @@ export const ContactForm = () => {
                                         error: true,
                                         helperText: errors[inputFieldValue.name]
                                     })}
-                                    InputLabelProps={{
-                                        classes: {
-                                            root: classes.cssLabel,
-                                            focused: classes.cssFocused,
-                                        },
-                                    }}
-                                    InputProps={{
-                                        classes: {
-                                            root: classes.cssOutlinedInput,
-                                            // focused: classes.cssFocused,
-                                            // notchedOutline: classes.notchedOutline,
-                                            input: classes.input,
-                                            underline: classes.underline
-                                            // cssLabel: classes.cssLabel
-                                        },
+                                    // InputLabelProps={{
+                                    //     classes: {
+                                    //         root: classes.cssLabel,
+                                    //         focused: classes.cssFocused,
+                                    //     },
+                                    // }}
+                                    // InputProps={{
+                                    //     classes: {
+                                    //         root: classes.cssOutlinedInput,
+                                    //         // focused: classes.cssFocused,
+                                    //         // notchedOutline: classes.notchedOutline,
+                                    //         input: classes.input,
+                                    //         underline: classes.underline
+                                    //         // cssLabel: classes.cssLabel
+                                    //     },
 
 
-                                    }}
-                                    className={classes.textField}
+                                    // }}
+                                  //  className={classes.textField}
 
                                 />
                             </Grid>
@@ -162,7 +163,7 @@ export const ContactForm = () => {
                         Send Message
                      </Button>
                 </Grid>
-            </Paper>
+            {/* </Paper> */}
         </form>
     );
 };

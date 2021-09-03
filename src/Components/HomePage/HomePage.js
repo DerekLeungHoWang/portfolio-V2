@@ -14,9 +14,7 @@ import FeaturedProjects from './ProjectsPage/Projects/Featured/FeaturedProjects'
 import FeaturedProjectPage from './ProjectsPage/FeaturedProjectPage';
 const useStyles = makeStyles((theme) => ({
     root: {
-        // flexGrow: 1,
-       backgroundColor:'#0a192f'
-
+       backgroundColor:theme.palette.primary.background
     },
     // paper: {
     //     padding: theme.spacing(1),

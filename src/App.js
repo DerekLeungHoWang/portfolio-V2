@@ -32,7 +32,7 @@ function App(props) {
       primary: {
         main: '#2FA687',
         secondary: "#F3EADA",
-        background: '#0a192f',
+        background: '#000',
         frontend: '#A4C3A9',
         backend: "#82AB9B",
         deployment: "#65928D",
@@ -40,6 +40,9 @@ function App(props) {
         others: "#3C606C",
         paper: "#283042"
       },
+      secondary:{
+        main:'#2FA687'
+      }
 
     }
   })
