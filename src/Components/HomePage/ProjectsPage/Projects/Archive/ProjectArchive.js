@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) =>({
     cardContainer: {
         width: '100%'
     },
@@ -29,9 +29,9 @@ const useStyles = makeStyles({
         width: "400px",
         height: "300px",
         position: 'relative',
-        borderRadius: "5px",
-        background: "#283042",
-        color: "white",
+        borderRadius: "12px",
+        background: theme.palette.primary.background,
+        color: theme.palette.primary.main,
 
 
     },
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
 
 
     }
-});
+}));
 
 const FolderIcon = styled(FontAwesomeIcon)`
      
@@ -65,7 +65,7 @@ const Title = styled.h1`
      top: 80px;
      left: 45px;
     font-size: 25px;
-     
+     color:${props=>props.theme.palette.primary.main}
 `
 const Description = styled.p`
      
@@ -165,7 +165,7 @@ export default function ProjectArchive(props) {
                             >
                                 <CardContent >
                                     <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
-                                    <Title  >
+                                    <Title theme={theme} >
                                         {project.title}
                                     </Title>
 

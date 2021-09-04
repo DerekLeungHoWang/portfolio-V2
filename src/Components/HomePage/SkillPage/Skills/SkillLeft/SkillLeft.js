@@ -42,18 +42,19 @@ const Title = styled(motion.h2)`
 /* margin-top: 30px;
 margin-bottom: 30px; */
 margin-left: 10px;
+color:${props=>props.theme.palette.primary.main};
 `
 const Description = styled(motion.p)`
-   color: #9d9ca1;
-   font-size: 20px;
+ color:${props=>props.theme.palette.primary.main};
+   font-size: 16px;
    line-height: 28px;
 
 `
 
 const Divider = styled(motion.div)`
-   border-bottom: 1px solid white;
+   border-bottom: ${props=> `1px solid ${props.theme.palette.primary.main}`};
     border-radius: 100%;
- 
+    
     &:last-child{
         margin: 25px 25px; 
     }
@@ -66,6 +67,7 @@ const HighlightText = styled(motion.span)`
 
 const Icon = styled(FontAwesomeIcon)`
     font-size: 20px;
+    color:${props=>props.theme.palette.primary.main};
 `
 export default function SkillLeft() {
     const theme = useTheme();
@@ -85,17 +87,17 @@ export default function SkillLeft() {
 
                         return ((
                             <Wrapper key={i} >
-                                <Divider />
+                                <Divider theme={theme}/>
                                 <Grid item container direction="row"
 
                                     alignItems="center">
-                                    <Icon icon={icons[i]} />
-                                    <Title>
+                                    <Icon icon={icons[i]} theme={theme} />
+                                    <Title theme={theme}>
                                         {item.title}
                                     </Title>
 
                                 </Grid>
-                                <Description>
+                                <Description theme={theme}>
                                     <span>{item.description1}</span>
                                     <HighlightText theme={theme}  >{item.highlightText}</HighlightText>
                                     <span>{item.description2}</span>
@@ -104,7 +106,7 @@ export default function SkillLeft() {
 
                         ))
                     })}
-                    <Divider />
+                    <Divider theme={theme} />
                 </motion.div>
             </Grid>
 

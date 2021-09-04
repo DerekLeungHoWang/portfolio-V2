@@ -8,7 +8,7 @@ import StyledButton from '../../Common/StyledButton/StyledButton';
 import { useSelector } from 'react-redux';
 import { blue, pink } from '@material-ui/core/colors';
 import Pdf from '../../Common/PDF/resume.pdf'
-
+import { ReactComponent as GoodTeamSVG } from '../../Common/Images/goodTeam.svg';
 
 const Title = () => {
     const line1 = "I am Derek Leung,  "
@@ -26,7 +26,7 @@ const Title = () => {
                 <motion.span
                     key={`${char}-${index}`}
                     variants={letter}
-                    style={{ color: "white" }}
+
                 >
                     {char}
                 </motion.span>
@@ -76,7 +76,7 @@ const letter = {
 
 
 const Wrapper = styled(Grid)`
-    color: white;
+
     height: 100vh;
     width: 100vw;
     background-color: ${props => props.theme.palette.primary.background};
@@ -106,29 +106,49 @@ export default function CoverPage() {
 
         >
             <Container item >
-                <SayHi theme={theme}
-                    initial="hidden"
-                    animate="visible"
-                    variants={sayHi}>Hi There,</SayHi>
-                <MyTitle />
-                <a href={Pdf} target="_blank">
-                    <Button
+                <Grid container direction="row" justify="center">
+                    <Grid container item lg={4} alignItems="center">
+                        <div>
+                            <SayHi theme={theme}
+                                initial="hidden"
+                                animate="visible"
+                                variants={sayHi}>Hi There,</SayHi>
+                            <MyTitle theme={theme} />
+                            <a href={Pdf} target="_blank">
+                                <Button
 
-                        size="large"
-                        component={motion.div}
-                        variant="outlined"
-                        color="primary"
-                        ref={ref}
-                        // initial="hidden"
-                        // variants={talkBtnVariants}
-                        animate={talkBtn}
+                                    size="large"
+                                    component={motion.div}
+                                    variant="contained"
+                                    color="primary"
+                                    ref={ref}
+                                    // initial="hidden"
+                                    // variants={talkBtnVariants}
+                                    animate={talkBtn}
+                                    style={{marginRight:"15px"}}
+                                >
+                                    Know More
+                                </Button>
+                                <Button
 
-                    >
-                        Resume
-
-
-
-                </Button></a>
+                                    size="large"
+                                    component={motion.div}
+                                    variant="outlined"
+                                    color="primary"
+                                    ref={ref}
+                                    // initial="hidden"
+                                    // variants={talkBtnVariants}
+                                    animate={talkBtn}
+                                >
+                                    Resume
+                                </Button>
+                            </a>
+                        </div>
+                    </Grid>
+                    <Grid container item lg={4}>
+                        <GoodTeamSVG style={{ maxHeight: "500px" }} />
+                    </Grid>
+                </Grid>
             </Container>
 
         </Wrapper>
@@ -142,12 +162,12 @@ const Container = styled(Grid)`
    
 `
 const MyTitle = styled(Title)`
-  
+      color:  ${props => props.theme.palette.primary.main};
   
    
 `
-const SayHi = styled(motion.h4)`
-    color: ${props => props.theme.palette.primary.main};
+const SayHi = styled(motion.h3)`
+    color: ${props => props.theme.palette.primary.green};
    
 `
 const sayHi = {
@@ -168,5 +188,5 @@ const Heading = styled(motion.h2)`
     font-family:  sans-serif;
     color:white;
     font-size: 52px;
- 
+    color:black;
 `

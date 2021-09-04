@@ -4,6 +4,7 @@ import { motion, useCycle } from "framer-motion";
 
 import { MenuToggle } from './MenuToggle';
 import { Navigation } from './Navigation';
+import { useTheme } from '@material-ui/core';
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 80% 40px)`,
@@ -38,23 +39,22 @@ const Background = styled(motion.div)`
   min-width: 100px;
   max-width: 300px;
   width: 100%;
-  background: #005750;
-
+  background: ${props=>props.theme.palette.primary.main}
 `
 function RightNav(props) {
   const [isOpen, toggleOpen] = useCycle(false, true);
-
+  const theme = useTheme();
   return (
     <MyNav
 
       initial={false}
       animate={isOpen ? "open" : "closed"}
     >
-      <Background  variants={sidebar} />
+      <Background variants={sidebar} theme={theme} />
 
-      <Navigation isOpen={isOpen} toggleOpen={toggleOpen}/>
+      <Navigation isOpen={isOpen} toggleOpen={toggleOpen} />
       <MenuToggle toggle={() => toggleOpen()} />
-    
+
     </MyNav>
   )
 }

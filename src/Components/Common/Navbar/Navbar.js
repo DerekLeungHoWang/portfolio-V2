@@ -21,11 +21,12 @@ const Wrapper = styled(motion.div)`
 const Logo = styled(motion.h1)`
     margin-left: 35px;
     margin-top: 35px;
+    color:${props=>props.theme.palette.primary.main};
 `;
 
 const NavLink = styled(Link)`
     text-decoration: none;
-    color: ${props => props.color};
+    color:${props=>props.theme.palette.primary.main};
 `;
 export default function Navbar() {
     
@@ -34,7 +35,7 @@ export default function Navbar() {
     return (
      
             <Wrapper id="navBar" theme={theme}>
-                <Logo >DEREK</Logo>
+                <Logo theme={theme} >DEREK</Logo>
                
                 <RightNav/> 
 

@@ -30,14 +30,15 @@ function App(props) {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: '#2FA687',
+        main: '#000',
         secondary: "#F3EADA",
-        background: '#000',
-        frontend: '#A4C3A9',
-        backend: "#82AB9B",
-        deployment: "#65928D",
-        testing: "#4E797E",
-        others: "#3C606C",
+        green:"#00BFA6",
+        background: '#fff',
+        frontend: '#264653',
+        backend: "#2a9d8f",
+        deployment: "#e9c46a",
+        testing: "#f4a261",
+        others: "#e76f51",
         paper: "#283042"
       },
       secondary:{
