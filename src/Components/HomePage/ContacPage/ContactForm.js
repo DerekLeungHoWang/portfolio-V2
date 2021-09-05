@@ -1,19 +1,21 @@
-import { Button, Grid, makeStyles, Paper, TextField } from "@material-ui/core";
+import { Button, CircularProgress, Grid, makeStyles, Paper, Snackbar, TextField } from "@material-ui/core";
+import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { useFormControls } from "./ContactFormControls";
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 const inputFieldValues = [
     {
-        name: "fullName",
-        label: "Name",
+        name: "email",
+        label: "Email",
         id: "my-name"
     },
     {
-        name: "email",
-        label: "Email",
+        name: "title",
+        label: "Title",
         id: "my-email"
     },
     {
@@ -72,7 +74,7 @@ const useStyles = makeStyles(theme => ({
     // paper: {
     //     background: `${theme.palette.primary.paper} !important`,
     //     padding:"50px 20px"
-        
+
     // },
 
 }));
@@ -80,6 +82,9 @@ const useStyles = makeStyles(theme => ({
 export const ContactForm = () => {
 
     const {
+        sending,
+        values,
+        setValues,
         handleInputValue,
         handleFormSubmit,
         formIsValid,
@@ -90,80 +95,67 @@ export const ContactForm = () => {
     const [ref, inView, entry] = useInView({ threshold: 0.1 });
 
 
+    const handleClose = () => {
+        setValues(state => ({ ...state, formSubmitted: false }))
+    }
+
     return (
         <form as={motion.div} autoComplete="off" onSubmit={handleFormSubmit}
 
             ref={ref}
         // className={classes.multilineColor}
         >
-            {/* <Paper component={motion.div} initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={containerVariants} className={classes.paper}  > */}
-                <Grid container spacing={3} direction="row"
-                    justify="center"
-                    alignItems="center">
-                    {inputFieldValues.map((inputFieldValue, index) => {
-                        return (
+            <Grid container direction="row"
+                justify="center"
+                alignItems="center">
+                {inputFieldValues.map((inputFieldValue, index) => {
+                    return (
+                        <TextField
+                            margin="normal"
+                            variant="outlined"
+                            key={index}
+                            value={values[`${inputFieldValue.name}`]}
+                            // initial="hidden"
+                            // animate={inView?"visible":"hidden"}
+                            variants={textFieldVariants}
+                            component={motion.div}
+                            onChange={handleInputValue}
+                            onBlur={handleInputValue}
+                            name={inputFieldValue.name}
+                            label={inputFieldValue.label}
+                            error={errors[inputFieldValue.name]}
+                            multiline={inputFieldValue.multiline ?? false}
+                            fullWidth
+                            rows={inputFieldValue.rows ?? 1}
+                            autoComplete="none"
+                            {...(errors[inputFieldValue.name] && {
+                                error: true,
+                                helperText: errors[inputFieldValue.name]
+                            })}
+                        />
+                    );
+                })}
 
-                            <Grid key={index} container item xs={12} direction="column"
-                                justify="center"
-                                alignItems="center">
-                                <TextField
-                                    
-                                    variant="outlined"
-                                    key={index}
-                                    // initial="hidden"
-                                    // animate={inView?"visible":"hidden"}
-                                    variants={textFieldVariants}
-                                    component={motion.div}
-                                    onChange={handleInputValue}
-                                    onBlur={handleInputValue}
-                                    name={inputFieldValue.name}
-                                    label={inputFieldValue.label}
-                                    error={errors[inputFieldValue.name]}
-                                    multiline={inputFieldValue.multiline ?? false}
-                                    fullWidth
-                                    rows={inputFieldValue.rows ?? 1}
-                                    autoComplete="none"
-                                    {...(errors[inputFieldValue.name] && {
-                                        error: true,
-                                        helperText: errors[inputFieldValue.name]
-                                    })}
-                                    // InputLabelProps={{
-                                    //     classes: {
-                                    //         root: classes.cssLabel,
-                                    //         focused: classes.cssFocused,
-                                    //     },
-                                    // }}
-                                    // InputProps={{
-                                    //     classes: {
-                                    //         root: classes.cssOutlinedInput,
-                                    //         // focused: classes.cssFocused,
-                                    //         // notchedOutline: classes.notchedOutline,
-                                    //         input: classes.input,
-                                    //         underline: classes.underline
-                                    //         // cssLabel: classes.cssLabel
-                                    //     },
-
-
-                                    // }}
-                                  //  className={classes.textField}
-
-                                />
-                            </Grid>
-                        );
-                    })}
-                    <Button
-                        style={{ margin: "20px 0px" }}
-                        variant="contained"
-                        type="submit"
-                        color="primary"
-                        disabled={false}
-                    >
-                        Send Message
-                     </Button>
-                </Grid>
-            {/* </Paper> */}
+                <Button
+                    size="large"
+                    style={{ margin: "20px 0px" }}
+                    variant="contained"
+                    type="submit"
+                    color="primary"
+                    disabled={false}
+                    type="submit"
+                    disabled={sending}
+                >
+                    {sending && <CircularProgress
+                        size={18} style={{ marginRight: "10px", color: "white" }} />}
+                    Send Message
+                </Button>
+            </Grid>
+            <Snackbar open={values.formSubmitted} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success">
+                    The message has been sent successfully !
+                </Alert>
+            </Snackbar>
         </form>
     );
 };

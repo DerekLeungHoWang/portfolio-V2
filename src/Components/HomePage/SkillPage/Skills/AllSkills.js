@@ -43,7 +43,7 @@ function AllSkills({ delayPerPixel = 0.0008 }) {
         }
 
         if (item.id == 25) {
-            return (<span style={{ width: "65px", wordWrap: "break-word" }}>
+            return (<span style={{ width: "65px", wordWrap: "break-word", fontWeight: "900" }}>
                 {animate ? "Hide" : "Show"}
             </span>)
         }
@@ -178,12 +178,21 @@ const Box = styled(Button)`
   cursor: pointer;
   text-align: center;
   font-size: 11px;
-  
+  border:${({ skill }) => {
+        skill = skill.toLowerCase()
+        switch (skill) {
+            case "center":
+                return "2px solid red"
+            default:
+                return ;
+        }
+
+    }};
   color:${({ skill }) => {
         skill = skill.toLowerCase()
         switch (skill) {
             case "center":
-                return "red"
+                return "#d46e6e"
             case "react":
                 return "#0af2bc"
             case "spring boot":
@@ -199,7 +208,7 @@ const Box = styled(Button)`
   background:${({ category, theme }) => {
         switch (category) {
             case "center":
-                return "white"
+                return "black"
             case "frontend":
                 return theme.palette.primary.frontend
             case "backend":
@@ -213,10 +222,28 @@ const Box = styled(Button)`
             default:
                 return null;
         }
-
-
-
     }};
+    &:hover{
+       
+        background:${({ category, theme }) => {
+        switch (category) {
+            case "center":
+                return "black"
+            case "frontend":
+                return theme.palette.primary.frontend
+            case "backend":
+                return theme.palette.primary.backend
+            case "deployment":
+                return theme.palette.primary.deployment
+            case "testing":
+                return theme.palette.primary.testing
+            case "others":
+                return theme.palette.primary.others
+            default:
+                return null;
+        }
+    }};
+    }
 `;
 
 export default AllSkills;

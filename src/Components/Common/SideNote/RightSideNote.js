@@ -1,18 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { useTheme } from '@material-ui/core'
 
 
 export default function RightSideNote() {
+    const theme = useTheme();
     return (
-        <Wrapper>
-            <a href="mailTo:hkz88i00123@gmail.com"> <Email>hkz88i00123@gmail.com</Email></a>
+        <Wrapper >
+            <a href="mailTo:hkz88i00123@gmail.com"> <Email theme={theme}>hkz88i00123@gmail.com</Email></a>
             <Line />
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
+
    
    @media (max-width: 768px) {
     display: none;
@@ -23,16 +25,16 @@ const Wrapper = styled.div`
 
 
 const Email = styled.div`
+
     position:fixed;
-    color:white;
+    color:${props => props.theme.palette.primary.main};
     height: 150px;
     bottom: 144px;
     right:48px;
     transform:rotate(90deg);
-    color:#a8b2d1 ;
     font-size: 14px;
     &:hover{
-        color: white;
+        color:${props => props.theme.palette.primary.main};
         transition: all .5s ease-in-out;
     }
     

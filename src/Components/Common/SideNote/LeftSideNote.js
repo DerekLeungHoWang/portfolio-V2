@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Grid, useTheme } from '@material-ui/core';
 import React from 'react'
 import styled from 'styled-components'
 import { ReactComponent as Leetcode } from '../../Common/Images/leetcode.svg';
@@ -7,18 +7,20 @@ import { ReactComponent as Linkedin } from '../../Common/Images/linkedin.svg';
 import { motion } from 'framer-motion';
 
 const IconWrapper = styled(motion.div)`
-        
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        
+      
+        stroke:${props => props.theme.palette.primary.main};
+      
 
 `
 export default function LeftSideNote() {
+    const theme = useTheme()
     return (
         <Wrapper>
             <Media>
-                <IconWrapper>
+                <IconWrapper theme={theme}>
                     <a href="https://github.com/DerekLeungHoWang/portfolio-V2" target="_blank">     <Github style={{ transform: "rotate(-90deg)" }} /></a>
                     <a href="https://leetcode.com/poiuz88i/" target="_blank"> <Leetcode style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>
                     <a href="https://www.linkedin.com/in/derek-leung-7b7388122/" target="_blank">     <Linkedin style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>

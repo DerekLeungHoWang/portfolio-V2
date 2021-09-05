@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import ProjectArchive from './Projects/Archive/ProjectArchive';
 import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
+import PageHeader from '../../Common/PageHeader/PageHeader';
 
 const MyContainer = styled(Container)`
      
@@ -48,7 +49,7 @@ export default function FeaturedProjectPage(props) {
                 alignItems="center"
                
             >
-                <Title theme={theme} style={{marginBottom:"90px",fontSize:"40px"}} >Featured</Title>
+                <PageHeader  >Featured</PageHeader>
                 <FeaturedProjects  />
             </Grid>
         </MyContainer>

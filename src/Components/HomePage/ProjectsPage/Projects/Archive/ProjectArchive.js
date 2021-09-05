@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { data } from './data'
-import { Container, Grid } from '@material-ui/core';
+import { Box, Container, Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen as faFolderOpen } from '@fortawesome/free-regular-svg-icons'
 
@@ -16,13 +16,15 @@ import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) =>({
+const useStyles = makeStyles((theme) => ({
     cardContainer: {
-        width: '100%'
+        width: '100%',
+
     },
     cardWrapper: {
         position: "relative",
-        marginBottom: "5px"
+        marginBottom: "25px",
+
     },
     card: {
 
@@ -58,14 +60,14 @@ const FolderIcon = styled(FontAwesomeIcon)`
         position:"absolute";
         top: 0;
         font-size: 45px;
-        color:${props => props.theme.palette.primary.main};
+        color:#cfcfcf;
 `
-const Title = styled.h1`
+const Title = styled.p`
     
      top: 80px;
      left: 45px;
     font-size: 25px;
-     color:${props=>props.theme.palette.primary.main}
+     color:${props => props.theme.palette.primary.main};
 `
 const Description = styled.p`
      
@@ -160,32 +162,34 @@ export default function ProjectArchive(props) {
                             className={classes.cardWrapper}
 
                         >
-                            <Card variant="outlined" key={project.title}
-                                className={classes.card}
-                            >
-                                <CardContent >
-                                    <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
-                                    <Title theme={theme} >
-                                        {project.title}
-                                    </Title>
+                            <Box boxShadow={3} style={{ borderRadius: "12px",}}>
+                                <Card variant="outlined" key={project.title}
+                                    className={classes.card}
+                                >
+                                    <CardContent >
+                                        <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
+                                        <Title theme={theme} >
+                                            {project.title}
+                                        </Title>
 
-                                    <DetailButton
-                                        onClick={() => handleClick(project.id)}
-                                        // size="large"
-                                        color="primary"
-                                        variant="outlined"
-                                        className={classes.styledButton} >Detail</DetailButton>
+                                        <DetailButton
+                                            onClick={() => handleClick(project.id)}
+                                            // size="large"
+                                            color="primary"
+                                            variant="outlined"
+                                            className={classes.styledButton} >Detail</DetailButton>
 
-                                    <Description >
-                                        {project.description}
-                                    </Description>
-                                    <FrameWork  >
-                                        <span>{project.tag1} </span>
-                                        <span>  {project.tag2 ?? null} </span>
-                                        <span>  {project.tag3 ?? null} </span>
-                                    </FrameWork>
-                                </CardContent>
-                            </Card>
+                                        <Description >
+                                            {project.description}
+                                        </Description>
+                                        <FrameWork  >
+                                            <span>{project.tag1} </span>
+                                            <span>  {project.tag2 ?? null} </span>
+                                            <span>  {project.tag3 ?? null} </span>
+                                        </FrameWork>
+                                    </CardContent>
+                                </Card>
+                            </Box>
                         </Grid>
                     )
                 }

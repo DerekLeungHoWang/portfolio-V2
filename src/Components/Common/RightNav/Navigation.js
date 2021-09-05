@@ -16,16 +16,15 @@ const MyList = styled(motion.ul)`
   right: 0px;
   top: 95px;
   width: 300px;
-
-    padding:0px;
+  padding:0px;
   
 `
 export const Navigation = (props) => {
-  const {isOpen,toggleOpen} = props
+  const { isOpen, toggleOpen } = props
   return (
     <>
       <MyList variants={variants}>
-        {itemIds.map((text,i)=> (
+        {itemIds.map((text, i) => (
           <MenuItem isOpen={isOpen} toggleOpen={toggleOpen} text={text} key={text} />
         ))}
       </MyList>
@@ -41,4 +40,4 @@ export const Navigation = (props) => {
 // </MyList>
 
 
-const itemIds = ["Home","Skills", "Projects", "Contact"];
+const itemIds = ["Home", "Skills", "Projects", "Contact"];

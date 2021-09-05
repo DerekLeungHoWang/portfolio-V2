@@ -3,7 +3,8 @@
   margin: 0;
   min-height: 100vh;
    height: auto;
-    background: #000;
+  
+    background: #fff;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -37,7 +38,7 @@
       height: 100%;
       top: 0;
       right: 0;
-      background-color: #000;
+      background-color: #fff;
     }
     img {
       border-radius: 5px;
@@ -90,7 +91,7 @@
   font-size:3rem;
  font-weight: 600;
   padding: 10px 5px;
-  color: white;
+  color: black;
   font-family: 'B612', sans-serif;
   
   @media (max-width: 768px) {
@@ -100,7 +101,7 @@
 .projectDescription {
   font-size: 1.3rem;
    
-  color: white;
+  color: black;
    max-width: 1200px;
   line-height: 1.5;
   @media (max-width: 768px) {
@@ -125,7 +126,7 @@
   width: 100%;
   height: 100%;
   // background: rgb(65, 62, 85);
-  background: white;
+  background: black;
   padding: inherit;
  
   animation: .75s cubic-bezier(1,-0.01,.12,.8) .75s 1 hideBlack forwards;

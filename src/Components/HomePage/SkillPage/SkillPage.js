@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { Container, Grid, useTheme } from '@material-ui/core';
 import AllSkills from './Skills/AllSkills';
 import SkillLeft from './Skills/SkillLeft/SkillLeft';
+import PageHeader from '../../Common/PageHeader/PageHeader';
 
 const Wrapper = styled(Container)`
 position: relative;
@@ -18,16 +19,22 @@ background-color: ${props => props.theme.palette.primary.background};
 
 const Header = styled(motion.h1)`
   color:${props => props.theme.palette.primary.main};
-    font-size: 40px;
+   font-size: 40px;
   margin-bottom: 90px;
+  position: relative;
+  &:after {
+    margin-top: 5px;
+    position: absolute;
+	content: '';
+	display: block;
+	width: 30%;
+	height: 4px;
+	background-color: #f57542;
+    left: 35%;
+}
 `
 
-const HeaderWrapper = styled(motion.div)`
-     width:100%;
-     align-items: center;
-     justify-content: center;
 
-`
 
 const Title = styled(motion.h1)`
     color:${props => props.theme.palette.primary.other};
@@ -46,7 +53,7 @@ export default function SkillPage() {
                 justify="center"
                 alignItems="center"
             >
-                <Header theme={theme} >Skills</Header>
+                <PageHeader>Skills</PageHeader>
                 <Grid container
                     direction="row"
                     justify="center"

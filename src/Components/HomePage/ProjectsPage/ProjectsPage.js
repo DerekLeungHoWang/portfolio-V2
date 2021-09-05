@@ -9,6 +9,7 @@ import { Container, Grid, useTheme } from '@material-ui/core';
 import ProjectArchive from './Projects/Archive/ProjectArchive';
 import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
+import PageHeader from '../../Common/PageHeader/PageHeader';
 
 const Wrapper = styled(Container)`
     height: auto;
@@ -38,16 +39,16 @@ export default function ProjectsPage(props) {
     }, [inView]);
 
     return (
-        <Wrapper id="projectPage" ref={ref} theme={theme} container>
+        <Wrapper id="projectPage" ref={ref} theme={theme} container style={{maxWidth:"70%"}}>
             <Grid container
                 xs={12}
                 direction="column"
                 justify="center"
                 alignItems="center"
             >
-               
-                    <Title theme={theme} style={{ marginBottom: "90px" }} >More Projects</Title>
-              
+
+                <PageHeader>More Projects</PageHeader>
+
                 <ProjectArchive />
             </Grid>
         </Wrapper>

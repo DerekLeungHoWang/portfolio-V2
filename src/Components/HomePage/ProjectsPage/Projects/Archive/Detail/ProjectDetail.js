@@ -102,14 +102,14 @@ function ProjectDetail({ match }) {
                                 {item.youtube_link && <a href={item.youtube_link} target="_blank">
                                     <Button
                                         className="detail_link_button"
-                                        variant="contained"
+                                        variant="outlined"
                                         size="large"
                                         color="primary" startIcon={<YoutubeSvg />}>Video</Button></a>}
 
                                 {item.actual_link && <a href={item.actual_link} target="_blank">
                                     <Button
                                         className="detail_link_button"
-                                        variant="contained"
+                                        variant="outlined"
                                         size="large"
                                         style={{ marginLeft: "10px", fontWeight: '900' }}
                                         color="primary" startIcon={<DesktopSvg />} >WebSite</Button></a>}
@@ -117,7 +117,7 @@ function ProjectDetail({ match }) {
                                 {item.github_link && <a href={item.github_link} target="_blank">
                                     <Button
                                         className="detail_link_button"
-                                        variant="contained"
+                                        variant="outlined"
                                         style={{ marginLeft: "10px", fontWeight: '900' }}
                                         size="large"
                                         color="primary" startIcon={<GithubSvg />}>Code</Button>
@@ -188,12 +188,12 @@ const YoutubeSvg = styled(YoutubeIcon)`
 const DesktopSvg = styled(DesktopIcon)`
   height:  100%;
   width:20px;
-  fill: white;
+  fill: black;
 `
 const GithubSvg = styled(GithubIcon)`
   height:  100%;
   width:20px;
-  fill: white;
+  fill: black;
  
 `
 

@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
-import { Container, Grid, useTheme,Button } from '@material-ui/core';
+import { Container, Grid, useTheme, Button } from '@material-ui/core';
 import { ContactForm } from './ContactForm';
+import PageHeader from '../../Common/PageHeader/PageHeader';
+import axios from 'axios';
+
 
 
 const Wrapper = styled(Container)`
@@ -23,6 +26,7 @@ const Title = styled(motion.h1)`
 `
 export default function ContactPage() {
     const theme = useTheme();
+  
 
     return (
         <Wrapper theme={theme} container >
@@ -31,13 +35,11 @@ export default function ContactPage() {
                 justify="center"
                 alignItems="center"
             >
-     
-                {/* <Title theme={theme} >Contact</Title>
 
-                <ContactForm /> */}
-                  <a href="mailTo:hkz88i00123@gmail.com"> 
-                <Button color="secondary" variant="contained" >Contact Me</Button>
-                </a>
+                <PageHeader>Contact</PageHeader>
+
+                <ContactForm   />
+
             </Grid>
         </Wrapper>
     )
