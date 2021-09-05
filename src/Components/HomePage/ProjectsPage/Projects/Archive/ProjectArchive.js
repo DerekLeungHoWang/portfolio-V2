@@ -28,8 +28,10 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
 
-        width: "400px",
-        height: "300px",
+        maxWidth: 345,
+        minWidth: 100,
+        height: "100%",
+  
         position: 'relative',
         borderRadius: "12px",
         background: theme.palette.primary.background,
@@ -138,7 +140,7 @@ export default function ProjectArchive(props) {
         <Grid container
             direction="row"
             justify="center"
-            alignItems="center"
+            alignItems="stretch"
             initial="hidden"
             animate={prjPageInview ? "visible" : "hidden"}
             variants={cardWrapper}
@@ -162,7 +164,7 @@ export default function ProjectArchive(props) {
                             className={classes.cardWrapper}
 
                         >
-                            <Box boxShadow={3} style={{ borderRadius: "12px",}}>
+                          
                                 <Card variant="outlined" key={project.title}
                                     className={classes.card}
                                 >
@@ -189,7 +191,7 @@ export default function ProjectArchive(props) {
                                         </FrameWork>
                                     </CardContent>
                                 </Card>
-                            </Box>
+                           
                         </Grid>
                     )
                 }

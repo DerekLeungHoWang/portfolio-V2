@@ -3,12 +3,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
 import styles from './CoverPage.module.css'
 import Button from '@material-ui/core/Button';
-import { Grid, useTheme } from '@material-ui/core';
+import { Container, Grid, useTheme } from '@material-ui/core';
 import StyledButton from '../../Common/StyledButton/StyledButton';
 import { useSelector } from 'react-redux';
 import { blue, pink } from '@material-ui/core/colors';
 import Pdf from '../../Common/PDF/resume.pdf'
 import { ReactComponent as GoodTeamSVG } from '../../Common/Images/goodTeam.svg';
+import Navbar from '../../Common/Navbar/Navbar';
 
 const Title = () => {
     const line1 = "I am Derek Leung,  "
@@ -76,7 +77,6 @@ const letter = {
 
 
 const Wrapper = styled(Grid)`
-
     height: 100vh;
     width: 100vw;
     background-color: ${props => props.theme.palette.primary.background};
@@ -97,70 +97,60 @@ export default function CoverPage() {
 
 
     return (
-        <Wrapper container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            theme={theme}
-            id="coverPage"
 
-        >
-            <Container item >
-                <Grid container direction="row" justify="center">
-                    <Grid container item lg={4} alignItems="center">
-                        <div>
-                            <SayHi theme={theme}
-                                initial="hidden"
-                                animate="visible"
-                                variants={sayHi}>Hi There,</SayHi>
-                            <MyTitle theme={theme} />
-                            <a href={Pdf} target="_blank">
-                                <Button
 
-                                    size="large"
-                                    component={motion.div}
-                                    variant="contained"
-                                    color="primary"
-                                    ref={ref}
-                                    // initial="hidden"
-                                    // variants={talkBtnVariants}
-                                    animate={talkBtn}
-                                    style={{marginRight:"15px"}}
-                                >
-                                    Know More
-                                </Button>
-                                <Button
+        <Container className={styles.coverContainer} >
+            <Grid container direction="row" justify="center" alignItems="center">
+                <Grid container item xs={12} lg={4} alignItems="center" justify="center">
+                    <div>
+                        <SayHi theme={theme}
+                            initial="hidden"
+                            animate="visible"
+                            variants={sayHi}>Hi There,</SayHi>
+                        <MyTitle theme={theme} />
+                        <a href={Pdf} target="_blank">
+                            <Button
+                                size="large"
+                                component={motion.div}
+                                variant="contained"
+                                color="primary"
+                                ref={ref}
+                                // initial="hidden"
+                                // variants={talkBtnVariants}
+                                animate={talkBtn}
+                                style={{ marginRight: "15px" }}
+                            >
+                                Know More
+                            </Button>
+                            <Button
 
-                                    size="large"
-                                    component={motion.div}
-                                    variant="outlined"
-                                    color="primary"
-                                    ref={ref}
-                                    // initial="hidden"
-                                    // variants={talkBtnVariants}
-                                    animate={talkBtn}
-                                >
-                                    Resume
-                                </Button>
-                            </a>
-                        </div>
-                    </Grid>
-                    <Grid container item lg={4}>
-                        <GoodTeamSVG style={{ maxHeight: "500px" }} />
-                    </Grid>
+                                size="large"
+                                component={motion.div}
+                                variant="outlined"
+                                color="primary"
+                                ref={ref}
+                                // initial="hidden"
+                                // variants={talkBtnVariants}
+                                animate={talkBtn}
+                            >
+                                Resume
+                            </Button>
+                        </a>
+                    </div>
                 </Grid>
-            </Container>
+                <Grid container item lg={4} xs={12} justify="center" alignItems="center">
 
-        </Wrapper>
+                    <GoodTeamSVG className={styles.goodTeamSvg} />
+
+                </Grid>
+            </Grid>
+        </Container>
+
+
     )
 }
 
-const Container = styled(Grid)`
- 
-  padding-left: 60px !important;
- 
-   
-`
+
 const MyTitle = styled(Title)`
       color:  ${props => props.theme.palette.primary.main};
   

@@ -12,9 +12,10 @@ import RightSideNote from '../Common/SideNote/RightSideNote';
 import LeftSideNote from '../Common/SideNote/LeftSideNote';
 import FeaturedProjects from './ProjectsPage/Projects/Featured/FeaturedProjects';
 import FeaturedProjectPage from './ProjectsPage/FeaturedProjectPage';
+import Navbar from '../Common/Navbar/Navbar';
 const useStyles = makeStyles((theme) => ({
     root: {
-       backgroundColor:theme.palette.primary.background
+        backgroundColor: theme.palette.primary.background
     },
     // paper: {
     //     padding: theme.spacing(1),
@@ -41,7 +42,9 @@ export default function HomePage({ match }) {
         <Grid container
             className={classes.root}
         >
-            <Grid  container item xs={12}  >
+
+      
+            <Grid container item xs={12}  >
                 <CoverPage />
             </Grid>
             <Grid container item xs={12}  >

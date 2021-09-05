@@ -1,14 +1,30 @@
-.wrapper{
+.wrapper {
     height: 100vh;
     width: 100%;
-  background: red;
- 
-  display: flex;
-  align-content: center;
- justify-content: center;
- color: white;
+    background: red;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: white;
 }
-.t{
+
+.t {
     height: 100%;
     width: 100%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .goodTeamSvg {
+        padding: 50px 0px 5px 5px;
+        height: auto;
+        width: 280px
+    }
+
+    .coverContainer{
+        margin-top: 80px;
+    }
+ 
 }
