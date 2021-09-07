@@ -28,15 +28,16 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
 
-        maxWidth: 345,
+        maxWidth: 400,
         minWidth: 100,
-        height: "100%",
-  
+        minHeight: 320,
         position: 'relative',
         borderRadius: "12px",
         background: theme.palette.primary.background,
         color: theme.palette.primary.main,
-
+        [theme.breakpoints.up(300)]: {
+            minWidth: 300,
+          }
 
     },
     bullet: {
@@ -160,7 +161,7 @@ export default function ProjectArchive(props) {
                             variants={card}
                             component={motion.div}
                             key={`${project.title}-${index}`}
-                            xs={12} md={4} lg={4}
+                            xs={12} sm={12} md={6} lg={4}
                             className={classes.cardWrapper}
 
                         >

@@ -42,7 +42,7 @@ function App(props) {
         paper: "#283042"
       },
       secondary:{
-        main:'#2FA687'
+        main:'#fff'
       }
 
     }

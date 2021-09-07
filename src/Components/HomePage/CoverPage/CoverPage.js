@@ -108,20 +108,21 @@ export default function CoverPage() {
                             animate="visible"
                             variants={sayHi}>Hi There,</SayHi>
                         <MyTitle theme={theme} />
+
+                        <Button
+                            size="large"
+                            component={motion.div}
+                            variant="contained"
+                            color="primary"
+                            ref={ref}
+                            // initial="hidden"
+                            // variants={talkBtnVariants}
+                            animate={talkBtn}
+                            style={{ marginRight: "15px" }}
+                        >
+                            Know More
+                        </Button>
                         <a href={Pdf} target="_blank">
-                            <Button
-                                size="large"
-                                component={motion.div}
-                                variant="contained"
-                                color="primary"
-                                ref={ref}
-                                // initial="hidden"
-                                // variants={talkBtnVariants}
-                                animate={talkBtn}
-                                style={{ marginRight: "15px" }}
-                            >
-                                Know More
-                            </Button>
                             <Button
 
                                 size="large"

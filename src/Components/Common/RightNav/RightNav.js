@@ -39,7 +39,7 @@ const Background = styled(motion.div)`
   min-width: 100px;
   max-width: 300px;
   width: 100%;
-  background: ${props=>props.theme.palette.primary.main}
+  background: ${props=>props.theme.palette.primary.main};
 `
 function RightNav(props) {
   const [isOpen, toggleOpen] = useCycle(false, true);

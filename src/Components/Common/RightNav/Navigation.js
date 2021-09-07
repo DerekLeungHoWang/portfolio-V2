@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styled from "styled-components";
+import { Button } from "@material-ui/core";
 
 const variants = {
   open: {
@@ -24,9 +25,13 @@ export const Navigation = (props) => {
   return (
     <>
       <MyList variants={variants}>
-        {itemIds.map((text, i) => (
-          <MenuItem isOpen={isOpen} toggleOpen={toggleOpen} text={text} key={text} />
-        ))}
+        {itemIds.map((text, i) => {
+         
+
+          return (
+            <MenuItem isOpen={isOpen} toggleOpen={toggleOpen} text={text} key={text} />
+          )
+        })}
       </MyList>
     </>
 
@@ -40,4 +45,4 @@ export const Navigation = (props) => {
 // </MyList>
 
 
-const itemIds = ["Home", "Skills", "Projects", "Contact"];
+const itemIds = ["Skills", "Projects", "Contact", "Resume"];
