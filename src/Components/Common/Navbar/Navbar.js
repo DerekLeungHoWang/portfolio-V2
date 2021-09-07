@@ -19,7 +19,7 @@ import { menuItems } from './MenuItem'
 
 
 const Logo = styled(motion.h1)`
-  
+  padding: 20px 40px;
     color:${props => props.theme.palette.primary.main};
 `;
 
@@ -33,7 +33,7 @@ export default function Navbar() {
     let color = theme.palette.primary.main
     return (
 
-        <Container id="navBar" theme={theme}>
+        <Container id="navBar" theme={theme} maxWidth={false}>
             <Grid container justify="space-between">
                 <Logo theme={theme} >DEREK</Logo>
 
