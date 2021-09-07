@@ -6,12 +6,12 @@ import { MenuToggle } from './MenuToggle';
 import { Navigation } from './Navigation';
 import { useTheme } from '@material-ui/core';
 const sidebar = {
-  open: (height = 1000) => ({
+  open: (height = 300) => ({
     clipPath: `circle(${height * 2 + 200}px at 80% 40px)`,
     transition: {
       type: "spring",
-      stiffness: 20,
-      restDelta: 2
+      stiffness: 60,
+      restDelta: 0
     }
   }),
   closed: {
@@ -27,7 +27,6 @@ const sidebar = {
 
 const MyNav = styled(motion.nav)`
   color: white;
-     
       z-index: 999;
   `
 const Background = styled(motion.div)`
@@ -39,14 +38,13 @@ const Background = styled(motion.div)`
   min-width: 100px;
   max-width: 300px;
   width: 100%;
-  background: ${props=>props.theme.palette.primary.main};
+  background: ${props => props.theme.palette.primary.main};
 `
 function RightNav(props) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const theme = useTheme();
   return (
     <MyNav
-
       initial={false}
       animate={isOpen ? "open" : "closed"}
     >

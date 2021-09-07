@@ -19,7 +19,8 @@ import { menuItems } from './MenuItem'
 
 
 const Logo = styled(motion.h1)`
-  padding: 20px 40px;
+    margin-top: 35px;
+    margin-left: 20px;
     color:${props => props.theme.palette.primary.main};
 `;
 
