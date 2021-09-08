@@ -95,6 +95,17 @@ export default function CoverPage() {
     const [pos, setPos] = useState("relative")
 
 
+    const handleClick = (e) => {
+    
+       document.getElementById("skillPage").scrollIntoView()
+        
+
+       
+
+    }
+
+
+
 
     return (
 
@@ -119,6 +130,7 @@ export default function CoverPage() {
                             // variants={talkBtnVariants}
                             animate={talkBtn}
                             style={{ marginRight: "15px" }}
+                            onClick={handleClick}
                         >
                             Know More
                         </Button>
