@@ -89,7 +89,7 @@ export const data = [
         "title": "FRUIT STORE",
         "description": "A pretty complete website built with React, Spring Boot and MySQL. Key features includes authentication, cart, payment and order management. Error handling, form validation and language localization is also complete. Feel feel to try it out withe the default username/password",
         "technology": "React",
-        "youtube_link": "#",
+        "youtube_link": "https://www.youtube.com/watch?v=rTR-KqjU8bQ",
         "actual_link": "https://wahkee-fruitstore.com/#/en",
         "github_link": "https://github.com/DerekLeungHoWang/fruit-store-v2",
         "tag1": "React",
