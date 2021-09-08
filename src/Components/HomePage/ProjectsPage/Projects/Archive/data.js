@@ -18,7 +18,7 @@ export const data = [
         "end":"Frontend",
         "title": "Lyrics maker for church",
         "description": "Alowing users to quickly generate powerpoint-like slides for lyrics.The view height of the slide is designed to be 20% of the screen height due to the physical constraint of the church.This is a tailor-made solution for the church.",
-        "youtube_link": "https://www.youtube.com/watch?v=9F7qJ-azZlY",
+        "youtube_link": "https://www.youtube.com/watch?v=3MpNyEEGONA",
         "actual_link": "https://church-lyrics-maker.netlify.app/#/",
         "github_link": "https://github.com/DerekLeungHoWang/dark-mode",
         "tag1": "React",
