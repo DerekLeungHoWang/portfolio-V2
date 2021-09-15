@@ -17,7 +17,7 @@ export const data = [
         "id": 1,
         "end":"Fullstack",
         "title": "Lyrics maker for church",
-        "description": "Created for friends in my local church. Every week my church mates make slides of ppt which has to fit in a specific format, which is tedious. Therefore I came up with this quick lyrics maker and displayer to enable rapid slides creation",
+        "description": "Created for friends in my local church. Every week slides of ppt have to be made manually in specific format , which is tedious. Therefore I came up with this quick lyrics maker and player to automate the process",
         "youtube_link": "https://www.youtube.com/watch?v=3MpNyEEGONA",
         "actual_link": "https://church-lyrics-maker.netlify.app/#/",
         "github_link": "https://github.com/DerekLeungHoWang/dark-mode",
