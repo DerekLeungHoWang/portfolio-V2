@@ -80,7 +80,7 @@ function ProjectDetail({ match }) {
                 >
 
                     <div className="project_detail_inner_container">
-                        <SideText className="animatable">  {item.title}</SideText>
+                        {/* <SideText className="animatable">  {item.title}</SideText> */}
                         <div>
                             <TopTitle>
                                 <p className="projectDescription animatable">{item.end}</p>
