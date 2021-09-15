@@ -15,13 +15,15 @@ import creditCard1_1 from "../../../../Common/Images/creditCard1_1.jpg";
 export const data = [
     {
         "id": 1,
-        "end":"Frontend",
+        "end":"Fullstack",
         "title": "Lyrics maker for church",
-        "description": "Alowing users to quickly generate powerpoint-like slides for lyrics.The view height of the slide is designed to be 20% of the screen height due to the physical constraint of the church.This is a tailor-made solution for the church.",
+        "description": "Created for friends in my local church. Every week my church mates make slides of ppt which has to fit in a specific format, which is tedious. Therefore I came up with this quick lyrics maker and displayer to enable rapid slides creation",
         "youtube_link": "https://www.youtube.com/watch?v=3MpNyEEGONA",
         "actual_link": "https://church-lyrics-maker.netlify.app/#/",
         "github_link": "https://github.com/DerekLeungHoWang/dark-mode",
         "tag1": "React",
+        "tag2": "NodeJS",
+        "tag3": "MongoDB",
         "img": lyrics1_1
 
     },
