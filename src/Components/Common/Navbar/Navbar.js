@@ -36,7 +36,7 @@ export default function Navbar() {
 
         <Container id="navBar" theme={theme} maxWidth={false}>
             <Grid container justify="space-between">
-                <Logo theme={theme} >DEREK</Logo>
+                <Logo theme={theme} >Portfolio</Logo>
 
                 <RightNav />
             </Grid>
