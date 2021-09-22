@@ -12,7 +12,7 @@ import { ReactComponent as GoodTeamSVG } from '../../Common/Images/goodTeam.svg'
 import Navbar from '../../Common/Navbar/Navbar';
 
 const Title = () => {
-    const line1 = "I am Ho Wang Leung,  "
+    const line1 = "I am Ho Wang Leung .  "
     const line2 = "Software Developer."
     return (<Heading
         initial="hidden"
