@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio-V2/static/css/main.2c0a7162.chunk.css",
-    "main.js": "/portfolio-V2/static/js/main.4d9938aa.chunk.js",
-    "main.js.map": "/portfolio-V2/static/js/main.4d9938aa.chunk.js.map",
+    "main.js": "/portfolio-V2/static/js/main.61549b2e.chunk.js",
+    "main.js.map": "/portfolio-V2/static/js/main.61549b2e.chunk.js.map",
     "runtime-main.js": "/portfolio-V2/static/js/runtime-main.867772f3.js",
     "runtime-main.js.map": "/portfolio-V2/static/js/runtime-main.867772f3.js.map",
     "static/js/2.da7622d5.chunk.js": "/portfolio-V2/static/js/2.da7622d5.chunk.js",
@@ -30,7 +30,7 @@
     "static/media/leetcode.fa87fd9f.svg": "/portfolio-V2/static/media/leetcode.fa87fd9f.svg",
     "static/media/linkedin.7e47fa38.svg": "/portfolio-V2/static/media/linkedin.7e47fa38.svg",
     "static/media/lol1_1.bbf6899d.jpg": "/portfolio-V2/static/media/lol1_1.bbf6899d.jpg",
-    "static/media/lyrics1_1.1cd653e5.jpg": "/portfolio-V2/static/media/lyrics1_1.1cd653e5.jpg",
+    "static/media/lyrics1_1.90149e7f.jpg": "/portfolio-V2/static/media/lyrics1_1.90149e7f.jpg",
     "static/media/project1.c3edf67d.jpg": "/portfolio-V2/static/media/project1.c3edf67d.jpg",
     "static/media/project2.0ec93077.jpg": "/portfolio-V2/static/media/project2.0ec93077.jpg",
     "static/media/react.9342c384.svg": "/portfolio-V2/static/media/react.9342c384.svg",
@@ -43,6 +43,6 @@
     "static/js/runtime-main.867772f3.js",
     "static/js/2.da7622d5.chunk.js",
     "static/css/main.2c0a7162.chunk.css",
-    "static/js/main.4d9938aa.chunk.js"
+    "static/js/main.61549b2e.chunk.js"
   ]
 }
