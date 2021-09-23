@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     cardWrapper: {
         position: "relative",
-        marginBottom: "25px",
+        marginBottom: "auto",
 
     },
     card: {
