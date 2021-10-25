@@ -21,9 +21,9 @@ export default function LeftSideNote() {
         <Wrapper>
             <Media>
                 <IconWrapper theme={theme}>
-                    <a href="https://github.com/DerekLeungHoWang/portfolio-V2" target="_blank">     <Github style={{ transform: "rotate(-90deg)" }} /></a>
+                    <a href="https://github.com/HoWangLeung/portfolio-V2" target="_blank">     <Github style={{ transform: "rotate(-90deg)" }} /></a>
                     <a href="https://leetcode.com/poiuz88i/" target="_blank"> <Leetcode style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>
-                    <a href="https://www.linkedin.com/in/derek-leung-7b7388122/" target="_blank">     <Linkedin style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>
+                    <a href="https://www.linkedin.com/in/ho-wang-leung-7b7388122/" target="_blank">     <Linkedin style={{ transform: "rotate(-90deg)", marginLeft: "25px" }} /></a>
                 </IconWrapper>
             </Media>
             <Line />
