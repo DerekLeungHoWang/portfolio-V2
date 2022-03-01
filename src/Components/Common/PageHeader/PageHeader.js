@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useTheme } from '@material-ui/core';
+import SwitchView from '../../HomePage/ProjectsPage/Projects/SwitchView/SwitchView';
 
 const Header = styled(motion.h1)`
   color:${props => props.theme.palette.primary.main};
@@ -23,6 +24,15 @@ const Header = styled(motion.h1)`
 export default function PageHeader(props) {
     const theme = useTheme()
     return (
-        <Header theme={theme} >{props.children}</Header>
+        <div style={{
+           width:"100%",
+           position:"relative"
+        }}>
+            <div style={{display:"flex", justifyContent:"center"}}>
+            <Header theme={theme} >{props.children}</Header>
+            </div>
+    
+            
+        </div>
     )
 }

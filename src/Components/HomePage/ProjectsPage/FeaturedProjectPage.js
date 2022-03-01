@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
 import { setPrjPageInView } from '../Actions/HomePageActions';
@@ -11,6 +11,7 @@ import ProjectArchive from './Projects/Archive/ProjectArchive';
 import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
 import PageHeader from '../../Common/PageHeader/PageHeader';
+import SwitchView from './Projects/SwitchView/SwitchView';
 
 const MyContainer = styled(Container)`
      
@@ -31,6 +32,8 @@ export default function FeaturedProjectPage(props) {
     const { id } = props
     const theme = useTheme();
     const dispatch = useDispatch()
+
+    
 
     const [ref, inView, entry] = useInView({ threshold: 0.1 });
     useEffect(() => {

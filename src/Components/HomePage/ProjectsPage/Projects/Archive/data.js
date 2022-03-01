@@ -24,7 +24,8 @@ export const data = [
         "tag1": "React",
         "tag2": "NodeJS",
         "tag3": "MongoDB",
-        "img": lyrics1_1
+        "img": lyrics1_1,
+        "year":2021
 
     },
     {
@@ -37,7 +38,8 @@ export const data = [
         "github_link": "https://github.com/HoWangLeung/world-data",
         "tag1": "React",
         //"tag2": "Spring Boot",
-        "img": d31_1
+        "img": d31_1,
+        "year":2021
         
     },
     {
@@ -49,7 +51,8 @@ export const data = [
         "actual_link": "https://howangleung.github.io/dark-mode/#/",
         "github_link": "https://github.com/HoWangLeung/dark-mode",
         "tag1": "React",
-        "img": image1
+        "img": image1,
+        "year":2021
     },
     {
         "id": 4,
@@ -60,7 +63,8 @@ export const data = [
          "github_link": "https://github.com/HoWangLeung/Credit-Card-Framer-Motion",
         "tag1": "React",
         //"tag2": "Spring Boot",
-        "img": creditCard1_1
+        "img": creditCard1_1,
+        "year":2021
     },
     {
         "id": 5,
@@ -71,7 +75,8 @@ export const data = [
         "github_link": "https://github.com/HoWangLeung/framer-motion-playground",
         "tag1": "React",
         //"tag2": "Spring Boot",
-        "img": lol1_1
+        "img": lol1_1,
+        "year":2021
     },
     {
         "id": 6,
@@ -82,7 +87,8 @@ export const data = [
         "github_link": "https://github.com/HoWangLeung/personalPage",
         "tag1": "React",
         //"tag2": "Spring Boot",
-        "img": image2
+        "img": image2,
+        "year":2021
     }
     ,
     {
@@ -100,5 +106,6 @@ export const data = [
         "img2": featured1_2,
         "img3": featured1_3,
         "img4": featured1_4,
+        "year":2020
     }
 ]

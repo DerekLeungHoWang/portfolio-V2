@@ -15,6 +15,7 @@ import StyledButton from '../../../../Common/StyledButton/StyledButton';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import AllProjects from '../AllProjects/AllProjects';
 
 const useStyles = makeStyles((theme) => ({
     cardContainer: {
@@ -131,74 +132,77 @@ export default function ProjectArchive(props) {
     const theme = useTheme();
     const classes = useStyles();
     const prjPageInview = useSelector(state => state.AnimationReducer.prjPageInView)
-
+    const{isTableView}=props
     const handleClick = (id) => {
         history.push(`/projectDetail/${id}`)
+        //console.log("history:",props);
     }
     return (
 
 
-        <Grid container
-            direction="row"
-            justify="center"
-            alignItems="stretch"
-            initial="hidden"
-            animate={prjPageInview ? "visible" : "hidden"}
-            variants={cardWrapper}
-            component={motion.div}
-            className={classes.cardContainer}
-            spacing={1}
-        >
-            {data.map((project, index) => {
+       isTableView ?(
+           <AllProjects data={data} />
 
-                if (project.id < 50) {
-                    return (
-                        <Grid
-                            container item
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            variants={card}
-                            component={motion.div}
-                            key={`${project.title}-${index}`}
-                            xs={12} sm={12} md={6} lg={4}
-                            className={classes.cardWrapper}
+       ):( <Grid container
+        direction="row"
+        justify="center"
+        alignItems="stretch"
+        initial="hidden"
+        animate={prjPageInview ? "visible" : "hidden"}
+        variants={cardWrapper}
+        component={motion.div}
+        className={classes.cardContainer}
+        spacing={1}
+    >
+        {data.map((project, index) => {
 
-                        >
-                          
-                                <Card variant="outlined" key={project.title}
-                                    className={classes.card}
-                                >
-                                    <CardContent >
-                                        <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
-                                        <Title theme={theme} >
-                                            {project.title}
-                                        </Title>
+            if (project.id < 50) {
+                return (
+                    <Grid
+                        container item
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        variants={card}
+                        component={motion.div}
+                        key={`${project.title}-${index}`}
+                        xs={12} sm={12} md={6} lg={4}
+                        className={classes.cardWrapper}
 
-                                        <DetailButton
-                                            onClick={() => handleClick(project.id)}
-                                            // size="large"
-                                            color="primary"
-                                            variant="outlined"
-                                            className={classes.styledButton} >Detail</DetailButton>
+                    >
+                      
+                            <Card variant="outlined" key={project.title}
+                                className={classes.card}
+                            >
+                                <CardContent >
+                                    <FolderIcon theme={theme} icon={faFolderOpen} className={classes.folderIcon} />
+                                    <Title theme={theme} >
+                                        {project.title}
+                                    </Title>
 
-                                        <Description >
-                                            {project.description}
-                                        </Description>
-                                        <FrameWork  >
-                                            <span>{project.tag1} </span>
-                                            <span>  {project.tag2 ?? null} </span>
-                                            <span>  {project.tag3 ?? null} </span>
-                                        </FrameWork>
-                                    </CardContent>
-                                </Card>
-                           
-                        </Grid>
-                    )
-                }
-            })}
+                                    <DetailButton
+                                        onClick={() => handleClick(project.id)}
+                                        // size="large"
+                                        color="primary"
+                                        variant="outlined"
+                                        className={classes.styledButton} >Detail</DetailButton>
+                                    <Description >
+                                        {project.description}
+                                    </Description>
+                                    <FrameWork  >
+                                        <span>{project.tag1} </span>
+                                        <span>  {project.tag2 ?? null} </span>
+                                        <span>  {project.tag3 ?? null} </span>
+                                    </FrameWork>
+                                </CardContent>
+                            </Card>
+                       
+                    </Grid>
+                )
+            }
+        })}
 
-        </Grid>
+    </Grid>)
 
 
     )

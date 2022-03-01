@@ -13,6 +13,7 @@ import LeftSideNote from '../Common/SideNote/LeftSideNote';
 import FeaturedProjects from './ProjectsPage/Projects/Featured/FeaturedProjects';
 import FeaturedProjectPage from './ProjectsPage/FeaturedProjectPage';
 import Navbar from '../Common/Navbar/Navbar';
+import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.primary.background
@@ -26,16 +27,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function HomePage({ match }) {
-    let { id } = match.params;
+export default function HomePage(props) {
+    let { id } = props.match.params;
+
     const imageHasLoaded = true;
     const selectedMenu = useSelector(state => state.NavReducer.selectedMenu)
-    console.log(selectedMenu);
+    const history = useHistory()
+    console.log("IN HOME PAGE ?",props, history);
     const classes = useStyles();
-    // const coverPage = useRef()
-    // const skillPage = useRef()
-    // const featuredPage = useRef()
-    // const contactPage = useRef()
+   
 
 
     return (
