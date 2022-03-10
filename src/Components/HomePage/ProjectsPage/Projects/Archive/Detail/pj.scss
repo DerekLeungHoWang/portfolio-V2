@@ -1,73 +1,70 @@
-.project_detail_container{
+.project_detail_container {
   padding: 20px;
   margin: 0;
   min-height: 100vh;
-   height: auto;
-  
-    background: #fff;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: auto;
 
-    .project_detail_inner_container{
+  background: #fff;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .project_detail_inner_container {
     display: none;
-    
-      max-width: 70%;
-    
-      @media (max-width: 768px) {
-        max-width: 100%;
-      }
+
+    max-width: 70%;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
     }
-    overflow: hidden;
+  }
+  overflow: hidden;
 }
 
-  .img-container {
-   
-    max-width:100%;
-    max-height:auto;
+.img-container {
+  max-width: 100%;
+  max-height: auto;
 
-    position: relative;
-   
-    overflow: hidden;
-    &:after {
-     
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
-      background-color: #fff;
-    }
-    img {
-      border-radius: 5px;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-   
-    }
-    // @media (max-width: 768px) {
-    //   max-width:100%;
-    // }
+  position: relative;
+
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+  }
+  img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  // @media (max-width: 768px) {
+  //   max-width:100%;
+  // }
 }
-#pjrojectWrapper{
+#pjrojectWrapper {
   width: 100%;
-  height:auto;
+  height: auto;
   color: black;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   @media (max-width: 768px) {
-   flex-direction: column;
-   & > *{
-     margin:10px;
-   }
+    flex-direction: column;
+    & > * {
+      margin: 10px;
+    }
   }
 }
-#buttonGrouptWrapper{
+#buttonGrouptWrapper {
   width: 100%;
-  height:auto;
+  height: auto;
   color: black;
   display: flex;
   justify-content: flex-end;
@@ -75,34 +72,32 @@
   margin: 25px 0px;
   @media (max-width: 768px) {
     justify-content: center;
-
   }
 }
-.detail_link_button{
-  max-width:110px;
+.detail_link_button {
+  max-width: 110px;
   @media (max-width: 375px) {
     max-height: 50px !important;
-    max-width:90px !important;
-    
+    max-width: 90px !important;
   }
 }
 
-.projectTitle{
-  font-size:3rem;
- font-weight: 600;
+.projectTitle {
+  font-size: 3rem;
+  font-weight: 600;
   padding: 10px 5px;
   color: black;
-  font-family: 'B612', sans-serif;
-  
+  font-family: "B612", sans-serif;
+
   @media (max-width: 768px) {
-    font-size:1.5rem;
+    font-size: 1.5rem;
   }
 }
 .projectDescription {
   font-size: 1.3rem;
-   
+
   color: black;
-   max-width: 1200px;
+  max-width: 1200px;
   line-height: 1.5;
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -110,16 +105,16 @@
     max-width: 80%;
   }
 }
- 
+
 .animatable {
   position: relative;
   clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
- 
-  animation: .75s cubic-bezier(1,-0.01,.12,.8) 0s 1 reveal forwards;
+
+  animation: 0.75s cubic-bezier(1, -0.01, 0.12, 0.8) 0s 1 reveal forwards;
 }
 
 .animatable::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -128,16 +123,56 @@
   // background: rgb(65, 62, 85);
   background: black;
   padding: inherit;
- 
-  animation: .75s cubic-bezier(1,-0.01,.12,.8) .75s 1 hideBlack forwards;
+
+  animation: 0.75s cubic-bezier(1, -0.01, 0.12, 0.8) 0.75s 1 hideBlack forwards;
 }
 
 @keyframes reveal {
-  from { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 @keyframes hideBlack {
-  from { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  to { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+.projectBoxContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.projectCardWrapper {
+  flex: 0 0 30.333333%;
+  // flex-grow: 1;
+  // width: 280px;
+  min-width: 280px;
+  margin: 5px;
+  // margin: 20px;
+  min-height: 100%;
+}
+.projectCard {
+  height: 100%;
+  width: 100%;
+}
+
+.projectCardContent {
+  position: relative;
+}
+
+.projectStyledButton {
+  z-index: 5;
+  font-weight: 400px;
+  text-transform: none;
+  position: absolute;
+  right: 0px;
 }

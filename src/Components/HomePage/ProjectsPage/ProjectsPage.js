@@ -47,8 +47,9 @@ export default function ProjectsPage(props) {
       id="projectPage"
       ref={ref}
       theme={theme}
-      container
-      style={{ maxWidth: "70%" }}
+      maxWidth={false}
+      // container
+      // style={{ maxWidth: "70%" }}
     >
       <Grid
         container
