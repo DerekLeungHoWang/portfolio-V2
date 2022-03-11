@@ -6,7 +6,14 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { data } from "./data";
-import { Box, Container, Grid } from "@material-ui/core";
+import {
+  Box,
+  CardActionArea,
+  CardMedia,
+  Container,
+  Grid,
+  IconButton,
+} from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen as faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 
@@ -16,6 +23,9 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import AllProjects from "../AllProjects/AllProjects";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import LinkIcon from "@material-ui/icons/Link";
 
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
@@ -45,6 +55,14 @@ const useStyles = makeStyles((theme) => ({
   },
   pos: {
     marginBottom: 12,
+  },
+  img: {
+    // position: "relative",
+    // width: "100%",
+    height: "200px",
+  },
+  imgRoot: {
+    //   height:"280px"
   },
 }));
 
@@ -133,6 +151,7 @@ export default function ProjectArchive(props) {
     >
       {data.map((project, index) => {
         if (project.id < 50) {
+          console.log(project);
           return (
             <motion.div
               // container item
@@ -150,7 +169,62 @@ export default function ProjectArchive(props) {
                 key={project.title}
                 className="projectCard"
               >
-                <CardContent className="projectCardContent">
+                <CardActionArea onClick={() => handleClick(project.id)}>
+                  {/* <div style={{height:"190px"}} > */}
+                  <CardMedia
+                    classes={{
+                      img: classes.img,
+                      root: classes.imgRoot,
+                    }}
+                    component="img"
+                    // className={classes.media}
+                    src={project.img}
+                  />
+                  {/* </div> */}
+                  <CardContent>
+                    <Typography
+                      color="primary"
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                    >
+                      {project.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions disableSpacing>
+                  {project.youtube_link && 
+                    <a href={project.youtube_link} target="_blank">
+                      <IconButton aria-label="add to favorites">
+                        <YouTubeIcon />
+                      </IconButton>
+                    </a>
+                  }
+                  {project.github_link && 
+                    <a href={project.github_link} target="_blank">
+                      <IconButton aria-label="share">
+                        <GitHubIcon />
+                      </IconButton>
+                    </a>
+                  }
+                  {project.actual_link && (
+                    <a href={project.actual_link} target="_blank">
+                      <IconButton aria-label="share">
+                        <LinkIcon />
+                      </IconButton>
+                    </a>
+                  )}
+                </CardActions>
+                {/* <CardContent className="projectCardContent">
                   <FolderIcon
                     theme={theme}
                     icon={faFolderOpen}
@@ -173,7 +247,7 @@ export default function ProjectArchive(props) {
                                         <span>  {project.tag2 ?? null} </span>
                                         <span>  {project.tag3 ?? null} </span>
                                     </FrameWork> */}
-                </CardContent>
+                {/* </CardContent> */}
               </Card>
             </motion.div>
           );
