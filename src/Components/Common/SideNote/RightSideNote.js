@@ -5,9 +5,11 @@ import { useTheme } from '@material-ui/core'
 
 export default function RightSideNote() {
     const theme = useTheme();
+
+    let email = "howangleung123@gmail.com"
     return (
         <Wrapper >
-            <a href="mailTo:hkz88i00123@gmail.com"> <Email theme={theme}>hkz88i00123@gmail.com</Email></a>
+            <a href={`mailTo:${email}`}> <Email theme={theme}>{email}</Email></a>
             <Line />
         </Wrapper>
     )
