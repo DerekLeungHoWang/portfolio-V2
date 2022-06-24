@@ -9,12 +9,27 @@ import lyrics1_1 from "../../../../Common/Images/lyrics1_1.jpg";
 import d31_1 from "../../../../Common/Images/d31_1.jpg";
 import lol1_1 from "../../../../Common/Images/lol1_1.jpg";
 import creditCard1_1 from "../../../../Common/Images/creditCard1_1.jpg";
+import bill_1 from "../../../../Common/Images/bill_1.png";
 
 
 
 export const data = [
+
     {
         "id": 1,
+        "end":"Frontend",
+        "title": "Bill Splitter",
+        "description": "An app to help split expenses",
+        //"youtube_link": "#",
+        "actual_link": "https://sharedbillsplitter.netlify.app/",
+        "github_link": "https://github.com/HoWangLeung/Bill-Splitter",
+        "tag1": "React",
+        "img": bill_1,
+        "year":2022
+
+    },
+    {
+        "id": 2,
         "end":"Fullstack",
         "title": "Lyrics maker for church",
         "description": "Created for friends in my local church. Every week slides of ppt have to be made manually in specific format , which is tedious. Therefore I came up with this quick lyrics maker and player to automate the process",
@@ -29,7 +44,7 @@ export const data = [
 
     },
     {
-        "id": 2,
+        "id": 3,
         "end":"Frontend",
         "title": "D3.js charts",
         "description": "Practising D3.js Charts including world map, slider, pie charts and more.",
@@ -43,7 +58,7 @@ export const data = [
         
     },
     {
-        "id": 3,
+        "id": 4,
         "end":"Frontend",
         "title": "Dark Mode",
         "description": "Switching between dark mode and light mode with a cool animation",
@@ -55,7 +70,7 @@ export const data = [
         "year":2021
     },
     {
-        "id": 4,
+        "id": 5,
         "end":"Frontend",
         "title": "Animated Credit Card",
         "description": "Animated Credit Card with cool animation. The card number on card changes according to user's input. The card also flips around when user enter cvc.",
@@ -67,7 +82,7 @@ export const data = [
         "year":2021
     },
     {
-        "id": 5,
+        "id": 6,
         "end":"Frontend",
         "title": "League Of Legends Slides",
         "description": "Slides with cool animation in the them of League of Legends.",
@@ -79,7 +94,7 @@ export const data = [
         "year":2021
     },
     {
-        "id": 6,
+        "id": 7,
         "end":"Frontend",
         "title": "Portfolio v1",
         "description": "This is my first portfolio website made using only html, css and a little bit of javascript when I first started learning to code.",
