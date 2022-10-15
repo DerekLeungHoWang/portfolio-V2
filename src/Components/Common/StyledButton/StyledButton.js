@@ -1,4 +1,4 @@
-import { Button, styled, useTheme } from '@material-ui/core'
+import { Button, styled, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
 import React, { forwardRef } from 'react'
 import styles from './StyledButton.module.css'

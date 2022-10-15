@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
-import { Container, Grid, useTheme, Button } from '@material-ui/core';
+import { Container, Grid, useTheme, Button } from '@mui/material';
 import { ContactForm } from './ContactForm';
 import PageHeader from '../../Common/PageHeader/PageHeader';
 import axios from 'axios';
@@ -32,7 +32,7 @@ export default function ContactPage() {
         <Wrapper theme={theme} container >
             <Grid container item xs={12}
                 direction="column"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
             >
 
@@ -42,5 +42,5 @@ export default function ContactPage() {
 
             </Grid>
         </Wrapper>
-    )
+    );
 }

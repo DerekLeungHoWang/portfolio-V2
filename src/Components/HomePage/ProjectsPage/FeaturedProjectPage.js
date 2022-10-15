@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
 import { setPrjPageInView } from '../Actions/HomePageActions';
-import { Grid, useTheme } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
+import { Grid, useTheme } from '@mui/material';
+import Container from '@mui/material/Container';
 import ProjectArchive from './Projects/Archive/ProjectArchive';
 import AllProjects from './Projects/AllProjects/AllProjects';
 import FeaturedProjects from './Projects/Featured/FeaturedProjects';
@@ -48,7 +48,7 @@ export default function FeaturedProjectPage(props) {
         <MyContainer theme={theme} maxWidth={false} > 
             <Grid container 
                 direction="column"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
                
             >
@@ -56,5 +56,5 @@ export default function FeaturedProjectPage(props) {
                 <FeaturedProjects  />
             </Grid>
         </MyContainer>
-    )
+    );
 }

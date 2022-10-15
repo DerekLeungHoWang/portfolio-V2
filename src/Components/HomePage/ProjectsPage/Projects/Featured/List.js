@@ -8,7 +8,7 @@ import image2 from '../../../../Common/Images/f2.jpg'
 import image3 from '../../../../Common/Images/a_1.jpg'
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 
 
 

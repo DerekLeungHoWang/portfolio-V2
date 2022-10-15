@@ -4,8 +4,8 @@ import { data } from '../data'
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import gsap from "gsap";
 import styled from 'styled-components';
-import { Grid } from '@material-ui/core';
-import { Button } from '@material-ui/core'
+import { Grid } from '@mui/material';
+import { Button } from '@mui/material'
 import { ReactComponent as YoutubeIcon } from '../../../../../Common/Images/youtube.svg';
 import { ReactComponent as DesktopIcon } from '../../../../../Common/Images/desktop.svg';
 import { ReactComponent as GithubIcon } from '../../../../../Common/Images/github2.svg';

@@ -1,20 +1,20 @@
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid } from '@mui/material'
 import React from 'react'
 
 export default function ProjectBody({ item }) {
     return (
         <Container maxWidth={false} style={{ width: "100%" }}>
-            <Grid container direction="column" justify="center" alignItems="center">
+            <Grid container direction="column" justifyContent="center" alignItems="center">
 
-                <Grid container item xs={12} direction="column" justify="center" alignItems="center">
+                <Grid container item xs={12} direction="column" justifyContent="center" alignItems="center">
                     <div>
-                        <Grid style={{ marginBottom: "15px" }} container item xs={12} direction="column" justify="center" alignItems="center">
+                        <Grid style={{ marginBottom: "15px" }} container item xs={12} direction="column" justifyContent="center" alignItems="center">
                             <span className="projectTitle animatable"  >
                                 Introduction
                             </span>
                         </Grid>
 
-                        <Grid container item xs={12} direction="column" justify="center" alignItems="center">
+                        <Grid container item xs={12} direction="column" justifyContent="center" alignItems="center">
                             <div className="projectDescription animatable">
                                 {item.description}
                             </div>
@@ -33,5 +33,5 @@ export default function ProjectBody({ item }) {
 
             </Grid>
         </Container>
-    )
+    );
 }

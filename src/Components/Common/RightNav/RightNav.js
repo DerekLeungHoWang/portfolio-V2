@@ -4,7 +4,7 @@ import { motion, useCycle } from "framer-motion";
 
 import { MenuToggle } from './MenuToggle';
 import { Navigation } from './Navigation';
-import { useTheme } from '@material-ui/core';
+import { useTheme } from '@mui/material';
 const sidebar = {
   open: (height = 300) => ({
     clipPath: `circle(${height * 2 + 200}px at 80% 40px)`,

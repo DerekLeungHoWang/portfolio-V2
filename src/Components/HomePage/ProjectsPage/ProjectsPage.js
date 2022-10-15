@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 import { setPrjPageInView } from "../Actions/HomePageActions";
-import { Container, Grid, useTheme } from "@material-ui/core";
+import { Button, ButtonGroup, Container, Grid, useTheme } from "@mui/material";
 import ProjectArchive from "./Projects/Archive/ProjectArchive";
 import AllProjects from "./Projects/AllProjects/AllProjects";
 import FeaturedProjects from "./Projects/Featured/FeaturedProjects";
@@ -16,24 +16,15 @@ const Wrapper = styled(Container)`
   width: 100vw;
   background-color: ${(props) => props.theme.palette.primary.background};
 `;
-const Title = styled(motion.h1)`
-  color: ${(props) => props.theme.palette.primary.main};
-  font-size: 40px;
-`;
-
-const TItleWrapper = styled.div`
-  position:relative
-
-
-`;
 
 export default function ProjectsPage(props) {
   const { id } = props;
   const theme = useTheme();
   const dispatch = useDispatch();
   const [isTableView, setIsTableView] = useState(false);
-
   const [ref, inView, entry] = useInView({ threshold: 0.1 });
+  const [developedBy, setDevelopedBy] = useState("mySelf");
+
   useEffect(() => {
     if (inView) {
       dispatch(setPrjPageInView(true));
@@ -41,6 +32,7 @@ export default function ProjectsPage(props) {
       dispatch(setPrjPageInView(false));
     }
   }, [inView]);
+ 
 
   return (
     <Wrapper
@@ -55,19 +47,39 @@ export default function ProjectsPage(props) {
         container
         xs={12}
         direction="column"
-        justify="center"
+        justifyContent="center"
         alignItems="center"
-        style={{position:"relative"}}
+        style={{ position: "relative" }}
       >
-       
-          <PageHeader setPrjPageInView={setPrjPageInView} >More Projects</PageHeader>
-       
-          <SwitchView 
-        isTableView={isTableView}
-    
-            setIsTableView={setIsTableView} />
+        <PageHeader setPrjPageInView={setPrjPageInView}>
+          Projects
+        </PageHeader>
 
-        <ProjectArchive isTableView={isTableView} />
+        <SwitchView isTableView={isTableView} setIsTableView={setIsTableView} />
+
+        <Grid xs={12} style={{ marginBottom: "20px" }}>
+          <ButtonGroup
+            color="primary"
+            aria-label="outlined primary button group"
+          >
+            <Button
+              variant={developedBy === "mySelf" ? "contained" : "outlined"}
+              color="primary"
+              onClick={() => setDevelopedBy("mySelf")}
+            >
+              My Projects
+            </Button>
+            <Button
+              variant={developedBy !== "mySelf" ? "contained" : "outlined"}
+              color="primary"
+              onClick={() => setDevelopedBy("tutorial")}
+            >
+              Tutorial
+            </Button>
+          </ButtonGroup>
+        </Grid>
+
+        <ProjectArchive developedBy={developedBy} isTableView={isTableView} />
       </Grid>
     </Wrapper>
   );

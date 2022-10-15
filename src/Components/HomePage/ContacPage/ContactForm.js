@@ -1,11 +1,12 @@
-import { Button, CircularProgress, Grid, makeStyles, Paper, Snackbar, TextField } from "@material-ui/core";
+import { Button, CircularProgress, Grid, Paper, Snackbar, TextField } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { useFormControls } from "./ContactFormControls";
-import { Alert, AlertTitle } from '@material-ui/lab';
+import { Alert, AlertTitle } from '@mui/material';
 
 const inputFieldValues = [
     {
@@ -26,58 +27,6 @@ const inputFieldValues = [
         rows: 10
     }
 ];
-const useStyles = makeStyles(theme => ({
-    // textField: {
-    //     width: '90%',
-    //     marginLeft: 'auto',
-    //     marginRight: 'auto',
-    //     paddingBottom: 0,
-    //     marginTop: 0,
-    //     fontWeight: 500,
-    //     color: 'white !important'
-    // },
-
-
-    // cssLabel: {
-    //     color: `${theme.palette.primary.main} !important`
-    // },
-    // input: {
-    //     color: `${theme.palette.primary.main} !important`,
-    //     '&:-webkit-autofill': {
-    //         WebkitBoxShadow: `0 0 0 100px ${theme.palette.primary.paper} inset`,
-    //         WebkitTextFillColor: `${theme.palette.primary.main}`,
-
-    //     },
-
-
-    // },
-    // underline: {
-    //     '&:before': {
-    //         borderBottom: `1px solid ${theme.palette.primary.main}`
-    //     },
-    //     '&:after': {
-    //         borderBottom: `2px solid ${theme.palette.primary.main}`
-    //     },
-    //     '&:hover:not($disabled):not($focused):not($error):after': {
-    //         borderBottom: `1px solid ${theme.palette.primary.main}`
-    //     },
-    //     '&:hover:not($disabled):not($focused):not($error)': {
-    //         borderBottom: `1px solid ${theme.palette.primary.main}`
-    //     },
-    // },
-    // cssFocused: {},
-
-    // notchedOutline: {
-
-    //     borderColor: `${theme.palette.primary.main} !important`
-    // },
-    // paper: {
-    //     background: `${theme.palette.primary.paper} !important`,
-    //     padding:"50px 20px"
-
-    // },
-
-}));
 
 export const ContactForm = () => {
 
@@ -90,7 +39,6 @@ export const ContactForm = () => {
         formIsValid,
         errors
     } = useFormControls();
-    const classes = useStyles();
 
     const [ref, inView, entry] = useInView({ threshold: 0.1 });
 
@@ -106,7 +54,7 @@ export const ContactForm = () => {
         // className={classes.multilineColor}
         >
             <Grid container direction="row"
-                justify="center"
+                justifyContent="center"
                 alignItems="center">
                 {inputFieldValues.map((inputFieldValue, index) => {
                     return (

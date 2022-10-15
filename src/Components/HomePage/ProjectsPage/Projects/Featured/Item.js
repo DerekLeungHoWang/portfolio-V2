@@ -9,7 +9,7 @@ import image2 from '../../../../Common/Images/f.jpg'
 import image3 from '../../../../Common/Images/a.jpg'
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import { ReactComponent as YoutubeIcon } from '../../../../Common/Images/youtube.svg';
 import { ReactComponent as DesktopIcon } from '../../../../Common/Images/desktop.svg';
 import { ReactComponent as GithubIcon } from '../../../../Common/Images/github2.svg';

@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 
 const variants = {
   open: {

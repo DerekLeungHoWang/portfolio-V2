@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import styled from "styled-components";
-import { Button, Grid, useTheme } from "@material-ui/core";
+import { Button, Grid, useTheme } from "@mui/material";
 import data from './Skills.json'
 import { useInView } from "react-intersection-observer";
 
@@ -65,7 +65,7 @@ function AllSkills({ delayPerPixel = 0.0008 }) {
             style={{ display: "inline-block", minWidth: 320, maxWidth: 650 }}
         >
             <Grid container direction="row"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
             >
                 {/* <Grid container item xs={12} direction="row"

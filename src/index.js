@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { StylesProvider } from '@material-ui/styles';
+import { StylesProvider } from '@mui/styles';
 import store from './configureStore'
 import { Provider } from 'react-redux';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
 
 ReactDOM.render(
   <StylesProvider injectFirst>

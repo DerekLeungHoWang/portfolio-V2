@@ -1,4 +1,4 @@
-import { Grid, useTheme } from '@material-ui/core'
+import { Grid, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
 import styled from 'styled-components'
@@ -74,10 +74,10 @@ export default function SkillLeft() {
     const icons = [faPaintBrush, faCogs, faVial]
     return (
         <Grid container direction="row"
-            justify="center"
+            justifyContent="center"
             alignItems="center">
             <Grid container item xs={12} direction="row"
-                justify="center"
+                justifyContent="center"
                 alignItems="center" >
                 <motion.div initial="hidden" variants={{}}
                     style={{ display: "inline-block", minWidth: 320, maxWidth: 650 }}
@@ -112,5 +112,5 @@ export default function SkillLeft() {
 
 
         </Grid>
-    )
+    );
 }

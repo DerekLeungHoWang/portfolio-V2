@@ -1,29 +1,43 @@
-import { Button, ButtonGroup, Grid } from "@material-ui/core";
+import {
+  Button,
+  ButtonGroup,
+  Container,
+  Grid,
+  IconButton,
+} from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import ViewModuleIcon from '@material-ui/icons/ViewModule';
-import ViewListIcon from '@material-ui/icons/ViewList';
-export default function SwitchView({ setIsTableView,isTableView }) {
-  const Wrapper = styled.div`
-    @media (min-width: 1440px) {
-      position: absolute;
-      right: 0px;
-      top: 50px;
-    }
-    @media (max-width: 1390px) {
-        bottom:35px;
-        position:relative;
-        
-        
-      }
-  `;
-
+import ViewModuleIcon from "@mui/icons-material/ViewModule";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import { Avatar } from "react-lorem-ipsum";
+export default function SwitchView({ setIsTableView, isTableView }) {
   return (
-    <Wrapper>
-      <ButtonGroup color="primary" aria-label="text primary button group">
-        <Button  startIcon={<ViewModuleIcon/>} onClick={() => setIsTableView(false)}>View Module</Button>
-        <Button startIcon={<ViewListIcon/>} onClick={() => setIsTableView(true)}>View Table</Button>
-      </ButtonGroup>
-    </Wrapper>
+    <Container>
+      <Grid
+        container
+        direction="row"
+        justifyContent="flex-end"
+        alignItems="center"
+      >
+        <ButtonGroup color="primary" aria-label="text primary button group">
+          <IconButton
+            color="primary"
+            variant={!isTableView ? "contained" : "outlined"}
+            // startIcon={}
+            onClick={() => setIsTableView(false)}
+          >
+            <ViewModuleIcon />
+          </IconButton>
+          <IconButton
+            color="primary"
+            variant={isTableView ? "contained" : "outlined"}
+            // startIcon={}
+            onClick={() => setIsTableView(true)}
+          >
+            <ViewListIcon />
+          </IconButton>
+        </ButtonGroup>
+      </Grid>
+    </Container>
   );
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Button, ListItem, ListItemText, useTheme } from "@material-ui/core";
+import { Button, ListItem, ListItemText, useTheme } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { setSelectedMenu } from "./actions/NavActions";
 import Pdf from '../../Common/PDF/resume.pdf'

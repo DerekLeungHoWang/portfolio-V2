@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { useTheme } from '@material-ui/core';
+import { useTheme } from '@mui/material';
 import SwitchView from '../../HomePage/ProjectsPage/Projects/SwitchView/SwitchView';
 
 const Header = styled(motion.h1)`

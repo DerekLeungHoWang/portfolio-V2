@@ -1,10 +1,11 @@
-import React from "react";
-import { createMuiTheme, makeStyles, useTheme } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import React, { useEffect, useState } from "react";
+import { createTheme, useTheme } from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import { data } from "./data";
 import {
   Box,
@@ -13,7 +14,7 @@ import {
   Container,
   Grid,
   IconButton,
-} from "@material-ui/core";
+} from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen as faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 
@@ -23,9 +24,9 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import AllProjects from "../AllProjects/AllProjects";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import LinkIcon from "@material-ui/icons/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import LinkIcon from "@mui/icons-material/Link";
 
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
@@ -42,11 +43,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 320,
     position: "relative",
     borderRadius: "12px",
-    background: theme.palette.primary.background,
-    color: theme.palette.primary.main,
-    [theme.breakpoints.up(300)]: {
-      minWidth: 300,
-    },
+    background: "white",
+    color: "black",
   },
   bullet: {
     display: "inline-block",
@@ -128,19 +126,33 @@ const card = {
 
 export default function ProjectArchive(props) {
   const history = useHistory();
-  console.log(history);
-  const theme = useTheme();
+  const { developedBy } = props;
   const classes = useStyles();
   const prjPageInview = useSelector(
     (state) => state.AnimationReducer.prjPageInView
   );
+  const [projectData, setProjectData] = useState(data);
   const { isTableView } = props;
   const handleClick = (id) => {
     history.push(`/projectDetail/${id}`);
     //console.log("history:",props);
   };
+
+  useEffect(() => {
+    let newProjectData = [...projectData];
+    newProjectData = data.filter((d) => {
+      console.log(d.developedBy, developedBy);
+      return d.developedBy === developedBy;
+    });
+    console.log(newProjectData);
+    setProjectData(newProjectData);
+    return () => {};
+  }, [developedBy]);
+
+  //filter data according to developedBy
+
   return isTableView ? (
-    <AllProjects data={data} />
+    <AllProjects data={projectData} />
   ) : (
     <motion.div
       initial="hidden"
@@ -149,19 +161,12 @@ export default function ProjectArchive(props) {
       component={motion.div}
       className="projectBoxContainer"
     >
-      {data.map((project, index) => {
-        if (project.id < 50) {
-          console.log(project);
+      {projectData.map((project, index) => {
+        
           return (
             <motion.div
-              // container item
-              // direction="row"
-              // justify="center"
-              // alignItems="center"
               variants={card}
-              // component={motion.div}
               key={`${project.title}-${index}`}
-              // xs={12} sm={4}   lg={4}
               className="projectCardWrapper"
             >
               <Card
@@ -200,67 +205,33 @@ export default function ProjectArchive(props) {
                   </CardContent>
                 </CardActionArea>
                 <CardActions disableSpacing>
-                  {project.youtube_link && 
+                  {project.youtube_link && (
                     <a href={project.youtube_link} target="_blank">
-                      <IconButton aria-label="add to favorites">
+                      <IconButton aria-label="add to favorites" size="large">
                         <YouTubeIcon />
                       </IconButton>
                     </a>
-                  }
-                  {project.github_link && 
+                  )}
+                  {project.github_link && (
                     <a href={project.github_link} target="_blank">
-                      <IconButton aria-label="share">
+                      <IconButton aria-label="share" size="large">
                         <GitHubIcon />
                       </IconButton>
                     </a>
-                  }
+                  )}
                   {project.actual_link && (
                     <a href={project.actual_link} target="_blank">
-                      <IconButton aria-label="share">
+                      <IconButton aria-label="share" size="large">
                         <LinkIcon />
                       </IconButton>
                     </a>
                   )}
                 </CardActions>
-                {/* <CardContent className="projectCardContent">
-                  <FolderIcon
-                    theme={theme}
-                    icon={faFolderOpen}
-                    className={classes.folderIcon}
-                  />
-                  <Title theme={theme}>{project.title}</Title>
-
-                  <DetailButton
-                    onClick={() => handleClick(project.id)}
-                    // size="large"
-                    color="primary"
-                    variant="outlined"
-                    className="projectStyledButton"
-                  >
-                    Detail
-                  </DetailButton>
-                  <Description>{project.description}</Description>
-                  {/* <FrameWork  >
-                                        <span>{project.tag1} </span>
-                                        <span>  {project.tag2 ?? null} </span>
-                                        <span>  {project.tag3 ?? null} </span>
-                                    </FrameWork> */}
-                {/* </CardContent> */}
               </Card>
             </motion.div>
           );
-        }
+        
       })}
     </motion.div>
   );
 }
-
-// container item
-// direction="row"
-// justify="center"
-// alignItems="center"
-// variants={card}
-// component={motion.div}
-// key={`${project.title}-${index}`}
-// xs={12} sm={12} md={6} lg={4}
-// className={classes.cardWrapper}

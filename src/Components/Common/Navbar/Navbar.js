@@ -1,4 +1,4 @@
-import { Container, Grid, useTheme } from '@material-ui/core';
+import { Container, Grid, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -33,15 +33,13 @@ export default function Navbar() {
     const theme = useTheme();
     let color = theme.palette.primary.main
     return (
-
         <Container id="navBar" theme={theme} maxWidth={false}>
-            <Grid container justify="space-between">
+            <Grid container justifyContent="space-between">
                 <Logo theme={theme} >Portfolio</Logo>
 
                 <RightNav />
             </Grid>
 
         </Container>
-
-    )
+    );
 }

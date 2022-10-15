@@ -1,14 +1,14 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { useTheme } from "@material-ui/core";
+import { useTheme } from "@mui/material";
 
 
 const Path = props => {
   const theme = useTheme();
   return (
     <motion.path
-      stroke={`${theme.palette.primary.secondary}`}
+      stroke={`white`}
       fill="transparent"
       strokeWidth="3"
       // stroke="hsl(0, 0%, 18%)"

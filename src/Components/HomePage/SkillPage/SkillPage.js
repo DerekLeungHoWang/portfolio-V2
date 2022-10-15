@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useDispatch } from 'react-redux';
-import { Container, Grid, useTheme } from '@material-ui/core';
+import { Container, Grid, useTheme } from '@mui/material';
 import AllSkills from './Skills/AllSkills';
 import SkillLeft from './Skills/SkillLeft/SkillLeft';
 import PageHeader from '../../Common/PageHeader/PageHeader';
@@ -50,30 +50,30 @@ export default function SkillPage() {
             <Grid container
                 xs={12}
                 direction="column"
-                justify="center"
+                justifyContent="center"
                 alignItems="center"
             >
                 <PageHeader>Skills</PageHeader>
                 <Grid container
                     direction="row"
-                    justify="center"
+                    justifyContent="center"
                     alignItems="center"
 
                     spacing={1}
                 >
                     <Grid container item xs={12} lg={6} direction="column"
-                        justify="center"
+                        justifyContent="center"
                         alignItems="center" >
                         <SkillLeft />
 
                     </Grid>
                     <Grid container item xs={12} lg={6} direction="column"
-                        justify="center"
+                        justifyContent="center"
                         alignItems="center" >
                         <AllSkills />
                     </Grid>
                 </Grid>
             </Grid>
         </Wrapper>
-    )
+    );
 }

@@ -2,11 +2,11 @@ import { motion, useAnimation } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
 import styles from './CoverPage.module.css'
-import Button from '@material-ui/core/Button';
-import { Container, Grid, useTheme } from '@material-ui/core';
+import Button from '@mui/material/Button';
+import { Container, Grid, useTheme } from '@mui/material';
 import StyledButton from '../../Common/StyledButton/StyledButton';
 import { useSelector } from 'react-redux';
-import { blue, pink } from '@material-ui/core/colors';
+import { blue, pink } from '@mui/material/colors';
 import Pdf from '../../Common/PDF/resume.pdf'
 import { ReactComponent as GoodTeamSVG } from '../../Common/Images/goodTeam.svg';
 import Navbar from '../../Common/Navbar/Navbar';
@@ -108,11 +108,9 @@ export default function CoverPage() {
 
 
     return (
-
-
         <Container className={styles.coverContainer} >
-            <Grid container direction="row" justify="center" alignItems="center">
-                <Grid container item xs={12} lg={4} alignItems="center" justify="center">
+            <Grid container direction="row" justifyContent="center" alignItems="center">
+                <Grid container item xs={12} lg={4} alignItems="center" justifyContent="center">
                     <div>
                         <SayHi theme={theme}
                             initial="hidden"
@@ -151,16 +149,14 @@ export default function CoverPage() {
                         </a>
                     </div>
                 </Grid>
-                <Grid container item lg={4} xs={12} justify="center" alignItems="center">
+                <Grid container item lg={4} xs={12} justifyContent="center" alignItems="center">
 
                     <GoodTeamSVG className={styles.goodTeamSvg} />
 
                 </Grid>
             </Grid>
         </Container>
-
-
-    )
+    );
 }
 
 

@@ -1,4 +1,4 @@
-import { Grid, useTheme } from '@material-ui/core';
+import { Grid, useTheme } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components'
 import { ReactComponent as Leetcode } from '../../Common/Images/leetcode.svg';

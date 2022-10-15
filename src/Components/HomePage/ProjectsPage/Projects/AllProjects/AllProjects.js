@@ -1,21 +1,17 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import { Button, Grid } from "@material-ui/core";
+import makeStyles from '@mui/styles/makeStyles';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { Button, Grid } from "@mui/material";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -42,13 +38,13 @@ export default function AllProjects({ data }) {
 
   };
 
-  const classes = useStyles();
+
 
   return (
-    <Grid container direction="row" justify="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center">
       <Grid item xs={12}>
         <TableContainer component={Paper}>
-          <Table className={classes.table} aria-label="simple table">
+          <Table  aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>Year</TableCell>
@@ -76,7 +72,7 @@ export default function AllProjects({ data }) {
                       // size="large"
                       color="primary"
                       variant="outlined"
-                      className={classes.styledButton}
+                    
                     >
                       Detail
                     </DetailButton>
