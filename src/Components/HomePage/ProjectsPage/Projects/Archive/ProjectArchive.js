@@ -14,6 +14,7 @@ import {
   Container,
   Grid,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen as faFolderOpen } from "@fortawesome/free-regular-svg-icons";
@@ -173,36 +174,40 @@ export default function ProjectArchive(props) {
               key={project.title}
               className="projectCard"
             >
-              <CardActionArea onClick={() => handleClick(project.id)}>
-                {/* <div style={{height:"190px"}} > */}
-                <CardMedia
-                  classes={{
-                    img: classes.img,
-                    root: classes.imgRoot,
-                  }}
-                  component="img"
-                  // className={classes.media}
-                  src={project.img}
-                />
-                {/* </div> */}
-                <CardContent>
-                  <Typography
-                    color="primary"
-                    gutterBottom
-                    variant="h5"
-                    component="h2"
-                  >
-                    {project.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
+              <Tooltip placement="top" title="Click to read more information">
+                <CardActionArea onClick={() => handleClick(project.id)}>
+                  {/* <div style={{height:"190px"}} > */}
+                  <CardMedia
+                    classes={{
+                      img: classes.img,
+                      root: classes.imgRoot,
+                    }}
+                    component="img"
+                    // className={classes.media}
+                    src={project.img}
+                  />
+                  {/* </div> */}
+                  <CardContent>
+                    <Typography
+                      color="primary"
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                    >
+                      {project.title}
+                    </Typography>
+                    <Box sx={{height:"120px", overflowY:"scroll"}}>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {project.description}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </CardActionArea>
+              </Tooltip>
               <CardActions disableSpacing>
                 {project.youtube_link && (
                   <a href={project.youtube_link} target="_blank">
@@ -220,9 +225,7 @@ export default function ProjectArchive(props) {
                 )}
                 {project.actual_link && (
                   <a href={project.actual_link} target="_blank">
-                    <IconButton aria-label="share" size="large">
-                      <LinkIcon />
-                    </IconButton>
+                    <Button aria-label="share">Visit the website</Button>
                   </a>
                 )}
               </CardActions>
