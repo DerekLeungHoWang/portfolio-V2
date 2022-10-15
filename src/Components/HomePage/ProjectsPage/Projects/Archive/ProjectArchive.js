@@ -28,7 +28,7 @@ import AllProjects from "../AllProjects/AllProjects";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkIcon from "@mui/icons-material/Link";
-
+import InfoIcon from "@mui/icons-material/Info";
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
     width: "100%",
@@ -150,8 +150,6 @@ export default function ProjectArchive(props) {
     return () => {};
   }, [developedBy]);
 
-  //filter data according to developedBy
-
   return isTableView ? (
     <AllProjects data={projectData} />
   ) : (
@@ -174,40 +172,78 @@ export default function ProjectArchive(props) {
               key={project.title}
               className="projectCard"
             >
-              <Tooltip placement="top" title="Click to read more information">
-                <CardActionArea onClick={() => handleClick(project.id)}>
-                  {/* <div style={{height:"190px"}} > */}
-                  <CardMedia
-                    classes={{
-                      img: classes.img,
-                      root: classes.imgRoot,
-                    }}
-                    component="img"
-                    // className={classes.media}
-                    src={project.img}
-                  />
-                  {/* </div> */}
-                  <CardContent>
-                    <Typography
-                      color="primary"
-                      gutterBottom
-                      variant="h5"
-                      component="h2"
-                    >
-                      {project.title}
-                    </Typography>
-                    <Box sx={{height:"120px", overflowY:"scroll"}}>
+              {project.actual_link ? (
+                <Tooltip placement="top" title="Click to visit the website">
+                  <a href={project.actual_link} target="_blank">
+                    <CardActionArea>
+                      {/* <div style={{height:"190px"}} > */}
+                      <CardMedia
+                        classes={{
+                          img: classes.img,
+                          root: classes.imgRoot,
+                        }}
+                        component="img"
+                        // className={classes.media}
+                        src={project.img}
+                      />
+                      {/* </div> */}
+                      <CardContent>
+                        <Typography
+                          color="primary"
+                          gutterBottom
+                          variant="h5"
+                          component="h2"
+                        >
+                          {project.title}
+                        </Typography>
+                        <Box sx={{ height: "120px", overflowY: "scroll" }}>
+                          <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
+                          >
+                            {project.description}
+                          </Typography>
+                        </Box>
+                      </CardContent>
+                    </CardActionArea>
+                  </a>
+                </Tooltip>
+              ) : (
+                <Tooltip placement="top" title="Not deployed, feel free to check the video/github">
+                  <Box>
+                    <CardMedia
+                      classes={{
+                        img: classes.img,
+                        root: classes.imgRoot,
+                      }}
+                      component="img"
+                      // className={classes.media}
+                      src={project.img}
+                    />
+                    {/* </div> */}
+                    <CardContent>
                       <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
+                        color="primary"
+                        gutterBottom
+                        variant="h5"
+                        component="h2"
                       >
-                        {project.description}
+                        {project.title}
                       </Typography>
-                    </Box>
-                  </CardContent>
-                </CardActionArea>
-              </Tooltip>
+                      <Box sx={{ height: "120px", overflowY: "scroll" }}>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {project.description}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Box>
+                </Tooltip>
+              )}
               <CardActions disableSpacing>
                 {project.youtube_link && (
                   <a href={project.youtube_link} target="_blank">
@@ -223,6 +259,16 @@ export default function ProjectArchive(props) {
                     </IconButton>
                   </a>
                 )}
+
+                <Tooltip title="Click to access more information">
+                  <IconButton
+                    onClick={() => handleClick(project.id)}
+                    aria-label="share"
+                    size="large"
+                  >
+                    <InfoIcon />
+                  </IconButton>
+                </Tooltip>
                 {project.actual_link && (
                   <a href={project.actual_link} target="_blank">
                     <Button aria-label="share">Visit the website</Button>

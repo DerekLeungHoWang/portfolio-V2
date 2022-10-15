@@ -31,21 +31,9 @@ export const data = [
     year: 2020,
     developedBy: "mySelf",
   },
+  
   {
     id: 2,
-    end: "Frontend",
-    title: "Bill Splitter",
-    description: "An app to help split expenses",
-    //"youtube_link": "#",
-    actual_link: "https://sharedbillsplitter.netlify.app/",
-    github_link: "https://github.com/HoWangLeung/Bill-Splitter",
-    tag1: "React",
-    img: bill_1,
-    year: 2022,
-    developedBy: "mySelf",
-  },
-  {
-    id: 3,
     end: "Fullstack",
     title: "Lyrics maker for church",
     description:
@@ -58,6 +46,19 @@ export const data = [
     tag3: "MongoDB",
     img: lyrics1_1,
     year: 2021,
+    developedBy: "mySelf",
+  },
+  {
+    id: 3,
+    end: "Frontend",
+    title: "Bill Splitter",
+    description: "An app to help split expenses",
+    //"youtube_link": "#",
+    actual_link: "https://sharedbillsplitter.netlify.app/",
+    github_link: "https://github.com/HoWangLeung/Bill-Splitter",
+    tag1: "React",
+    img: bill_1,
+    year: 2022,
     developedBy: "mySelf",
   },
   {
