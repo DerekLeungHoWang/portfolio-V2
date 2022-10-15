@@ -4,15 +4,16 @@ import {
   Container,
   Grid,
   IconButton,
+  Avatar,
+  Tooltip,
 } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import ViewListIcon from "@mui/icons-material/ViewList";
-import { Avatar } from "react-lorem-ipsum";
 export default function SwitchView({ setIsTableView, isTableView }) {
   return (
-    <Container>
+    <Container sx={{width:"58%"}} >
       <Grid
         container
         direction="row"
@@ -20,22 +21,27 @@ export default function SwitchView({ setIsTableView, isTableView }) {
         alignItems="center"
       >
         <ButtonGroup color="primary" aria-label="text primary button group">
-          <IconButton
-            color="primary"
-            variant={!isTableView ? "contained" : "outlined"}
-            // startIcon={}
-            onClick={() => setIsTableView(false)}
-          >
-            <ViewModuleIcon />
-          </IconButton>
-          <IconButton
-            color="primary"
-            variant={isTableView ? "contained" : "outlined"}
-            // startIcon={}
-            onClick={() => setIsTableView(true)}
-          >
-            <ViewListIcon />
-          </IconButton>
+          <Tooltip title="Module View">
+            <Button
+              color="primary"
+              variant={!isTableView ? "contained" : "outlined"}
+              // startIcon={}
+              onClick={() => setIsTableView(false)}
+            >
+              <ViewModuleIcon />
+            </Button>
+          </Tooltip>
+          <Tooltip title="Table View">
+            <Button
+              sx={{ cursor: "pointer" }}
+              color="primary"
+              variant={isTableView ? "contained" : "outlined"}
+              // startIcon={}
+              onClick={() => setIsTableView(true)}
+            >
+              <ViewListIcon />
+            </Button>
+          </Tooltip>
         </ButtonGroup>
       </Grid>
     </Container>

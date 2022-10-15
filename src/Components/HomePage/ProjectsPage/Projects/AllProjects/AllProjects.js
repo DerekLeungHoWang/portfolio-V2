@@ -1,5 +1,5 @@
 import React from "react";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -10,8 +10,7 @@ import Paper from "@mui/material/Paper";
 import { Button, Grid } from "@mui/material";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
-
+import { Container } from "@mui/system";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -26,63 +25,66 @@ const rows = [
 ];
 
 const DetailButton = styled(Button)`
-//   position: absolute;
-//   top: 5%;
-//   right: 5%;
+  //   position: absolute;
+  //   top: 5%;
+  //   right: 5%;
 `;
 
 export default function AllProjects({ data }) {
   const history = useHistory();
   const handleClick = (id) => {
     history.push(`/projectDetail/${id}`);
-
   };
 
-
-
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid item xs={12}>
-        <TableContainer component={Paper}>
-          <Table  aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Year</TableCell>
-                <TableCell align="right">Title</TableCell>
-                <TableCell align="right">Stack</TableCell>
-                <TableCell align="right">Description</TableCell>
-                <TableCell align="right">Detail</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {data.map((project, index) => (
-                <TableRow key={`${project.title}-${index}`}>
-                  <TableCell component="th" scope="row">
-                    {project.year}
-                  </TableCell>
-                  <TableCell align="right">{project.title}</TableCell>
-                  <TableCell align="right">{project.end}</TableCell>
-                  <TableCell align="right">{`${project.description.substring(
-                    0,
-                    40
-                  )}...`}</TableCell>
-                  <TableCell align="right">
-                    <DetailButton
-                      onClick={() => handleClick(project.id)}
-                      // size="large"
-                      color="primary"
-                      variant="outlined"
-                    
-                    >
-                      Detail
-                    </DetailButton>
-                  </TableCell>
+    <Container>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item xs={12}>
+          <TableContainer >
+            <Table aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Year</TableCell>
+                  <TableCell align="right">Title</TableCell>
+                  <TableCell align="right">Stack</TableCell>
+                  <TableCell align="right">Description</TableCell>
+                  <TableCell align="right">Detail</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {data.map((project, index) => (
+                  <TableRow key={`${project.title}-${index}`}>
+                    <TableCell component="th" scope="row">
+                      {project.year}
+                    </TableCell>
+                    <TableCell align="right">{project.title}</TableCell>
+                    <TableCell align="right">{project.end}</TableCell>
+                    <TableCell align="right">{`${project.description.substring(
+                      0,
+                      40
+                    )}...`}</TableCell>
+                    <TableCell align="right">
+                      <DetailButton
+                        onClick={() => handleClick(project.id)}
+                        // size="large"
+                        color="primary"
+                        variant="outlined"
+                      >
+                        Detail
+                      </DetailButton>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 }

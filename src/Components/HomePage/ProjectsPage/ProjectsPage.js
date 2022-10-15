@@ -4,7 +4,14 @@ import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 import { setPrjPageInView } from "../Actions/HomePageActions";
-import { Button, ButtonGroup, Container, Grid, useTheme } from "@mui/material";
+import {
+  Button,
+  ButtonGroup,
+  Container,
+  Grid,
+  Tooltip,
+  useTheme,
+} from "@mui/material";
 import ProjectArchive from "./Projects/Archive/ProjectArchive";
 import AllProjects from "./Projects/AllProjects/AllProjects";
 import FeaturedProjects from "./Projects/Featured/FeaturedProjects";
@@ -32,7 +39,6 @@ export default function ProjectsPage(props) {
       dispatch(setPrjPageInView(false));
     }
   }, [inView]);
- 
 
   return (
     <Wrapper
@@ -51,9 +57,7 @@ export default function ProjectsPage(props) {
         alignItems="center"
         style={{ position: "relative" }}
       >
-        <PageHeader setPrjPageInView={setPrjPageInView}>
-          Projects
-        </PageHeader>
+        <PageHeader setPrjPageInView={setPrjPageInView}>Projects</PageHeader>
 
         <SwitchView isTableView={isTableView} setIsTableView={setIsTableView} />
 
@@ -62,20 +66,24 @@ export default function ProjectsPage(props) {
             color="primary"
             aria-label="outlined primary button group"
           >
-            <Button
-              variant={developedBy === "mySelf" ? "contained" : "outlined"}
-              color="primary"
-              onClick={() => setDevelopedBy("mySelf")}
-            >
-              My Projects
-            </Button>
-            <Button
-              variant={developedBy !== "mySelf" ? "contained" : "outlined"}
-              color="primary"
-              onClick={() => setDevelopedBy("tutorial")}
-            >
-              Tutorial
-            </Button>
+            <Tooltip placement="top" title="Projects developed by myself">
+              <Button
+                variant={developedBy === "mySelf" ? "contained" : "outlined"}
+                color="primary"
+                onClick={() => setDevelopedBy("mySelf")}
+              >
+                My Projects
+              </Button>
+            </Tooltip>
+            <Tooltip placement="top" title="Projects that I coded along tutorial">
+              <Button
+                variant={developedBy !== "mySelf" ? "contained" : "outlined"}
+                color="primary"
+                onClick={() => setDevelopedBy("tutorial")}
+              >
+                Tutorial
+              </Button>
+            </Tooltip>
           </ButtonGroup>
         </Grid>
 

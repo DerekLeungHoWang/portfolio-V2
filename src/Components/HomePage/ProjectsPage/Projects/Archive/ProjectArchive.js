@@ -162,75 +162,73 @@ export default function ProjectArchive(props) {
       className="projectBoxContainer"
     >
       {projectData.map((project, index) => {
-        
-          return (
-            <motion.div
-              variants={card}
-              key={`${project.title}-${index}`}
-              className="projectCardWrapper"
+        return (
+          <motion.div
+            variants={card}
+            key={`${project.title}-${index}`}
+            className="projectCardWrapper"
+          >
+            <Card
+              variant="outlined"
+              key={project.title}
+              className="projectCard"
             >
-              <Card
-                variant="outlined"
-                key={project.title}
-                className="projectCard"
-              >
-                <CardActionArea onClick={() => handleClick(project.id)}>
-                  {/* <div style={{height:"190px"}} > */}
-                  <CardMedia
-                    classes={{
-                      img: classes.img,
-                      root: classes.imgRoot,
-                    }}
-                    component="img"
-                    // className={classes.media}
-                    src={project.img}
-                  />
-                  {/* </div> */}
-                  <CardContent>
-                    <Typography
-                      color="primary"
-                      gutterBottom
-                      variant="h5"
-                      component="h2"
-                    >
-                      {project.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {project.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions disableSpacing>
-                  {project.youtube_link && (
-                    <a href={project.youtube_link} target="_blank">
-                      <IconButton aria-label="add to favorites" size="large">
-                        <YouTubeIcon />
-                      </IconButton>
-                    </a>
-                  )}
-                  {project.github_link && (
-                    <a href={project.github_link} target="_blank">
-                      <IconButton aria-label="share" size="large">
-                        <GitHubIcon />
-                      </IconButton>
-                    </a>
-                  )}
-                  {project.actual_link && (
-                    <a href={project.actual_link} target="_blank">
-                      <IconButton aria-label="share" size="large">
-                        <LinkIcon />
-                      </IconButton>
-                    </a>
-                  )}
-                </CardActions>
-              </Card>
-            </motion.div>
-          );
-        
+              <CardActionArea onClick={() => handleClick(project.id)}>
+                {/* <div style={{height:"190px"}} > */}
+                <CardMedia
+                  classes={{
+                    img: classes.img,
+                    root: classes.imgRoot,
+                  }}
+                  component="img"
+                  // className={classes.media}
+                  src={project.img}
+                />
+                {/* </div> */}
+                <CardContent>
+                  <Typography
+                    color="primary"
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                  >
+                    {project.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {project.description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions disableSpacing>
+                {project.youtube_link && (
+                  <a href={project.youtube_link} target="_blank">
+                    <IconButton aria-label="add to favorites" size="large">
+                      <YouTubeIcon />
+                    </IconButton>
+                  </a>
+                )}
+                {project.github_link && (
+                  <a href={project.github_link} target="_blank">
+                    <IconButton aria-label="share" size="large">
+                      <GitHubIcon />
+                    </IconButton>
+                  </a>
+                )}
+                {project.actual_link && (
+                  <a href={project.actual_link} target="_blank">
+                    <IconButton aria-label="share" size="large">
+                      <LinkIcon />
+                    </IconButton>
+                  </a>
+                )}
+              </CardActions>
+            </Card>
+          </motion.div>
+        );
       })}
     </motion.div>
   );
