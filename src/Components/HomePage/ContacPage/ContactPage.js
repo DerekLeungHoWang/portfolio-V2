@@ -29,7 +29,7 @@ export default function ContactPage() {
   
 
     return (
-        <Wrapper theme={theme} container >
+        <Wrapper theme={theme}  >
             <Grid container item xs={12}
                 direction="column"
                 justifyContent="center"

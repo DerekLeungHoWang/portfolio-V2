@@ -48,7 +48,7 @@ export default function SkillPage() {
     return (
         <Wrapper id="skillPage" theme={theme} maxWidth={false} >
             <Grid container
-                xs={12}
+             
                 direction="column"
                 justifyContent="center"
                 alignItems="center"

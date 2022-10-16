@@ -34,7 +34,7 @@ export const data = [
   {
     id: 2,
     end: "Fullstack",
-    title: "Lyrics maker for church",
+    title: "Lyrics maker",
     description:
       "Created for friends in my local church. Every week slides of ppt have to be made manually in specific format , which is tedious. Therefore I came up with this quick lyrics maker and player to automate the process",
     youtube_link: "https://www.youtube.com/watch?v=3MpNyEEGONA",
@@ -102,7 +102,7 @@ export const data = [
   {
     id: 7,
     end: "Frontend",
-    title: "League Of Legends Slides",
+    title: "LOL Slides",
     description: "Slides with cool animation in the them of League of Legends.",
     youtube_link: "https://www.youtube.com/watch?v=YYOj_cLzyH8",
     github_link: "https://github.com/HoWangLeung/framer-motion-playground",

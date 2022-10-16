@@ -53,24 +53,14 @@ export default function ProjectsPage(props) {
       // container
       // style={{ maxWidth: "70%" }}
     >
-      <Grid
-        container
-        xs={12}
-        // direction="column"
-        // justifyContent="center"
-        // alignItems="center"
-        style={{ position: "relative" }}
-      >
+      <Grid container style={{ position: "relative" }}>
         <PageHeader setPrjPageInView={setPrjPageInView}>Projects</PageHeader>
-
-        <SwitchView isTableView={isTableView} setIsTableView={setIsTableView} />
 
         <Grid
           container
           direction="column"
           justifyContent="center"
           alignItems="center"
-          xs={12}
           style={{ marginBottom: "20px" }}
         >
           <ButtonGroup
@@ -99,16 +89,30 @@ export default function ProjectsPage(props) {
               </Button>
             </Tooltip>
           </ButtonGroup>
+          
+          <SwitchView
+            isTableView={isTableView}
+            setIsTableView={setIsTableView}
+          />
+        </Grid>
+        <Grid container direction="row" justifyContent="center">
+          <Grid item>
+            <TagFilter
+              selectedTags={selectedTags}
+              data={data}
+              setSelectedTags={setSelectedTags}
+            />
+          </Grid>
         </Grid>
 
-        <TagFilter selectedTags={selectedTags} data={data} setSelectedTags={setSelectedTags} />
-
         <ProjectArchive
-        selectedTags={selectedTags}
+          selectedTags={selectedTags}
+          setSelectedTags={setSelectedTags}
           projectData={projectData}
           setProjectData={setProjectData}
           developedBy={developedBy}
           isTableView={isTableView}
+          setIsTableView={setIsTableView}
         />
       </Grid>
     </Wrapper>

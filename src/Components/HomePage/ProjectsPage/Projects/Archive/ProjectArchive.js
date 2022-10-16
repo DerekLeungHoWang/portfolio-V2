@@ -27,10 +27,11 @@ import AllProjects from "../AllProjects/AllProjects";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkIcon from "@mui/icons-material/Link";
-import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
+import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
 import { Stack } from "@mui/system";
 import { YoutubeSvg } from "../Featured/Item";
-import { getChipColor } from "../TagFilter/TagFilter";
+import TagFilter, { getChipColor } from "../TagFilter/TagFilter";
+import SwitchView from "../SwitchView/SwitchView";
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
     width: "100%",
@@ -129,7 +130,7 @@ const card = {
 
 export default function ProjectArchive(props) {
   const history = useHistory();
-  const { developedBy, projectData, setProjectData, selectedTags } = props;
+  const { developedBy, projectData, setProjectData, selectedTags ,setSelectedTags,setIsTableView} = props;
   const classes = useStyles();
   const prjPageInview = useSelector(
     (state) => state.AnimationReducer.prjPageInView
@@ -166,8 +167,6 @@ export default function ProjectArchive(props) {
         return tags.includes(matchingTag);
       });
     }
-
-    console.log(newProjectData);
     setProjectData(newProjectData);
     return () => {};
   }, [developedBy, selectedTags]);
@@ -179,6 +178,24 @@ export default function ProjectArchive(props) {
       justifyContent="center"
       alignItems="center"
     >
+
+        {/* <Grid container direction="row" justifyContent="space-between">
+          <Grid item>
+            <TagFilter
+              selectedTags={selectedTags}
+              data={data}
+              setSelectedTags={setSelectedTags}
+            />
+          </Grid>
+
+          <Grid item sx={{ mt: 2 }}>
+            <SwitchView
+              isTableView={isTableView}
+              setIsTableView={setIsTableView}
+            />
+          </Grid>
+        </Grid> */}
+
       {isTableView ? (
         <AllProjects data={projectData} />
       ) : (
@@ -251,15 +268,15 @@ export default function ProjectArchive(props) {
                       </CardActionArea>
                     </a>
                   </Tooltip>
-                  <Stack
-                    sx={{ pl:2, display: "block" }}
-                    direction="row"
-                    
-                  >
+                  <Stack sx={{ pl: 2, display: "block" }} direction="row">
                     {project.tags.map((tag) => (
-                      <Chip 
-                      color={getChipColor(tag)}
-                      sx={{m:.5}}  size="small"  label={tag} />
+                      <Chip
+                        key={tag}
+                        color={getChipColor(tag)}
+                        sx={{ m: 0.5 }}
+                        size="small"
+                        label={tag}
+                      />
                     ))}
                   </Stack>
 
@@ -267,21 +284,21 @@ export default function ProjectArchive(props) {
                     {project.youtube_link && (
                       <a href={project.youtube_link} target="_blank">
                         <IconButton aria-label="add to favorites" size="large">
-                          <YoutubeSvg/>
+                          <YoutubeSvg />
                         </IconButton>
                       </a>
                     )}
                     {project.github_link && (
                       <a href={project.github_link} target="_blank">
                         <IconButton aria-label="share" size="large">
-                          <GitHubIcon sx={{fill:"black"}} />
+                          <GitHubIcon sx={{ fill: "black" }} />
                         </IconButton>
                       </a>
                     )}
 
                     <Tooltip title="Click to access more information">
                       <IconButton
-                      color="secondary"
+                        color="secondary"
                         onClick={() => handleClick(project.id)}
                         aria-label="share"
                         size="large"
@@ -291,7 +308,7 @@ export default function ProjectArchive(props) {
                     </Tooltip>
                     {project.actual_link && (
                       <a href={project.actual_link} target="_blank">
-                        <Button aria-label="share">Visit the website</Button>
+                        <Button aria-label="share">Visit</Button>
                       </a>
                     )}
                   </CardActions>

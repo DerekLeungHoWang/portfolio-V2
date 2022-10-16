@@ -46,15 +46,14 @@ export default function TagFilter({ data, selectedTags, setSelectedTags }) {
   
 
   return (
-    <Container sx={{width:"58%",mb:2}}>
+    <Container maxWidth={false} >
       <Grid
         container
         direction="column"
         justifyContent="center"
-        alignItems="start"
-        xs={12}
+        alignItems="center"
       >
-        <Typography sx={{mb:1}}>Filter By Tags:</Typography>
+        <Typography>Filter By Tags:</Typography>
         <Stack direction="row" spacing={1}>
           {allTags.sort().map((tag) => (
             <Chip
