@@ -11,6 +11,7 @@ import {
   Box,
   CardActionArea,
   CardMedia,
+  Chip,
   Container,
   Grid,
   IconButton,
@@ -29,6 +30,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkIcon from "@mui/icons-material/Link";
 import InfoIcon from "@mui/icons-material/Info";
+import { Stack } from "@mui/system";
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
     width: "100%",
@@ -127,12 +129,12 @@ const card = {
 
 export default function ProjectArchive(props) {
   const history = useHistory();
-  const { developedBy } = props;
+  const { developedBy, projectData, setProjectData, selectedTags } = props;
   const classes = useStyles();
   const prjPageInview = useSelector(
     (state) => state.AnimationReducer.prjPageInView
   );
-  const [projectData, setProjectData] = useState(data);
+
   const { isTableView } = props;
   const handleClick = (id) => {
     history.push(`/projectDetail/${id}`);
@@ -145,140 +147,157 @@ export default function ProjectArchive(props) {
       console.log(d.developedBy, developedBy);
       return d.developedBy === developedBy;
     });
+    let hashMap = selectedTags.reduce(
+      (obj, item, index) => ({ ...obj, [item]: item }),
+      {}
+    );
+    console.log(hashMap);
+    if (selectedTags.length > 0) {
+      newProjectData = newProjectData.filter((d) => {
+        let tags = d.tags;
+        let matchingTag = tags.find((tag) => {
+          console.log(tag, "<<< tag", hashMap[tag]);
+          if (hashMap && hashMap[tag] !== undefined) {
+            console.log("here,", tag);
+            return tag;
+          }
+        });
+        console.log(matchingTag, "matchingTag");
+        return tags.includes(matchingTag);
+      });
+    }
+
     console.log(newProjectData);
     setProjectData(newProjectData);
     return () => {};
-  }, [developedBy]);
+  }, [developedBy, selectedTags]);
 
-  return isTableView ? (
-    <AllProjects data={projectData} />
-  ) : (
-    <motion.div
-      initial="hidden"
-      animate={prjPageInview ? "visible" : "hidden"}
-      variants={cardWrapper}
-      component={motion.div}
-      className="projectBoxContainer"
+  return (
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
     >
-      {projectData.map((project, index) => {
-        return (
-          <motion.div
-            variants={card}
-            key={`${project.title}-${index}`}
-            className="projectCardWrapper"
-          >
-            <Card
-              variant="outlined"
-              key={project.title}
-              className="projectCard"
-            >
-              {project.actual_link ? (
-                <Tooltip placement="top" title="Click to visit the website">
-                  <a href={project.actual_link} target="_blank">
-                    <CardActionArea>
-                      {/* <div style={{height:"190px"}} > */}
-                      <CardMedia
-                        classes={{
-                          img: classes.img,
-                          root: classes.imgRoot,
-                        }}
-                        component="img"
-                        // className={classes.media}
-                        src={project.img}
-                      />
-                      {/* </div> */}
-                      <CardContent>
-                        <Typography
-                          color="primary"
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                        >
-                          {project.title}
-                        </Typography>
-                        <Box sx={{ height: "120px", overflowY: "scroll" }}>
-                          <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
-                          >
-                            {project.description}
-                          </Typography>
-                        </Box>
-                      </CardContent>
-                    </CardActionArea>
-                  </a>
-                </Tooltip>
-              ) : (
-                <Tooltip placement="top" title="Not deployed, feel free to check the video/github">
-                  <Box>
-                    <CardMedia
-                      classes={{
-                        img: classes.img,
-                        root: classes.imgRoot,
-                      }}
-                      component="img"
-                      // className={classes.media}
-                      src={project.img}
-                    />
-                    {/* </div> */}
-                    <CardContent>
-                      <Typography
-                        color="primary"
-                        gutterBottom
-                        variant="h5"
-                        component="h2"
-                      >
-                        {project.title}
-                      </Typography>
-                      <Box sx={{ height: "120px", overflowY: "scroll" }}>
-                        <Typography
-                          variant="body2"
-                          color="textSecondary"
-                          component="p"
-                        >
-                          {project.description}
-                        </Typography>
-                      </Box>
-                    </CardContent>
-                  </Box>
-                </Tooltip>
-              )}
-              <CardActions disableSpacing>
-                {project.youtube_link && (
-                  <a href={project.youtube_link} target="_blank">
-                    <IconButton aria-label="add to favorites" size="large">
-                      <YouTubeIcon />
-                    </IconButton>
-                  </a>
-                )}
-                {project.github_link && (
-                  <a href={project.github_link} target="_blank">
-                    <IconButton aria-label="share" size="large">
-                      <GitHubIcon />
-                    </IconButton>
-                  </a>
-                )}
-
-                <Tooltip title="Click to access more information">
-                  <IconButton
-                    onClick={() => handleClick(project.id)}
-                    aria-label="share"
-                    size="large"
+      {isTableView ? (
+        <AllProjects data={projectData} />
+      ) : (
+        <motion.div
+          initial="hidden"
+          animate={prjPageInview ? "visible" : "hidden"}
+          variants={cardWrapper}
+          component={motion.div}
+          className="projectBoxContainer"
+        >
+          {projectData.map((project, index) => {
+            return (
+              <motion.div
+                variants={card}
+                key={`${project.title}-${index}`}
+                className="projectCardWrapper"
+              >
+                <Card
+                  variant="outlined"
+                  key={project.title}
+                  className="projectCard"
+                >
+                  <Tooltip
+                    placement="top"
+                    title={
+                      project.actual_link
+                        ? "Click to visit the website"
+                        : "Not deployed, click to view the video"
+                    }
                   >
-                    <InfoIcon />
-                  </IconButton>
-                </Tooltip>
-                {project.actual_link && (
-                  <a href={project.actual_link} target="_blank">
-                    <Button aria-label="share">Visit the website</Button>
-                  </a>
-                )}
-              </CardActions>
-            </Card>
-          </motion.div>
-        );
-      })}
-    </motion.div>
+                    <a
+                      href={
+                        project.actual_link
+                          ? project.actual_link
+                          : project.youtube_link
+                      }
+                      target="_blank"
+                    >
+                      <CardActionArea>
+                        {/* <div style={{height:"190px"}} > */}
+                        <CardMedia
+                          classes={{
+                            img: classes.img,
+                            root: classes.imgRoot,
+                          }}
+                          component="img"
+                          // className={classes.media}
+                          src={project.img}
+                        />
+                        {/* </div> */}
+                        <CardContent>
+                          <Typography
+                            color="primary"
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                          >
+                            {project.title}
+                          </Typography>
+                          <Box sx={{ height: "120px", overflowY: "scroll" }}>
+                            <Typography
+                              variant="body2"
+                              color="textSecondary"
+                              component="p"
+                            >
+                              {project.description}
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </CardActionArea>
+                    </a>
+                  </Tooltip>
+                  <Stack
+                    sx={{ pl:2, display: "block" }}
+                    direction="row"
+                    
+                  >
+                    {project.tags.map((tag) => (
+                      <Chip sx={{m:.5}}  size="small" color="primary" label={tag} />
+                    ))}
+                  </Stack>
+
+                  <CardActions disableSpacing>
+                    {project.youtube_link && (
+                      <a href={project.youtube_link} target="_blank">
+                        <IconButton aria-label="add to favorites" size="large">
+                          <YouTubeIcon />
+                        </IconButton>
+                      </a>
+                    )}
+                    {project.github_link && (
+                      <a href={project.github_link} target="_blank">
+                        <IconButton aria-label="share" size="large">
+                          <GitHubIcon />
+                        </IconButton>
+                      </a>
+                    )}
+
+                    <Tooltip title="Click to access more information">
+                      <IconButton
+                        onClick={() => handleClick(project.id)}
+                        aria-label="share"
+                        size="large"
+                      >
+                        <InfoIcon />
+                      </IconButton>
+                    </Tooltip>
+                    {project.actual_link && (
+                      <a href={project.actual_link} target="_blank">
+                        <Button aria-label="share">Visit the website</Button>
+                      </a>
+                    )}
+                  </CardActions>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      )}
+    </Grid>
   );
 }

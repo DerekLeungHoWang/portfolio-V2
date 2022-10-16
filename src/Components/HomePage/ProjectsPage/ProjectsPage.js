@@ -17,6 +17,8 @@ import AllProjects from "./Projects/AllProjects/AllProjects";
 import FeaturedProjects from "./Projects/Featured/FeaturedProjects";
 import PageHeader from "../../Common/PageHeader/PageHeader";
 import SwitchView from "./Projects/SwitchView/SwitchView";
+import TagFilter from "./Projects/TagFilter/TagFilter";
+import { data } from "./Projects/Archive/data";
 
 const Wrapper = styled(Container)`
   height: auto;
@@ -31,6 +33,8 @@ export default function ProjectsPage(props) {
   const [isTableView, setIsTableView] = useState(false);
   const [ref, inView, entry] = useInView({ threshold: 0.1 });
   const [developedBy, setDevelopedBy] = useState("mySelf");
+  const [projectData, setProjectData] = useState(data);
+  const [selectedTags, setSelectedTags] = useState([]);
 
   useEffect(() => {
     if (inView) {
@@ -52,16 +56,23 @@ export default function ProjectsPage(props) {
       <Grid
         container
         xs={12}
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
+        // direction="column"
+        // justifyContent="center"
+        // alignItems="center"
         style={{ position: "relative" }}
       >
         <PageHeader setPrjPageInView={setPrjPageInView}>Projects</PageHeader>
 
         <SwitchView isTableView={isTableView} setIsTableView={setIsTableView} />
 
-        <Grid xs={12} style={{ marginBottom: "20px" }}>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          xs={12}
+          style={{ marginBottom: "20px" }}
+        >
           <ButtonGroup
             color="primary"
             aria-label="outlined primary button group"
@@ -75,7 +86,10 @@ export default function ProjectsPage(props) {
                 My Projects
               </Button>
             </Tooltip>
-            <Tooltip placement="top" title="Projects that I coded along tutorial">
+            <Tooltip
+              placement="top"
+              title="Projects that I coded along tutorial"
+            >
               <Button
                 variant={developedBy !== "mySelf" ? "contained" : "outlined"}
                 color="primary"
@@ -87,7 +101,15 @@ export default function ProjectsPage(props) {
           </ButtonGroup>
         </Grid>
 
-        <ProjectArchive developedBy={developedBy} isTableView={isTableView} />
+        <TagFilter selectedTags={selectedTags} data={data} setSelectedTags={setSelectedTags} />
+
+        <ProjectArchive
+        selectedTags={selectedTags}
+          projectData={projectData}
+          setProjectData={setProjectData}
+          developedBy={developedBy}
+          isTableView={isTableView}
+        />
       </Grid>
     </Wrapper>
   );

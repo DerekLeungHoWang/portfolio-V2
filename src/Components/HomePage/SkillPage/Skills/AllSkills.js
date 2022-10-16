@@ -10,7 +10,7 @@ import { ReactComponent as SpringBootSvg } from '../../../Common/Images/springBo
 import { ReactComponent as SeleniumSvg } from '../../../Common/Images/selenium.svg';
 
 
-function AllSkills({ delayPerPixel = 0.0008 }) {
+function AllSkills({ delayPerPixel = 0.0018 }) {
     const originOffset = useRef({ top: 0, left: 0 });
     const [animate, setAnimate] = useState(false)
     const controls = useAnimation();
