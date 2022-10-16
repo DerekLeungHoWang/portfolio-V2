@@ -89,21 +89,11 @@ export default function ProjectsPage(props) {
               </Button>
             </Tooltip>
           </ButtonGroup>
-          
-          <SwitchView
-            isTableView={isTableView}
-            setIsTableView={setIsTableView}
-          />
+
+        
         </Grid>
-        <Grid container direction="row" justifyContent="center">
-          <Grid item>
-            <TagFilter
-              selectedTags={selectedTags}
-              data={data}
-              setSelectedTags={setSelectedTags}
-            />
-          </Grid>
-        </Grid>
+
+    
 
         <ProjectArchive
           selectedTags={selectedTags}

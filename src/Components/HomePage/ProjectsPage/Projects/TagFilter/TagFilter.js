@@ -46,12 +46,13 @@ export default function TagFilter({ data, selectedTags, setSelectedTags }) {
   
 
   return (
-    <Container maxWidth={false} >
+   
       <Grid
         container
         direction="column"
         justifyContent="center"
-        alignItems="center"
+        alignItems="start"
+        
       >
         <Typography>Filter By Tags:</Typography>
         <Stack direction="row" spacing={1}>
@@ -69,6 +70,6 @@ export default function TagFilter({ data, selectedTags, setSelectedTags }) {
           ))}
         </Stack>
       </Grid>
-    </Container>
+
   );
 }

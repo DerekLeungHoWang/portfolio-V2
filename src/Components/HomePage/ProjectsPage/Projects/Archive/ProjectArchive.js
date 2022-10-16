@@ -130,7 +130,14 @@ const card = {
 
 export default function ProjectArchive(props) {
   const history = useHistory();
-  const { developedBy, projectData, setProjectData, selectedTags ,setSelectedTags,setIsTableView} = props;
+  const {
+    developedBy,
+    projectData,
+    setProjectData,
+    selectedTags,
+    setSelectedTags,
+    setIsTableView,
+  } = props;
   const classes = useStyles();
   const prjPageInview = useSelector(
     (state) => state.AnimationReducer.prjPageInView
@@ -178,28 +185,39 @@ export default function ProjectArchive(props) {
       justifyContent="center"
       alignItems="center"
     >
-
-        {/* <Grid container direction="row" justifyContent="space-between">
-          <Grid item>
-            <TagFilter
-              selectedTags={selectedTags}
-              data={data}
-              setSelectedTags={setSelectedTags}
-            />
-          </Grid>
-
-          <Grid item sx={{ mt: 2 }}>
-            <SwitchView
-              isTableView={isTableView}
-              setIsTableView={setIsTableView}
-            />
-          </Grid>
-        </Grid> */}
+      <Grid
+        sx={{ mb: 1, width: "92%" }}
+        container
+        item
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Grid item>
+          <TagFilter
+            selectedTags={selectedTags}
+            data={data}
+            setSelectedTags={setSelectedTags}
+          />
+        </Grid>
+        <Grid item>
+          <SwitchView
+            isTableView={isTableView}
+            setIsTableView={setIsTableView}
+          />
+        </Grid>
+      </Grid>
 
       {isTableView ? (
-        <AllProjects data={projectData} />
+        <Grid item>
+          <AllProjects data={projectData} />
+        </Grid>
       ) : (
-        <motion.div
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          item
           initial="hidden"
           animate={prjPageInview ? "visible" : "hidden"}
           variants={cardWrapper}
@@ -210,7 +228,7 @@ export default function ProjectArchive(props) {
             return (
               <motion.div
                 variants={card}
-                key={`${project.title}-${index}`}
+                key={project.title}
                 className="projectCardWrapper"
               >
                 <Card
@@ -316,7 +334,7 @@ export default function ProjectArchive(props) {
               </motion.div>
             );
           })}
-        </motion.div>
+        </Grid>
       )}
     </Grid>
   );

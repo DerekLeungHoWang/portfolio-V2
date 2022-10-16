@@ -13,13 +13,8 @@ import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import ViewListIcon from "@mui/icons-material/ViewList";
 export default function SwitchView({ setIsTableView, isTableView }) {
   return (
-    <Container sx={{width:"58%"}} >
-      <Grid
-        container
-        direction="row"
-        justifyContent="flex-end"
-        alignItems="center"
-      >
+  
+      < >
         <ButtonGroup color="primary" aria-label="text primary button group">
           <Tooltip title="Module View">
             <Button
@@ -43,7 +38,7 @@ export default function SwitchView({ setIsTableView, isTableView }) {
             </Button>
           </Tooltip>
         </ButtonGroup>
-      </Grid>
-    </Container>
+      </>
+ 
   );
 }
