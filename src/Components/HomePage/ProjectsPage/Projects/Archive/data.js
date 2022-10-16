@@ -121,7 +121,7 @@ export const data = [
     github_link: "https://github.com/HoWangLeung/personalPage",
     img: image2,
     year: 2021,
-    tags: ["React"],
+    tags: ["Others"],
     developedBy: "mySelf",
   },
 ];

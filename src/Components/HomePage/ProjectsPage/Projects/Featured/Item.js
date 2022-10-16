@@ -125,7 +125,7 @@ width: 100%;
 
 `
 
-const YoutubeSvg = styled(YoutubeIcon)`
+export const YoutubeSvg = styled(YoutubeIcon)`
   height: 20px;
   width:20px;
 `

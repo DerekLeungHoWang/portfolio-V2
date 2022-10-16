@@ -18,8 +18,6 @@ import {
   Tooltip,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolderOpen as faFolderOpen } from "@fortawesome/free-regular-svg-icons";
-
 import styled from "styled-components";
 import StyledButton from "../../../../Common/StyledButton/StyledButton";
 import { motion } from "framer-motion";
@@ -29,8 +27,10 @@ import AllProjects from "../AllProjects/AllProjects";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkIcon from "@mui/icons-material/Link";
-import InfoIcon from "@mui/icons-material/Info";
+import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
 import { Stack } from "@mui/system";
+import { YoutubeSvg } from "../Featured/Item";
+import { getChipColor } from "../TagFilter/TagFilter";
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
     width: "100%",
@@ -257,7 +257,9 @@ export default function ProjectArchive(props) {
                     
                   >
                     {project.tags.map((tag) => (
-                      <Chip sx={{m:.5}}  size="small" color="primary" label={tag} />
+                      <Chip 
+                      color={getChipColor(tag)}
+                      sx={{m:.5}}  size="small"  label={tag} />
                     ))}
                   </Stack>
 
@@ -265,25 +267,26 @@ export default function ProjectArchive(props) {
                     {project.youtube_link && (
                       <a href={project.youtube_link} target="_blank">
                         <IconButton aria-label="add to favorites" size="large">
-                          <YouTubeIcon />
+                          <YoutubeSvg/>
                         </IconButton>
                       </a>
                     )}
                     {project.github_link && (
                       <a href={project.github_link} target="_blank">
                         <IconButton aria-label="share" size="large">
-                          <GitHubIcon />
+                          <GitHubIcon sx={{fill:"black"}} />
                         </IconButton>
                       </a>
                     )}
 
                     <Tooltip title="Click to access more information">
                       <IconButton
+                      color="secondary"
                         onClick={() => handleClick(project.id)}
                         aria-label="share"
                         size="large"
                       >
-                        <InfoIcon />
+                        <PrivacyTipIcon />
                       </IconButton>
                     </Tooltip>
                     {project.actual_link && (

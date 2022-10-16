@@ -16,7 +16,7 @@ const Header = styled(motion.h1)`
 	display: block;
 	width: 50%;
 	height: 4px;
-	background-color: #01BFA6;
+	background-color: #1976d2;
     left: 25%;
    
 }
