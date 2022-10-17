@@ -152,14 +152,12 @@ export default function ProjectArchive(props) {
   useEffect(() => {
     let newProjectData = [...projectData];
     newProjectData = data.filter((d) => {
-      console.log(d.developedBy, developedBy);
       return d.developedBy === developedBy;
     });
     let hashMap = selectedTags.reduce(
       (obj, item, index) => ({ ...obj, [item]: item }),
       {}
     );
-    console.log(hashMap);
     if (selectedTags.length > 0) {
       newProjectData = newProjectData.filter((d) => {
         let tags = d.tags;
@@ -186,7 +184,7 @@ export default function ProjectArchive(props) {
       alignItems="center"
     >
       <Grid
-        sx={{ mb: 1, width: "92%" }}
+        sx={{ mb: 1, width: "74%" }}
         container
         item
         direction="row"
@@ -214,6 +212,7 @@ export default function ProjectArchive(props) {
         </Grid>
       ) : (
         <Grid
+          sx={{ width: "80%" }}
           container
           justifyContent="center"
           alignItems="center"

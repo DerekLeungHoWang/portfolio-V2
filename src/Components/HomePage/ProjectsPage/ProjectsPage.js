@@ -51,7 +51,7 @@ export default function ProjectsPage(props) {
       theme={theme}
       maxWidth={false}
       // container
-      // style={{ maxWidth: "70%" }}
+      // sx={{ maxWidth: "70%" }}
     >
       <Grid container style={{ position: "relative" }}>
         <PageHeader setPrjPageInView={setPrjPageInView}>Projects</PageHeader>
