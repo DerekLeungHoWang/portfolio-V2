@@ -217,16 +217,16 @@ export default function ProjectArchive(props) {
           justifyContent="center"
           alignItems="center"
           item
-          initial="hidden"
-          animate={prjPageInview ? "visible" : "hidden"}
-          variants={cardWrapper}
-          component={motion.div}
+          // initial="hidden"
+          // animate={prjPageInview ? "visible" : "hidden"}
+          // variants={cardWrapper}
+          // component={motion.div}
           className="projectBoxContainer"
         >
           {projectData.map((project, index) => {
             return (
-              <motion.div
-                variants={card}
+              <div
+                // variants={card}
                 key={project.title}
                 className="projectCardWrapper"
               >
@@ -330,7 +330,7 @@ export default function ProjectArchive(props) {
                     )}
                   </CardActions>
                 </Card>
-              </motion.div>
+              </div>
             );
           })}
         </Grid>
