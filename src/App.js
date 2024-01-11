@@ -7,25 +7,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import ProjectDetail from "./Components/HomePage/ProjectsPage/Projects/Archive/Detail/ProjectDetail";
 
 function App(props) {
-  // const theme = createMuiTheme({
-  //   palette: {
-  //     primary: {
-  //       main: "#000",
-  //       secondary: "#F3EA  DA",
-  //       green: "#00BFA6",
-  //       background: "#fff",
-  //       frontend: "#264653",
-  //       backend: "#2a9d8f",
-  //       deployment: "#e9c46a",
-  //       testing: "#f4a261",
-  //       others: "#e76f51",
-  //       paper: "#283042",
-  //     },
-  //     secondary: {
-  //       main: "#fff",
-  //     },
-  //   },
-  // });
+  
 
   return (
     <div className="App">

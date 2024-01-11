@@ -70,7 +70,7 @@ export default function SkillPage() {
                     <Grid container item xs={12} lg={6} direction="column"
                         justifyContent="center"
                         alignItems="center" >
-                        <AllSkills />
+                        {/* <AllSkills /> */}
                     </Grid>
                 </Grid>
             </Grid>

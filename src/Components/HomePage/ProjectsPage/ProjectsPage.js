@@ -63,11 +63,11 @@ export default function ProjectsPage(props) {
           alignItems="center"
           style={{ marginBottom: "20px" }}
         >
-          <ButtonGroup
+          {/* <ButtonGroup
             color="primary"
             aria-label="outlined primary button group"
-          >
-            <Tooltip placement="top" title="Projects developed by myself">
+          > */}
+            {/* <Tooltip placement="top" title="Projects developed by myself">
               <Button
                 variant={developedBy === "mySelf" ? "contained" : "outlined"}
                 color="primary"
@@ -75,8 +75,8 @@ export default function ProjectsPage(props) {
               >
                 My Projects
               </Button>
-            </Tooltip>
-            <Tooltip
+            </Tooltip> */}
+            {/* <Tooltip
               placement="top"
               title="Projects that I coded along tutorial"
             >
@@ -88,7 +88,7 @@ export default function ProjectsPage(props) {
                 Tutorial
               </Button>
             </Tooltip>
-          </ButtonGroup>
+          </ButtonGroup> */}
 
         
         </Grid>
