@@ -27,30 +27,30 @@ function AllSkills({ delayPerPixel = 0.0018 }) {
 
     const handleClick = (e) => {
 
-        setAnimate(!animate)
+        // setAnimate(!animate)
 
     }
     const getText = (item) => {
 
-        if (item.id == 1) {
-            return (<ReactSvg />
-            )
-        }
+        // if (item.id == 1) {
+        //     return (<ReactSvg />
+        //     )
+        // }
 
-        if (item.id == 18) {
-            return (<SpringBootSvg />
-            )
-        }
+        // if (item.id == 18) {
+        //     return (<SpringBootSvg />
+        //     )
+        // }
 
-        if (item.id == 25) {
-            return (<span style={{ width: "65px", wordWrap: "break-word", fontWeight: "900" }}>
-                {animate ? "Hide" : "Show"}
-            </span>)
-        }
-        if (item.id == 34) {
-            return (<SeleniumSvg fill="#64ffda" stroke="#64ffda" />
-            )
-        }
+        // if (item.id == 25) {
+        //     return (<span style={{ width: "65px", wordWrap: "break-word", fontWeight: "900" }}>
+        //         {animate ? "Hide" : "Show"}
+        //     </span>)
+        // }
+        // if (item.id == 34) {
+        //     return (<SeleniumSvg fill="#64ffda" stroke="#64ffda" />
+        //     )
+        // }
         return (<span style={{ width: "65px", wordWrap: "break-word" }}>
             {item.skill}
         </span>)
@@ -62,7 +62,7 @@ function AllSkills({ delayPerPixel = 0.0018 }) {
 
     return (
         <motion.div initial="hidden" animate={controls} variants={{}}
-            style={{ display: "inline-block", minWidth: 320, maxWidth: 650 }}
+            style={{ display: "inline-block", minWidth: 320, maxWidth: 450 }}
         >
             <Grid container direction="row"
                 justifyContent="center"
@@ -81,7 +81,7 @@ function AllSkills({ delayPerPixel = 0.0018 }) {
                         category={item.category}
                         skill={item.skill}
                         onClick={handleClick}
-                        originIndex={24}
+                        originIndex={0}
                         delayPerPixel={delayPerPixel}
                         originOffset={originOffset}
                         setAnimate={setAnimate}
@@ -158,8 +158,8 @@ const itemVariants = {
 
         return ({
 
-            opacity: props.id == 24 ? 1 : 0,
-            scale: props.id == 24 ? 1 : 0,
+            opacity: props.id == 0 ? 1 : 0,
+            scale: props.id == 0 ? 1 : 0,
             transition: { delay: props.delayRef.current, }
         })
     },
@@ -173,8 +173,8 @@ const itemVariants = {
 
 const Box = styled(Button)`
   margin: 10px;
-  height: 65px;
-  width: 65px;
+  height: 125px;
+  width: 125px;
   cursor: pointer;
   text-align: center;
   font-size: 11px;

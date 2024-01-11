@@ -92,7 +92,7 @@ export const MenuItem = ({ text, toggleOpen }) => {
       <ItemText theme={theme} comonent={motion.div}
         primary={text.toLowerCase() === "resume" ?
           <a href={Pdf} target="_blank">
-            <Button color="secondary" variant="outlined">{text}</Button>
+            <Button  color="secondary" variant="contained">{text}</Button>
           </a>
           : text}
       />
