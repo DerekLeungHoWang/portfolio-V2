@@ -36,9 +36,9 @@ export const data = [
     title: "Live Together",
     description:
       "A mobile app that helps the division of responsibilities among individuals sharing the same living space",
-    youtube_link: "https://www.youtube.com/watch?v=3MpNyEEGONA",
-    actual_link: "https://church-lyrics-maker.netlify.app/#/",
-    github_link: "https://github.com/HoWangLeung/dark-mode",
+    youtube_link: "#",
+    actual_link: "https://apps.apple.com/gb/app/livetogetherapp/id6469418761",
+    github_link: "https://github.com/HoWangLeung/liveTogether",
     img: liveTogether1,
     year: 2023,
     tags: ["React Native", "Spring Boot", "MySQL"],
